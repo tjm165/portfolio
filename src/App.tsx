@@ -1,12 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Home from "./components/home";
+import Example from "./components/example";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Example />
     </div>
   );
 }
