@@ -12,10 +12,16 @@ type PropTypes = {
 export default function MyLandingContainer({ children, color }: PropTypes) {
   return (
     <React.Fragment>
-      <CssBaseline />
-      <Container>
-        <Box sx={{ bgcolor: color, height: "80vh" }}>{children}</Box>
-      </Container>
+      <div
+        style={{
+          backgroundColor: color,
+        }}
+      >
+        {" "}
+        <Container>
+          <Box sx={{ bgcolor: color, height: "90vh" }}>{children}</Box>
+        </Container>
+      </div>
     </React.Fragment>
   );
 }
