@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function MyHeader() {
+function MyAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -161,4 +161,4 @@ function MyHeader() {
     </AppBar>
   );
 }
-export default MyHeader;
+export default MyAppBar;
