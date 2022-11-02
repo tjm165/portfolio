@@ -1,4 +1,4 @@
 import COLOR from "./colors";
-import MyBody from "./MyBody";
+import MyLandingContainer from "./MyLandingContainer";
 
-export { COLOR, MyBody };
+export { COLOR, MyLandingContainer };
