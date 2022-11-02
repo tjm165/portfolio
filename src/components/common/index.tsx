@@ -1,3 +1,4 @@
 import COLOR from "./colors";
+import MyBody from "./MyBody";
 
-export { COLOR };
+export { COLOR, MyBody };
