@@ -1,11 +1,10 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import CssBaseline from "@mui/material/CssBaseline";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import MyAppBar from "./MyAppBar";
 
 interface Props {
   /**
@@ -37,13 +36,14 @@ export default function MyHeader(props: Props) {
     <React.Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar>
+        <MyAppBar />
+        {/* <AppBar>
           <Toolbar>
             <Typography variant="h6" component="div">
               Scroll to elevate App bar
             </Typography>
           </Toolbar>
-        </AppBar>
+        </AppBar> */}
       </ElevationScroll>
       <Toolbar />
       <Container>
