@@ -48,3 +48,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Goal
 
 https://startup-tailwind.preview.uideck.com/
+
+## Tools and Turoials
+
+Material UI Guide - https://www.youtube.com/watch?v=MvCXO-zTfuo

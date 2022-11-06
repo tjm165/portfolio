@@ -1,16 +1,16 @@
 import { COLOR, MyLandingContainer } from "../common";
-import MyHeader from "../global/MyHeader";
+import { HeroSection } from "../common";
 
 export const Example = () => {
   return (
-    <div>
-      <MyHeader />
-      <MyLandingContainer color={COLOR.BLUE}>
-        <div> Hello world?</div>
-      </MyLandingContainer>
+    <>
+      <HeroSection />
       <MyLandingContainer color={COLOR.BEIGE}>
         <div> Hello world?</div>
       </MyLandingContainer>
-    </div>
+      <MyLandingContainer color={COLOR.BLUE}>
+        <div> Hello world?</div>
+      </MyLandingContainer>
+    </>
   );
 };
