@@ -1,7 +1,7 @@
-import { COLOR, MyLandingContainer } from "../common";
-import { HeroSection } from "../common";
+import { COLOR, MyLandingContainer } from "../../common";
+import { HeroSection } from "../../common";
 
-export const Example = () => {
+export default function Home() {
   return (
     <>
       <HeroSection />
@@ -13,4 +13,4 @@ export const Example = () => {
       </MyLandingContainer>
     </>
   );
-};
+}

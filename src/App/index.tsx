@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Example from ".././components/example";
+import Home from "../components/pages/home";
 import { createTheme, Palette, ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import createMuiTheme, { Theme, ThemeOptions } from "@mui/material";
@@ -17,7 +17,7 @@ function App() {
       <ThemeProvider theme={darkTheme}>
         <MyHeader />
         <CssBaseline enableColorScheme={true} />
-        <Example />
+        <Home />
         {/* <HeroSection /> */}
         {/* The rest of your application */}
       </ThemeProvider>
