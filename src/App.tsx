@@ -6,7 +6,7 @@ import { createTheme, Palette, ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import createMuiTheme, { Theme, ThemeOptions } from "@mui/material";
 import { HeroSection } from "./components/common";
-import { MyHeader } from "./components/global";
+import MyHeader from "./components/global/MyHeader";
 
 const darkTheme = createTheme({
   palette: { mode: "dark" } as Palette,
