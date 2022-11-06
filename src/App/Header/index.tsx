@@ -23,7 +23,7 @@ function ElevationScroll(props: ElevationScrollProps) {
   });
 }
 
-export default function MyHeader() {
+export default function Header() {
   return (
     <React.Fragment>
       <CssBaseline />
