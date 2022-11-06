@@ -1,12 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Example from "./components/example";
+import Example from ".././components/example";
 import { createTheme, Palette, ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import createMuiTheme, { Theme, ThemeOptions } from "@mui/material";
-import { HeroSection } from "./components/common";
-import MyHeader from "./components/global/MyHeader";
+import { HeroSection } from ".././components/common";
+import MyHeader from ".././components/global/MyHeader";
 
 const darkTheme = createTheme({
   palette: { mode: "dark" } as Palette,
