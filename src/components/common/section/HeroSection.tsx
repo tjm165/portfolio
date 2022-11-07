@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Container, Grid, Typography, Box } from "@mui/material";
+import { Paper, Container, Grid, Typography, Box, Hidden } from "@mui/material";
 
 const paperStyle = {
   height: "90vh",
@@ -43,7 +43,15 @@ export default function HeroSection({
             {subheading && <Typography variant="h5">{subheading}</Typography>}
             {boxChild && <Box my={2}>{boxChild}</Box>}
           </Grid>
-          <Grid item>Social</Grid>
+
+          <Hidden mdDown>
+            <Grid item>
+              <img
+                width="200px"
+                src="https://www.pngfind.com/pngs/m/693-6932035_transparent-background-halloween-pumpkin-clipart-hd-png-download.png"
+              />
+            </Grid>
+          </Hidden>
         </Grid>
       </Container>
     </Paper>
