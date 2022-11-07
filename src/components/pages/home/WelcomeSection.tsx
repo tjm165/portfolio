@@ -7,6 +7,8 @@ export default function WelcomeSection() {
     <HeroSection
       heading="Hi my name is Tommy Moawad. I'm a full stack software engineer"
       subheading="I love serverless, cloud, and data."
+      //@ts-ignore
+      contentImageSrc={require("./IMG_4990.png")}
       boxChild={
         <Button
           href="mailto:tom.moawad@gmail.com"

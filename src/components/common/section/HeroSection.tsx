@@ -1,13 +1,5 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
-import {
-  Paper,
-  Container,
-  Grid,
-  Typography,
-  Box,
-  Hidden,
-  Zoom,
-} from "@mui/material";
+import { Paper, Container, Grid, Typography, Box, Hidden } from "@mui/material";
 import Grow from "@mui/material/Grow";
 
 const paperStyle = {
@@ -39,12 +31,14 @@ type PropTypes = {
   heading: string;
   subheading?: string;
   boxChild?: JSX.Element;
+  contentImageSrc?: string;
 };
 
 export default function HeroSection({
   heading,
   subheading,
   boxChild,
+  contentImageSrc,
 }: PropTypes) {
   const [shouldShow, setShouldShow] = useState(false);
   const [hasAppeared, setHasAppeared] = useState(false);
@@ -85,14 +79,15 @@ export default function HeroSection({
             )}
           </Grid>
 
-          <Hidden mdDown>
-            <Grid item>
-              <img
-                width="200px"
-                src="https://www.pngfind.com/pngs/m/693-6932035_transparent-background-halloween-pumpkin-clipart-hd-png-download.png"
-              />
-            </Grid>
-          </Hidden>
+          {contentImageSrc && (
+            <Hidden mdDown>
+              <Grow in={shouldShow} timeout={2000}>
+                <Grid item>
+                  <img width="200px" src={contentImageSrc} />
+                </Grid>
+              </Grow>
+            </Hidden>
+          )}
         </Grid>
       </Container>
     </Paper>
