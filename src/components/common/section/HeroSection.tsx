@@ -1,5 +1,13 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
-import { Paper, Container, Grid, Typography, Box, Hidden } from "@mui/material";
+import {
+  Paper,
+  Container,
+  Grid,
+  Typography,
+  Box,
+  Hidden,
+  Avatar,
+} from "@mui/material";
 import Grow from "@mui/material/Grow";
 
 const paperStyle = {
@@ -25,6 +33,12 @@ const overlayStyle: React.CSSProperties = {
   height: "90vh",
   position: "absolute",
   zIndex: 2,
+};
+
+const imgStyle: React.CSSProperties = {
+  borderRadius: "50%",
+  height: "80%",
+  width: "80%",
 };
 
 type PropTypes = {
@@ -80,10 +94,10 @@ export default function HeroSection({
           </Grid>
 
           {contentImageSrc && (
-            <Hidden mdDown>
+            <Hidden smDown>
               <Grow in={shouldShow} timeout={2000}>
-                <Grid item>
-                  <img width="200px" src={contentImageSrc} />
+                <Grid item sm={4}>
+                  <img style={imgStyle} src={contentImageSrc} />
                 </Grid>
               </Grow>
             </Hidden>
