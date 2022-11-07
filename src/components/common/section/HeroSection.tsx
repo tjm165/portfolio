@@ -68,14 +68,14 @@ export default function HeroSection({
         >
           <Grid item sm={8}>
             <Grow in={shouldShow} timeout={1000}>
-              <Typography component="h1" variant="h3">
+              <Typography component="h1" variant="h3" ref={ref1}>
                 {heading}
               </Typography>
             </Grow>
 
             {(subheading || boxChild) && (
               <Grow in={shouldShow} timeout={2000}>
-                <span ref={ref1}>
+                <span>
                   {subheading && (
                     <Typography variant="h5">{subheading}</Typography>
                   )}
