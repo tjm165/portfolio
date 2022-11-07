@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import {
   Paper,
   Container,
@@ -47,7 +47,15 @@ export default function HeroSection({
   boxChild,
 }: PropTypes) {
   const [shouldShow, setShouldShow] = useState(false);
-  useEffect(() => setShouldShow(true));
+  const [hasAppeared, setHasAppeared] = useState(false);
+
+  useEffect(() => {
+    setShouldShow(isInViewport1 || hasAppeared);
+    setHasAppeared(isInViewport1 || hasAppeared);
+  });
+  const ref1 = useRef(null);
+
+  const isInViewport1 = useIsInViewport(ref1);
 
   return (
     <Paper style={paperStyle}>
@@ -68,7 +76,7 @@ export default function HeroSection({
 
             {(subheading || boxChild) && (
               <Grow in={shouldShow} timeout={2000}>
-                <span>
+                <span ref={ref1}>
                   {subheading && (
                     <Typography variant="h5">{subheading}</Typography>
                   )}
@@ -90,4 +98,26 @@ export default function HeroSection({
       </Container>
     </Paper>
   );
+}
+
+function useIsInViewport(ref: any) {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
+  const observer = useMemo(
+    () =>
+      new IntersectionObserver(([entry]) =>
+        setIsIntersecting(entry.isIntersecting)
+      ),
+    []
+  );
+
+  useEffect(() => {
+    observer.observe(ref.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref, observer]);
+
+  return isIntersecting;
 }
