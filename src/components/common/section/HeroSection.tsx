@@ -49,13 +49,12 @@ export default function HeroSection({
   const [shouldShow, setShouldShow] = useState(false);
   const [hasAppeared, setHasAppeared] = useState(false);
 
+  const [ref1, isInViewport1] = useIsInViewport();
+
   useEffect(() => {
     setShouldShow(isInViewport1 || hasAppeared);
     setHasAppeared(isInViewport1 || hasAppeared);
   });
-  const ref1 = useRef(null);
-
-  const isInViewport1 = useIsInViewport(ref1);
 
   return (
     <Paper style={paperStyle}>
@@ -100,7 +99,8 @@ export default function HeroSection({
   );
 }
 
-function useIsInViewport(ref: any) {
+function useIsInViewport() {
+  const ref: any = useRef(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   const observer = useMemo(
@@ -119,5 +119,5 @@ function useIsInViewport(ref: any) {
     };
   }, [ref, observer]);
 
-  return isIntersecting;
+  return [ref, isIntersecting];
 }
