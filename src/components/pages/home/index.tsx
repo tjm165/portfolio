@@ -1,10 +1,10 @@
 import { COLOR, MyLandingContainer } from "../../common";
-import { HeroSection } from "../../common";
+import WelcomeSection from "./WelcomeSection";
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <WelcomeSection />
       <MyLandingContainer color={COLOR.BEIGE}>
         <div> Hello world?</div>
       </MyLandingContainer>

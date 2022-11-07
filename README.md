@@ -51,4 +51,4 @@ https://startup-tailwind.preview.uideck.com/
 
 ## Tools and Turoials
 
-Material UI Guide - https://www.youtube.com/watch?v=MvCXO-zTfuo
+- Hero Landing Page: https://www.youtube.com/watch?v=MvCXO-zTfuo

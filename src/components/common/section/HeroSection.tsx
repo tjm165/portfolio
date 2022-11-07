@@ -1,12 +1,5 @@
 import React from "react";
-import { Paper, Container, Grid, Typography, Button, Box } from "@mui/material";
-
-// const useStyles = makeStyles(() => ({
-//   section: {
-//     height: "90vh",
-//     backgroundImage: "url(https://wallpaperaccess.com/full/476126.jpg)",
-//   },
-// }));
+import { Paper, Container, Grid, Typography, Box } from "@mui/material";
 
 const paperStyle = {
   height: "90vh",
@@ -23,7 +16,17 @@ const gridContainerStyle = {
   height: "100%",
 };
 
-export default function HeroSection() {
+type PropTypes = {
+  heading: string;
+  subheading?: string;
+  boxChild?: JSX.Element;
+};
+
+export default function HeroSection({
+  heading,
+  subheading,
+  boxChild,
+}: PropTypes) {
   return (
     <Paper style={paperStyle}>
       <Container style={containerStyle} maxWidth="md">
@@ -35,20 +38,10 @@ export default function HeroSection() {
         >
           <Grid item sm={8}>
             <Typography component="h1" variant="h3">
-              Hi my name is Tommy Moawad. I'm a full stack software engineer.
+              {heading}
             </Typography>
-            <Typography variant="h5">
-              I love serverless, cloud, and data.
-            </Typography>
-            <Box my={2}>
-              <Button
-                href="mailto:tom.moawad@gmail.com"
-                variant="outlined"
-                color="secondary"
-              >
-                Get in Touch
-              </Button>
-            </Box>
+            {subheading && <Typography variant="h5">{subheading}</Typography>}
+            {boxChild && <Box my={2}>{boxChild}</Box>}
           </Grid>
           <Grid item>Social</Grid>
         </Grid>
