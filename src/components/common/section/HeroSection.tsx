@@ -99,6 +99,7 @@ export default function HeroSection({
   );
 }
 
+// https://bobbyhadz.com/blog/react-check-if-element-in-viewport
 function useIsInViewport() {
   const ref: any = useRef(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
