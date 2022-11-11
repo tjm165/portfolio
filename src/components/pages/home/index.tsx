@@ -5,10 +5,13 @@ export default function Home() {
   return (
     <>
       <WelcomeSection />
-      <MyLandingContainer color={COLOR.BEIGE}>
+      <MyLandingContainer color={COLOR.BLUE}>
         <div> Hello world?</div>
       </MyLandingContainer>
-      <MyLandingContainer color={COLOR.BLUE}>
+
+      <WelcomeSection />
+
+      <MyLandingContainer color={COLOR.BEIGE}>
         <div> Hello world?</div>
       </MyLandingContainer>
     </>
