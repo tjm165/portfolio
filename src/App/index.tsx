@@ -6,7 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Header from "./Header";
 
 const darkTheme = createTheme({
-  palette: { mode: "dark" } as Palette,
+  palette: { mode: "light" } as Palette,
 });
 
 type PropTypes = {

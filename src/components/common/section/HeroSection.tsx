@@ -10,13 +10,6 @@ import {
 } from "@mui/material";
 import Grow from "@mui/material/Grow";
 
-const paperStyle = {
-  height: "90vh",
-  backgroundImage: "url(https://wallpaperaccess.com/full/476126.jpg)",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
-
 const containerStyle: React.CSSProperties = {
   height: "100%",
   zIndex: 100,
@@ -39,6 +32,7 @@ const imgStyle: React.CSSProperties = {
   borderRadius: "50%",
   height: "80%",
   width: "80%",
+  objectFit: "cover",
 };
 
 type PropTypes = {
@@ -46,6 +40,7 @@ type PropTypes = {
   subheading?: string;
   boxChild?: JSX.Element;
   contentImageSrc?: string;
+  backgroundImageSrc?: string;
 };
 
 export default function HeroSection({
@@ -53,7 +48,16 @@ export default function HeroSection({
   subheading,
   boxChild,
   contentImageSrc,
+  backgroundImageSrc,
 }: PropTypes) {
+  const paperStyle = {
+    height: "90vh",
+    backgroundImage: `url(${backgroundImageSrc})`,
+    backgroundColor: "white",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  };
+
   const [shouldShow, setShouldShow] = useState(false);
   const [hasAppeared, setHasAppeared] = useState(false);
 
@@ -66,7 +70,7 @@ export default function HeroSection({
 
   return (
     <Paper style={paperStyle}>
-      <div style={overlayStyle}></div>
+      {backgroundImageSrc && <div style={overlayStyle}></div>}
       <Container style={containerStyle} maxWidth="md">
         <Grid
           style={gridContainerStyle}
