@@ -9,8 +9,15 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const pages = ["Products", "Pricing", "Blog"];
+type NavOption = {
+  title: string;
+  push: string;
+};
+
+const pages: NavOption[] = [{ title: "About", push: "/about" }];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function MyAppBar() {
@@ -27,6 +34,7 @@ function MyAppBar() {
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
+  const navigate = useNavigate();
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -87,8 +95,8 @@ function MyAppBar() {
             }}
           >
             {pages.map((page) => (
-              <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">{page}</Typography>
+              <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{page.title}</Typography>s{" "}
               </MenuItem>
             ))}
           </Menu>
@@ -115,11 +123,14 @@ function MyAppBar() {
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {pages.map((page) => (
             <Button
-              key={page}
-              onClick={handleCloseNavMenu}
+              key={page.title}
+              onClick={() => {
+                handleCloseNavMenu();
+                navigate(page.push, { replace: true });
+              }}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              {page}
+              {page.title}
             </Button>
           ))}
         </Box>

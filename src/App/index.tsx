@@ -9,15 +9,17 @@ const darkTheme = createTheme({
   palette: { mode: "dark" } as Palette,
 });
 
-function App() {
+type PropTypes = {
+  view: JSX.Element;
+};
+
+function App(props: PropTypes) {
   return (
     <React.Fragment>
       <ThemeProvider theme={darkTheme}>
         <Header />
         <CssBaseline enableColorScheme={true} />
-        <Home />
-        {/* <HeroSection /> */}
-        {/* The rest of your application */}
+        {props.view}
       </ThemeProvider>
     </React.Fragment>
   );
