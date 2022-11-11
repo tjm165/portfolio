@@ -1,14 +1,5 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
-import {
-  Paper,
-  Container,
-  Grid,
-  Typography,
-  Box,
-  Hidden,
-  Avatar,
-} from "@mui/material";
-import Grow from "@mui/material/Grow";
+import { Paper, Container, Grid, Typography, Box, Hidden } from "@mui/material";
 
 const containerStyle: React.CSSProperties = {
   height: "100%",
@@ -30,8 +21,10 @@ const overlayStyle: React.CSSProperties = {
 
 const imgStyle: React.CSSProperties = {
   borderRadius: "50%",
-  height: "80%",
-  width: "80%",
+  height: "50vw",
+  width: "50vw",
+  maxHeight: "50vh",
+  maxWidth: "50vh",
   objectFit: "cover",
 };
 
@@ -42,6 +35,23 @@ type PropTypes = {
   contentImageSrc?: string;
   backgroundImageSrc?: string;
 };
+
+type HeroImageProps = {
+  src?: string;
+  top: boolean;
+};
+
+function HeroImage({ src, top }: HeroImageProps) {
+  return src ? (
+    <Hidden mdDown={!top} mdUp={top}>
+      <Grid item sm={4}>
+        <img style={imgStyle} src={src} />
+      </Grid>
+    </Hidden>
+  ) : (
+    <></>
+  );
+}
 
 export default function HeroSection({
   heading,
@@ -79,33 +89,22 @@ export default function HeroSection({
           justifyContent="space-between"
         >
           <Grid item sm={8}>
-            <Grow in={shouldShow} timeout={1000}>
-              <Typography component="h1" variant="h3" ref={ref1}>
-                {heading}
-              </Typography>
-            </Grow>
+            <HeroImage top={true} src={contentImageSrc} />
+            <Typography component="h1" variant="h3" ref={ref1}>
+              {heading}
+            </Typography>
 
             {(subheading || boxChild) && (
-              <Grow in={shouldShow} timeout={2000}>
-                <span>
-                  {subheading && (
-                    <Typography variant="h5">{subheading}</Typography>
-                  )}
-                  {boxChild && <Box my={2}>{boxChild}</Box>}
-                </span>
-              </Grow>
+              <>
+                {subheading && (
+                  <Typography variant="h5">{subheading}</Typography>
+                )}
+                {boxChild && <Box my={2}>{boxChild}</Box>}
+              </>
             )}
           </Grid>
 
-          {contentImageSrc && (
-            <Hidden smDown>
-              <Grow in={shouldShow} timeout={2000}>
-                <Grid item sm={4}>
-                  <img style={imgStyle} src={contentImageSrc} />
-                </Grid>
-              </Grow>
-            </Hidden>
-          )}
+          <HeroImage top={false} src={contentImageSrc} />
         </Grid>
       </Container>
     </Paper>
