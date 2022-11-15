@@ -63,7 +63,7 @@ export default function HeroSection({
   const paperStyle = {
     height: "90vh",
     backgroundImage: `url(${backgroundImageSrc})`,
-    backgroundColor: "white",
+    // backgroundColor: "white",
     backgroundSize: "cover",
     backgroundPosition: "center",
   };

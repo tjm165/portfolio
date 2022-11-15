@@ -1,17 +1,17 @@
-import { COLOR, MyLandingContainer } from "../../common";
+import React from "react";
+import { MyLandingContainer } from "../../common";
+import { useTheme } from "@mui/material/styles";
 import WelcomeSection from "./WelcomeSection";
+import TimelineSection from "./TimelineSection";
 
 export default function Home() {
+  const theme = useTheme();
   return (
     <>
       <WelcomeSection />
-      <MyLandingContainer color={COLOR.BLUE}>
-        <div> Hello world?</div>
-      </MyLandingContainer>
+      <TimelineSection />
 
-      <WelcomeSection />
-
-      <MyLandingContainer color={COLOR.BEIGE}>
+      <MyLandingContainer>
         <div> Hello world?</div>
       </MyLandingContainer>
     </>

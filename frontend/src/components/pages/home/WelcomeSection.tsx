@@ -13,7 +13,7 @@ export default function WelcomeSection() {
         <Button
           href="mailto:tom.moawad@gmail.com"
           variant="outlined"
-          color="secondary"
+          color="primary"
         >
           Get in Touch
         </Button>
