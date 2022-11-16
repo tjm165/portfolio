@@ -5,9 +5,7 @@ import { styled, useTheme } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -20,8 +18,8 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 type NavOption = {
   title: string;
@@ -87,20 +85,24 @@ export default function MyAppBar() {
     setAnchorElNav(null);
   };
 
+  const md = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: "none" }) }}
-          >
-            <MenuIcon />
-          </IconButton>
+          {md && (
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ mr: 2, ...(open && { display: "none" }) }}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
           <Typography
             variant="h6"
             noWrap
@@ -155,7 +157,6 @@ export default function MyAppBar() {
               ))}
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -172,7 +173,7 @@ export default function MyAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            LOGOM
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -192,10 +193,10 @@ export default function MyAppBar() {
       </AppBar>
       <Drawer
         sx={{
-          width: drawerWidth,
+          width: "90%",
           flexShrink: 0,
           "& .MuiDrawer-paper": {
-            width: drawerWidth,
+            width: "90%",
             boxSizing: "border-box",
           },
         }}
@@ -213,21 +214,18 @@ export default function MyAppBar() {
           </IconButton>
         </DrawerHeader>
         <Divider />
+
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding>
+          {pages.map((page, index) => (
+            <ListItem key={index} disablePadding>
               <ListItemButton>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemText primary={text} />
+                <ListItemText
+                  primary={page.title}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                    navigate(page.push, { replace: true });
+                  }}
+                />
               </ListItemButton>
             </ListItem>
           ))}
