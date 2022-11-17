@@ -20,13 +20,8 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { useNavigate } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import pages from "./pages";
 
-type NavOption = {
-  title: string;
-  push: string;
-};
-
-const pages: NavOption[] = [{ title: "About", push: "/about" }];
 const drawerWidth = 240;
 
 interface AppBarProps extends MuiAppBarProps {
