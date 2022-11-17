@@ -1,5 +1,11 @@
-import React from "react";
+import HeadingSection from "./HeadingSection";
+import { Outlet, useLoaderData } from "react-router-dom";
 
 export default function Blog() {
-  return <div>A blog about tommy</div>;
+  return (
+    <>
+      <Outlet />
+      <HeadingSection />
+    </>
+  );
 }

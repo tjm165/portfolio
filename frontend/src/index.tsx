@@ -5,6 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { Home, About, ErrorPage, Blog } from "./components/pages";
+import { blogPostLoader } from "./components/pages/blog/blog-post";
+import BlogPost from "./components/pages/blog/blog-post";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,15 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <App view={<Blog />} />,
+  },
+  {
+    children: [
+      {
+        path: "blog/:blogId",
+        element: <App view={<BlogPost />} />,
+        loader: blogPostLoader,
+      },
+    ],
   },
 ]);
 

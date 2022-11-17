@@ -1,4 +1,3 @@
-import React from "react";
 import { HeroSection } from "../../common/section";
 import { Button } from "@mui/material";
 

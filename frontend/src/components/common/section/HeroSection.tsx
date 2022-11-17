@@ -1,24 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { Paper, Container, Grid, Typography, Box, Hidden } from "@mui/material";
 
-const containerStyle: React.CSSProperties = {
-  height: "100%",
-  zIndex: 100,
-  position: "relative",
-};
-
-const gridContainerStyle: React.CSSProperties = {
-  height: "100%",
-};
-
-const overlayStyle: React.CSSProperties = {
-  backgroundColor: "rgba(0, 0, 0, 0.4)",
-  width: "100%",
-  height: "90vh",
-  position: "absolute",
-  zIndex: 2,
-};
-
 const imgStyle: React.CSSProperties = {
   borderRadius: "50%",
   height: "50vw",
@@ -34,6 +16,7 @@ type PropTypes = {
   boxChild?: JSX.Element;
   contentImageSrc?: string;
   backgroundImageSrc?: string;
+  height?: string;
 };
 
 type HeroImageProps = {
@@ -59,13 +42,34 @@ export default function HeroSection({
   boxChild,
   contentImageSrc,
   backgroundImageSrc,
+  height,
 }: PropTypes) {
+  const calcualtedheight = height;
+
   const paperStyle = {
-    height: "90vh",
+    height: height || "90vh",
     backgroundImage: `url(${backgroundImageSrc})`,
     // backgroundColor: "white",
     backgroundSize: "cover",
     backgroundPosition: "center",
+  };
+
+  const containerStyle: React.CSSProperties = {
+    height: "100%",
+    zIndex: 100,
+    position: "relative",
+  };
+
+  const gridContainerStyle: React.CSSProperties = {
+    height: "100%",
+  };
+
+  const overlayStyle: React.CSSProperties = {
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
+    width: "100%",
+    height: "90vh",
+    position: "absolute",
+    zIndex: 2,
   };
 
   const [shouldShow, setShouldShow] = useState(false);
