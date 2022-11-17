@@ -5,7 +5,7 @@ import { useTheme } from "@mui/material/styles";
 export default function TimelineSection() {
   const theme = useTheme();
   return (
-    <MyLandingContainer color={theme.palette.secondary.main}>
+    <MyLandingContainer color={theme.palette.primary.main}>
       <div> Timeline?</div>
     </MyLandingContainer>
   );
