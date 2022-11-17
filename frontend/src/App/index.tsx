@@ -4,15 +4,7 @@ import Home from "../components/pages/home";
 import { createTheme, Palette, ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import Header from "./Header";
-
-// https://mui.com/material-ui/customization/palette/
-const darkTheme = createTheme({
-  palette: {
-    mode: "light",
-    primary: { main: "#ff4400" },
-    secondary: { main: "#95B9C7" },
-  } as Palette,
-});
+import myTheme from "./myTheme";
 
 type PropTypes = {
   view: JSX.Element;
@@ -21,7 +13,7 @@ type PropTypes = {
 function App(props: PropTypes) {
   return (
     <React.Fragment>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={myTheme}>
         <Header />
         <CssBaseline enableColorScheme={true} />
         {props.view}
