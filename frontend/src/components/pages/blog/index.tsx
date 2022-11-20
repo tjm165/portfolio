@@ -1,6 +1,8 @@
 import HeadingSection from "./HeadingSection";
 import { Outlet, useLoaderData } from "react-router-dom";
 import BlogCard, { BlogCardProps } from "./BlogCard";
+import { BodySection } from "../../common/section";
+import { MyDivider } from "../../common";
 
 export default function Blog() {
   const highlights: BlogCardProps[] = [
@@ -15,9 +17,19 @@ export default function Blog() {
     <>
       <Outlet />
       <HeadingSection />
-      {highlights.map(({ title, description, path }, i) => (
-        <BlogCard key={i} title={title} description={description} path={path} />
-      ))}
+      <MyDivider />
+      <BodySection>
+        <>
+          {highlights.map(({ title, description, path }, i) => (
+            <BlogCard
+              key={i}
+              title={title}
+              description={description}
+              path={path}
+            />
+          ))}
+        </>
+      </BodySection>
     </>
   );
 }

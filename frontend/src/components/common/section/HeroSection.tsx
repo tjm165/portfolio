@@ -44,8 +44,6 @@ export default function HeroSection({
   backgroundImageSrc,
   height,
 }: PropTypes) {
-  const calcualtedheight = height;
-
   const paperStyle = {
     height: height || "90vh",
     backgroundImage: `url(${backgroundImageSrc})`,
@@ -83,7 +81,7 @@ export default function HeroSection({
   });
 
   return (
-    <Paper style={paperStyle}>
+    <Paper style={paperStyle} elevation={0}>
       {backgroundImageSrc && <div style={overlayStyle}></div>}
       <Container style={containerStyle} maxWidth="md">
         <Grid
