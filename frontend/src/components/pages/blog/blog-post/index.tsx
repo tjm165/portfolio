@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import myData from ".././posts/abc.json";
 
 export default function BlogPost() {
   const blog = useLoaderData();
@@ -13,6 +12,11 @@ export default function BlogPost() {
   );
 }
 
+type BlogPostParams = {
+  blogId: string;
+};
+
 export async function blogPostLoader({ params }: any) {
-  return myData;
+  const blogData = require(`../posts/${params.blogId}.json`);
+  return blogData;
 }
