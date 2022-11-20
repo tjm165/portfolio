@@ -1,8 +1,7 @@
-import HeadingSection from "./HeadingSection";
 import { Outlet, useLoaderData } from "react-router-dom";
 import BlogCard, { BlogCardProps } from "./BlogCard";
-import { BodySection } from "../../common/section";
-import { MyDivider } from "../../common";
+import { SimpleSection } from "../../common/section";
+import Container from "@mui/material/Container";
 
 export default function Blog() {
   const highlights: BlogCardProps[] = [
@@ -16,20 +15,23 @@ export default function Blog() {
   return (
     <>
       <Outlet />
-      <HeadingSection />
-      <MyDivider />
-      <BodySection>
-        <>
-          {highlights.map(({ title, description, path }, i) => (
-            <BlogCard
-              key={i}
-              title={title}
-              description={description}
-              path={path}
-            />
-          ))}
-        </>
-      </BodySection>
+      <Container maxWidth="md">
+        <SimpleSection
+          headingText="Wow Tommy have some interesting stuff to say!"
+          subHeadingText="From experiences to code snippets this is really exciting to read!"
+        >
+          <>
+            {highlights.map(({ title, description, path }, i) => (
+              <BlogCard
+                key={i}
+                title={title}
+                description={description}
+                path={path}
+              />
+            ))}
+          </>
+        </SimpleSection>
+      </Container>
     </>
   );
 }

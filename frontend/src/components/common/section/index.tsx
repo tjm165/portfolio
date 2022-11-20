@@ -1,4 +1,4 @@
 import HeroSection from "./HeroSection";
-import BodySection from "./BodySection";
+import SimpleSection from "./SimpleSection";
 
-export { HeroSection, BodySection };
+export { HeroSection, SimpleSection };
