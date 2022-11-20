@@ -7,6 +7,7 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import { Link } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import Fade from "@mui/material/Fade";
+import { AbsoluteToast, Severity, Position } from "../../common";
 
 export type BlogCardProps = {
   title: string;
@@ -24,27 +25,21 @@ export default function BlogCard({
   const subPath = `/blog/${path}`;
   const fullUrl = `${window.location.origin}/blog/${path}`;
   const [showCopySuccess, setShowCopySuccess] = useState(false);
+
   async function copyToClipboard(data: string) {
     await navigator.clipboard.writeText(data);
-
-    // Alert the copied text
     setShowCopySuccess(true);
-    setTimeout(() => {
-      setShowCopySuccess(false);
-    }, 2000);
   }
 
   return (
     <>
-      <Fade
-        in={showCopySuccess}
-        style={{ transformOrigin: "0 0 0" }}
-        {...{ timeout: 1000 }}
-      >
-        <div style={{ position: "absolute", left: "10px", bottom: "10px" }}>
-          <Alert severity="success">Copied to clipboard</Alert>
-        </div>
-      </Fade>
+      <AbsoluteToast
+        show={showCopySuccess}
+        setShow={setShowCopySuccess}
+        severity={Severity.SUCCESS}
+        text="Copied to clipboard"
+        position={Position.BOTTOM_LEFT}
+      />
 
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea component={Link} to={subPath}>
