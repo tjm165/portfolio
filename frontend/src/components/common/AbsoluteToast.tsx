@@ -51,7 +51,7 @@ export default function AbsoluteToast({
 
   return (
     <Fade in={show} style={{ transformOrigin: "0 0 0" }} {...{ timeout: 1000 }}>
-      <div style={{ position: "absolute", ...positionCss() }}>
+      <div style={{ zIndex: "100", position: "fixed", ...positionCss() }}>
         {/* @ts-ignore */}
         <Alert severity={severity}>{text}</Alert>
       </div>

@@ -10,6 +10,71 @@ export default function Blog() {
       description: "my description",
       path: "abc",
     },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+    },
   ];
 
   return (
