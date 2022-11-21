@@ -17,7 +17,7 @@ export default function SimpleSection({
   };
 
   return (
-    <Container maxWidth="md">
+    <>
       <Grid
         style={gridContainerStyle}
         container
@@ -42,6 +42,6 @@ export default function SimpleSection({
           </Grid>
         </Grid>
       )}
-    </Container>
+    </>
   );
 }

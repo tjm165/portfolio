@@ -7,15 +7,8 @@ export default function BlogPost() {
 
   const heading = blog.title;
 
-  const overlayStyle: React.CSSProperties = {
-    backgroundColor: "rgba(0, 0, 0, 0.4)",
-    width: "100%",
-    position: "absolute",
-    zIndex: 2,
-  };
-
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <SimpleSection headingText={heading}>
         <Grid>
           <Grid item sm={8}>

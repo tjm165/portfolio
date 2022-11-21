@@ -80,9 +80,9 @@ export default function Blog() {
   return (
     <>
       <Outlet />
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <SimpleSection
-          headingText="Wow Tommy have some interesting stuff to say!"
+          headingText="Wow Tommy has some interesting stuff to say!"
           subHeadingText="From experiences to code snippets this is really exciting to read!"
         >
           <>
