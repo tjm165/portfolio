@@ -5,8 +5,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { Link } from "react-router-dom";
-import Alert from "@mui/material/Alert";
-import Fade from "@mui/material/Fade";
 import { AbsoluteToast, Severity, Position } from "../../common";
 
 export type BlogCardProps = {
@@ -66,7 +64,13 @@ export default function BlogCard({
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
+        {/* <CardActions>
+          <Link to={subPath}>
+            <Button size="small" color="primary">
+              Read
+            </Button>
+          </Link>
+
           <Button
             size="small"
             color="primary"
@@ -74,7 +78,7 @@ export default function BlogCard({
           >
             Share
           </Button>
-        </CardActions>
+        </CardActions> */}
       </Card>
     </>
   );
