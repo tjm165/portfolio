@@ -100,14 +100,6 @@ export default function Blog() {
                 path={path}
               />
             ))}
-            {/* {highlights.map(({ title, description, path }, i) => (
-              <BlogRow
-                key={i}
-                title={title}
-                description={description}
-                path={path}
-              />
-            ))} */}
           </Stack>
         </SimpleSection>
       </Container>
