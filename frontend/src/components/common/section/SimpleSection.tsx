@@ -18,12 +18,7 @@ export default function SimpleSection({
 
   return (
     <>
-      <Grid
-        style={gridContainerStyle}
-        container
-        alignItems="center"
-        justifyContent="space-between"
-      >
+      <Grid style={gridContainerStyle} container>
         <Grid item sm={8}>
           <Typography component="h1" variant="h3">
             {headingText}

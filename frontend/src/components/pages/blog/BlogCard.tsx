@@ -41,7 +41,15 @@ export default function BlogCard({
         position={Position.BOTTOM_LEFT}
       />
 
-      <Card sx={{ maxWidth: 345 }}>
+      <Card
+        sx={{ maxWidth: 345 }}
+        style={{
+          flexBasis: "33.333333%",
+          marginBottom: "5vh",
+          marginLeft: "0px",
+          marginRight: "20px",
+        }}
+      >
         <CardActionArea component={Link} to={subPath}>
           <CardMedia
             component="img"
