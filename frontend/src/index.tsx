@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import { Home, About, ErrorPage, Blog } from "./components/pages";
+import { Home, About, ErrorPage, Blog, Contact } from "./components/pages";
 import { blogPostLoader } from "./components/pages/blog/blog-post";
 import BlogPost from "./components/pages/blog/blog-post";
 
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <App view={<Blog />} />,
+  },
+  {
+    path: "/contact",
+    element: <App view={<Contact />} />,
   },
   {
     children: [

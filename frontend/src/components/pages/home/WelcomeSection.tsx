@@ -8,15 +8,15 @@ export default function WelcomeSection() {
       subheading="I love serverless, cloud, and data."
       //@ts-ignore
       contentImageSrc={require("../../../moawad.jpg")}
-      boxChild={
-        <Button
-          href="mailto:tom.moawad@gmail.com"
-          variant="outlined"
-          color="primary"
-        >
-          Get in Touch
-        </Button>
-      }
+      // boxChild={
+      //   <Button
+      //     href="mailto:tom.moawad@gmail.com"
+      //     variant="outlined"
+      //     color="primary"
+      //   >
+      //     Get in Touch
+      //   </Button>
+      // }
     />
   );
 }

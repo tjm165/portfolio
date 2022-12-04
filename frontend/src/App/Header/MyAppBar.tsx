@@ -113,7 +113,7 @@ export default function MyAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            TOMMY MOAWAD
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -168,7 +168,7 @@ export default function MyAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGOM
+            TOMMY MOAWAD
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
