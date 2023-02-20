@@ -12,10 +12,6 @@ export default function Home() {
       <Outlet />
       <WelcomeSection />
       <TimelineSection />
-
-      <MyLandingContainer>
-        <div> Hello world?</div>
-      </MyLandingContainer>
     </>
   );
 }
