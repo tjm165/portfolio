@@ -44,7 +44,7 @@ export default function BlogCard({
         <CardActionArea component={Link} to={subPath}>
           <CardMedia
             component="img"
-            height="550vh"
+            height="320vh"
             image={image || "https://picsum.photos/200/300"}
             alt="green iguana"
           />

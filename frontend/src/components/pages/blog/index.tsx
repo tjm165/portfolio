@@ -81,7 +81,7 @@ export default function Blog() {
   return (
     <>
       <Outlet />
-      <Container maxWidth="xl">
+      <Container maxWidth="md">
         <SimpleSection headingText="Blog" alignHeading={Align.CENTER}>
           <Grid container justifyContent={"space-evenly"} spacing={4}>
             {highlights.map(({ title, description, path }, i) => (
