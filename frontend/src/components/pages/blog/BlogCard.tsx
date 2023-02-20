@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 import { AbsoluteToast, Severity, Position } from "../../common";
 
@@ -12,6 +12,7 @@ export type BlogCardProps = {
   description: string;
   path: string;
   image?: string;
+  isLeft: boolean;
 };
 
 export default function BlogCard({
@@ -39,19 +40,11 @@ export default function BlogCard({
         position={Position.BOTTOM_LEFT}
       />
 
-      <Card
-        sx={{ maxWidth: 345 }}
-        style={{
-          flexBasis: "33.333333%",
-          marginBottom: "5vh",
-          marginLeft: "0px",
-          marginRight: "20px",
-        }}
-      >
+      <Card>
         <CardActionArea component={Link} to={subPath}>
           <CardMedia
             component="img"
-            height="140"
+            height="550vh"
             image={image || "https://picsum.photos/200/300"}
             alt="green iguana"
           />
@@ -64,21 +57,6 @@ export default function BlogCard({
             </Typography>
           </CardContent>
         </CardActionArea>
-        {/* <CardActions>
-          <Link to={subPath}>
-            <Button size="small" color="primary">
-              Read
-            </Button>
-          </Link>
-
-          <Button
-            size="small"
-            color="primary"
-            onClick={() => copyToClipboard(fullUrl)}
-          >
-            Share
-          </Button>
-        </CardActions> */}
       </Card>
     </>
   );
