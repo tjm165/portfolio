@@ -3,7 +3,6 @@ import BlogCard, { BlogCardProps } from "./BlogCard";
 import { SimpleSection, Align } from "../../common/section";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import Stack from "@mui/material/Stack";
 
 export default function Blog() {
   const highlights: { title: string; description: string; path: string }[] = [
@@ -82,7 +81,7 @@ export default function Blog() {
   return (
     <>
       <Outlet />
-      <Container>
+      <Container maxWidth="xl">
         <SimpleSection headingText="Blog" alignHeading={Align.CENTER}>
           <Grid container justifyContent={"space-evenly"} spacing={4}>
             {highlights.map(({ title, description, path }, i) => (
