@@ -32,7 +32,7 @@ interface MyPalette extends Palette {
 
 // https://coolors.co/90cce9-84f0c3-fff3a8-eec5ca-996cc6
 const colors = {
-  blue: "#a6cace",
+  blue: "#6ebdb5",
   green: "#43aa9a",
   yellow: "#e4c3a7",
   pink: "#cdbac2",
