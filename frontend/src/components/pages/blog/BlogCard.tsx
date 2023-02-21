@@ -41,24 +41,35 @@ export default function BlogCard({
         position={Position.BOTTOM_LEFT}
       />
 
-      <Card sx={{ borderRadius: "0" }}>
+      <Card
+        sx={{
+          borderRadius: "0",
+        }}
+      >
         <CardActionArea component={Link} to={subPath}>
           <CardContent
             sx={{
               bgcolor: "primary.main",
             }}
           >
-            <img
-              height="300vh"
-              src={image || "https://picsum.photos/200/300"}
-            />
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                height="300vh"
+                src={image || "https://picsum.photos/200/300"}
+              />
+            </div>
           </CardContent>
 
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography
+              align="center"
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
               {title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography align="center" variant="body2" color="text.secondary">
               {description}
             </Typography>
           </CardContent>
