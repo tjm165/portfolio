@@ -32,12 +32,12 @@ interface MyPalette extends Palette {
 
 // https://coolors.co/90cce9-84f0c3-fff3a8-eec5ca-996cc6
 const colors = {
-  blue: "#90CCE9",
-  green: "#84F0C3",
-  yellow: "#FFF3A8",
-  pink: "#EEC5CA",
-  purple: "#996CC6",
-  graphite: "#282c34",
+  blue: "#a6cace",
+  green: "#43aa9a",
+  yellow: "#e4c3a7",
+  pink: "#cdbac2",
+  purple: "#bbbacd",
+  graphite: "#232021",
 };
 
 const myTheme = createTheme({
