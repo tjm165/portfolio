@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
 import { AbsoluteToast, Severity, Position } from "../../common";
 
@@ -40,14 +41,19 @@ export default function BlogCard({
         position={Position.BOTTOM_LEFT}
       />
 
-      <Card>
+      <Card sx={{ borderRadius: "0" }}>
         <CardActionArea component={Link} to={subPath}>
-          <CardMedia
-            component="img"
-            height="320vh"
-            image={image || "https://picsum.photos/200/300"}
-            alt="green iguana"
-          />
+          <CardContent
+            sx={{
+              bgcolor: "primary.main",
+            }}
+          >
+            <img
+              height="300vh"
+              src={image || "https://picsum.photos/200/300"}
+            />
+          </CardContent>
+
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {title}
