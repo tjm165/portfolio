@@ -10,6 +10,7 @@ export default function Blog() {
     description: string;
     path: string;
     image?: string;
+    bgcolor: string;
   }[] = [
     {
       title: "All about React",
@@ -17,71 +18,121 @@ export default function Blog() {
       path: "abc",
       image:
         "https://d307urd3htsez.cloudfront.net/portfolio/blog/react-icon.png",
+      bgcolor: "graphite.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "green.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "yellow.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "pink.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "purple.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "blue.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "green.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "yellow.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "pink.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "purple.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "blue.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "green.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "yellow.main",
     },
     {
       title: "My first blog",
       description: "my description",
       path: "abc",
+      bgcolor: "pink.main",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+      bgcolor: "purple.main",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+      bgcolor: "blue.main",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+      bgcolor: "green.main",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+      bgcolor: "yellow.main",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+      bgcolor: "pink.main",
+    },
+    {
+      title: "My first blog",
+      description: "my description",
+      path: "abc",
+      bgcolor: "purple.main",
     },
   ];
 
@@ -91,18 +142,21 @@ export default function Blog() {
       <Container maxWidth="md">
         <SimpleSection headingText="Blog" alignHeading={Align.CENTER}>
           <Grid container justifyContent={"space-evenly"} spacing={4}>
-            {highlights.map(({ title, description, path, image }, i) => (
-              <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-                <BlogCard
-                  key={i}
-                  title={title}
-                  description={description}
-                  path={path}
-                  isLeft={i % 2 == 0}
-                  image={image || undefined}
-                />
-              </Grid>
-            ))}
+            {highlights.map(
+              ({ title, description, path, image, bgcolor }, i) => (
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                  <BlogCard
+                    key={i}
+                    title={title}
+                    description={description}
+                    path={path}
+                    isLeft={i % 2 == 0}
+                    image={image || undefined}
+                    bgcolor={bgcolor}
+                  />
+                </Grid>
+              )
+            )}
           </Grid>
         </SimpleSection>
       </Container>

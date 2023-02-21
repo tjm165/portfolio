@@ -14,6 +14,7 @@ export type BlogCardProps = {
   path: string;
   image?: string;
   isLeft: boolean;
+  bgcolor: string;
 };
 
 export default function BlogCard({
@@ -21,6 +22,7 @@ export default function BlogCard({
   description,
   path,
   image,
+  bgcolor,
 }: BlogCardProps) {
   const subPath = `/blog/${path}`;
   const fullUrl = `${window.location.origin}/blog/${path}`;
@@ -49,7 +51,7 @@ export default function BlogCard({
         <CardActionArea component={Link} to={subPath}>
           <CardContent
             sx={{
-              bgcolor: "primary.main",
+              bgcolor,
             }}
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
