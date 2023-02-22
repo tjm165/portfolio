@@ -1,9 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { Container, Grid, Box } from "@mui/material";
 import { SimpleSection } from "../../../common/section";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
+import MuiMarkdown from "mui-markdown";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
@@ -13,19 +11,24 @@ export default function BlogPost() {
 
   > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
   
+
+
   * Lists
   * [ ] todo
   * [x] done
   
   A table:
-  
-
-
 
   | Syntax      | Description |
   | ----------- | ----------- |
   | Header      | Title       |
   | Paragraph   | Text        |
+
+    
+  ~~~js
+  console.log('It works!')
+  ~~~
+
 
   `;
 
@@ -34,12 +37,7 @@ export default function BlogPost() {
       <SimpleSection headingText={heading}>
         <Grid>
           <Grid item sm={8}>
-            {/* <Box my={2}>{blog.body}</Box> */}
-            <ReactMarkdown
-              children={markdown}
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw]}
-            />
+            <MuiMarkdown>{markdown}</MuiMarkdown>
           </Grid>
         </Grid>
       </SimpleSection>
