@@ -15,7 +15,7 @@ export default function Blog() {
     {
       title: "All about React",
       description: "React is great!",
-      path: "abc",
+      path: "abcd",
       image:
         "https://d307urd3htsez.cloudfront.net/portfolio/blog/react-icon.png",
       bgcolor: "graphite.main",

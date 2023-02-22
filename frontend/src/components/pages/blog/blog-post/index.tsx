@@ -1,28 +1,45 @@
 import { useLoaderData } from "react-router-dom";
-import { Paper, Container, Grid, Box, Hidden } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 import { SimpleSection } from "../../../common/section";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
 
   const heading = blog.title;
+  const markdown = `A paragraph with *emphasis* and **strong importance**.
+
+  > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+  
+  * Lists
+  * [ ] todo
+  * [x] done
+  
+  A table:
+  
+
+
+
+  | Syntax      | Description |
+  | ----------- | ----------- |
+  | Header      | Title       |
+  | Paragraph   | Text        |
+
+  `;
 
   return (
     <Container maxWidth="lg">
       <SimpleSection headingText={heading}>
         <Grid>
           <Grid item sm={8}>
-            <Box my={2}>
-              {" "}
-              <div>
-                this is my content this is my content this is my content this is
-                my content this is my content this is my content this is my
-                content this is my contentthis is my contentthis is my
-                contentthis is my contentthis is my contentthis is my
-                contentthis is my contentthis is my contentthis is my
-                contentthis is my contentthis is my contentthis is my content
-              </div>
-            </Box>
+            {/* <Box my={2}>{blog.body}</Box> */}
+            <ReactMarkdown
+              children={markdown}
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
+            />
           </Grid>
         </Grid>
       </SimpleSection>
@@ -32,6 +49,7 @@ export default function BlogPost() {
 
 type BlogData = {
   title: string;
+  body: string;
 };
 
 export async function blogPostLoader({ params }: any) {

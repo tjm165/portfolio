@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { createTheme, Palette, PaletteColor } from "@mui/material";
 
-// https://coolors.co/89ae82-ddf0ff-7c809b
 // https://mui.com/material-ui/customization/palette/
 
 declare module "@mui/material/styles" {
