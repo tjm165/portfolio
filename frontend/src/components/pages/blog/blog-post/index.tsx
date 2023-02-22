@@ -2,39 +2,26 @@ import { useLoaderData } from "react-router-dom";
 import { Container, Grid, Box } from "@mui/material";
 import { SimpleSection } from "../../../common/section";
 import MuiMarkdown from "mui-markdown";
+import { useEffect, useState } from "react";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
+  const [markdown, setMarkdown] = useState("");
 
-  const heading = blog.title;
-  const markdown = `A paragraph with *emphasis* and **strong importance**.
-
-  > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-  
-
-
-  * Lists
-  * [ ] todo
-  * [x] done
-  
-  A table:
-
-  | Syntax      | Description |
-  | ----------- | ----------- |
-  | Header      | Title       |
-  | Paragraph   | Text        |
-
-    
-  ~~~js
-  console.log('It works!')
-  ~~~
-
-
-  `;
+  useEffect(() => {
+    async function fetchMarkdown() {
+      const heading = blog.title;
+      const static_media_path = require("../posts/e.md");
+      const response = await fetch(static_media_path);
+      const markdown = await response.text();
+      setMarkdown(markdown);
+    }
+    fetchMarkdown();
+  }, []);
 
   return (
     <Container maxWidth="lg">
-      <SimpleSection headingText={heading}>
+      <SimpleSection headingText={blog.title}>
         <Grid>
           <Grid item sm={8}>
             <MuiMarkdown>{markdown}</MuiMarkdown>
