@@ -13,7 +13,7 @@ export default function Blog() {
     bgcolor: string;
   }[] = [
     {
-      title: "All about React",
+      title: "Hello Blog",
       description: "React is great!",
       path: "abcd",
       image:
