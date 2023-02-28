@@ -5,6 +5,25 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { consts } from "../../common";
 
+type cardInput = {
+  title: string;
+  path: string;
+  bgcolor: string;
+  description: string;
+};
+
+const getCardData = (inputs: cardInput[]) => {
+  return inputs.map((input) => {
+    return {
+      title: input.title,
+      description: input.description,
+      path: input.path,
+      bgcolor: input.bgcolor,
+      image: `${consts.cdnBlogPosts}/${input.path}/${consts.cdnBlogImageSuffix}`,
+    };
+  });
+};
+
 export default function Blog() {
   const highlights: {
     title: string;
@@ -12,15 +31,14 @@ export default function Blog() {
     path: string;
     image?: string;
     bgcolor: string;
-  }[] = [
+  }[] = getCardData([
     {
-      title: "Hello Blog",
-      description: "React is great!",
       path: "my-first-blog-post",
-      image: `${consts.cdnBlogPosts}/my-first-blog-post/${consts.cdnBlogImageSuffix}`,
+      title: "My First Blog Post",
+      description: "Hey!",
       bgcolor: "graphite.main",
     },
-  ];
+  ]);
 
   return (
     <>
