@@ -31,8 +31,10 @@ export async function blogPostLoader({ params }: any) {
   const metadata = require(`./posts/${params.blogId}/metadata.json`);
 
   const static_media_path = require(`./posts/${params.blogId}/body.md`);
-  const body_response = await fetch(static_media_path);
-  const body = await body_response.text();
+  // const body_response = await fetch(static_media_path);
+  // const body = await body_response.text();
 
-  return { body, metadata };
+  console.log(static_media_path);
+
+  return { body: "body", metadata };
 }
