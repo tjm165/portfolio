@@ -3,6 +3,27 @@ import BlogCard, { BlogCardProps } from "./BlogCard";
 import { SimpleSection, Align } from "../../common/section";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
+import { consts } from "../../common";
+import catalogue from "./catalogue";
+
+type cardInput = {
+  title: string;
+  path: string;
+  bgcolor: string;
+  description: string;
+};
+
+const getCardData = (inputs: cardInput[]) => {
+  return inputs.map((input) => {
+    return {
+      title: input.title,
+      description: input.description,
+      path: input.path,
+      bgcolor: input.bgcolor,
+      image: `${consts.cdnBlogPosts}/${input.path}/${consts.cdnBlogImageSuffix}`,
+    };
+  });
+};
 
 export default function Blog() {
   const highlights: {
@@ -11,16 +32,7 @@ export default function Blog() {
     path: string;
     image?: string;
     bgcolor: string;
-  }[] = [
-    {
-      title: "Hello Blog",
-      description: "React is great!",
-      path: "abcd",
-      image:
-        "https://d307urd3htsez.cloudfront.net/portfolio/blog/react-icon.png",
-      bgcolor: "graphite.main",
-    },
-  ];
+  }[] = getCardData(catalogue);
 
   return (
     <>
