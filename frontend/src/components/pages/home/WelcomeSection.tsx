@@ -5,18 +5,25 @@ export default function WelcomeSection() {
   return (
     <HeroSection
       heading="Hi my name is Tommy Moawad. I'm a full stack software engineer"
-      subheading="I love serverless, cloud, and data."
+      subheading="I love serverless, cloud, and scalability."
       //@ts-ignore
       contentImageSrc={require("../../../moawad.jpg")}
-      // boxChild={
-      //   <Button
-      //     href="mailto:tom.moawad@gmail.com"
-      //     variant="outlined"
-      //     color="primary"
-      //   >
-      //     Get in Touch
-      //   </Button>
-      // }
+      boxChild={
+        <>
+          <div>
+            I am frequently recognized for bridging the gap between techical and
+            business concepts.
+          </div>
+          <br></br>
+          <Button
+            href="mailto:tom.moawad@gmail.com"
+            color="primary"
+            variant="contained"
+          >
+            Connect on LinkedIn
+          </Button>
+        </>
+      }
     />
   );
 }
