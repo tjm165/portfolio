@@ -4,6 +4,7 @@ import { SimpleSection, Align } from "../../common/section";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { consts } from "../../common";
+import catalogue from "./catalogue";
 
 type cardInput = {
   title: string;
@@ -31,14 +32,7 @@ export default function Blog() {
     path: string;
     image?: string;
     bgcolor: string;
-  }[] = getCardData([
-    {
-      path: "my-first-blog-post",
-      title: "My First Blog Post",
-      description: "Hey!",
-      bgcolor: "graphite.main",
-    },
-  ]);
+  }[] = getCardData(catalogue);
 
   return (
     <>
