@@ -15,9 +15,9 @@ export default function Blog() {
     {
       title: "Hello Blog",
       description: "React is great!",
-      path: "abcd",
+      path: "my-first-blog-post",
       image:
-        "https://d307urd3htsez.cloudfront.net/portfolio/blog/react-icon.png",
+        "https://d307urd3htsez.cloudfront.net/portfolio/blog/posts/my-first-blog-post/react-icon.png",
       bgcolor: "graphite.main",
     },
   ];

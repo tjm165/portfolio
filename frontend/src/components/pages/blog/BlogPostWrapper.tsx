@@ -28,13 +28,16 @@ type BlogData = {
 };
 
 export async function blogPostLoader({ params }: any) {
-  const metadata = require(`./posts/${params.blogId}/metadata.json`);
+  const metadata_response = await fetch(
+    `https://d307urd3htsez.cloudfront.net/portfolio/blog/posts/${params.blogId}/metadata.json`
+  );
+  const metadata = await metadata_response.json();
 
-  const static_media_path = require(`./posts/${params.blogId}/body.md`);
-  // const body_response = await fetch(static_media_path);
-  // const body = await body_response.text();
+  const body_response = await fetch(
+    `https://d307urd3htsez.cloudfront.net/portfolio/blog/posts/${params.blogId}/body.md`
+  );
 
-  console.log(static_media_path);
+  const body = await body_response.text();
 
-  return { body: "body", metadata };
+  return { body, metadata };
 }
