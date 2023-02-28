@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { Container, Grid, Box } from "@mui/material";
-import { SimpleSection } from "../../../common/section";
+import { Align, SimpleSection } from "../../../common/section";
 import MuiMarkdown from "mui-markdown";
 import { useEffect, useState } from "react";
 
@@ -21,7 +21,7 @@ export default function BlogPost() {
 
   return (
     <Container maxWidth="lg">
-      <SimpleSection headingText={blog.title}>
+      <SimpleSection headingText={blog.title} alignHeading={Align.LEFT}>
         <Grid>
           <Grid item sm={8}>
             <MuiMarkdown>{markdown}</MuiMarkdown>
