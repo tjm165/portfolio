@@ -2,29 +2,19 @@ import { useLoaderData } from "react-router-dom";
 import { Container, Grid, Box } from "@mui/material";
 import { Align, SimpleSection } from "../../../common/section";
 import MuiMarkdown from "mui-markdown";
-import { useEffect, useState } from "react";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
-  const [markdown, setMarkdown] = useState("");
-
-  useEffect(() => {
-    async function fetchMarkdown() {
-      const heading = blog.title;
-      const static_media_path = require("../posts/e.md");
-      const response = await fetch(static_media_path);
-      const markdown = await response.text();
-      setMarkdown(markdown);
-    }
-    fetchMarkdown();
-  }, []);
 
   return (
     <Container maxWidth="lg">
-      <SimpleSection headingText={blog.title} alignHeading={Align.LEFT}>
+      <SimpleSection
+        headingText={blog.metadata.title}
+        alignHeading={Align.LEFT}
+      >
         <Grid>
           <Grid item sm={8}>
-            <MuiMarkdown>{markdown}</MuiMarkdown>
+            <MuiMarkdown>{blog.body}</MuiMarkdown>
           </Grid>
         </Grid>
       </SimpleSection>
@@ -33,11 +23,16 @@ export default function BlogPost() {
 }
 
 type BlogData = {
-  title: string;
+  metadata: { title: string };
   body: string;
 };
 
 export async function blogPostLoader({ params }: any) {
-  const blogData: BlogData = require(`../posts/${params.blogId}.json`);
-  return blogData;
+  const metadata = require(`../posts/${params.blogId}/metadata.json`);
+
+  const static_media_path = require(`../posts/${params.blogId}/body.md`);
+  const body_response = await fetch(static_media_path);
+  const body = await body_response.text();
+
+  return { body, metadata };
 }
