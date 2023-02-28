@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 import { AbsoluteToast, Severity, Position } from "../../common";
 
@@ -12,6 +11,8 @@ export type BlogCardProps = {
   description: string;
   path: string;
   image?: string;
+  isLeft: boolean;
+  bgcolor: string;
 };
 
 export default function BlogCard({
@@ -19,6 +20,7 @@ export default function BlogCard({
   description,
   path,
   image,
+  bgcolor,
 }: BlogCardProps) {
   const subPath = `/blog/${path}`;
   const fullUrl = `${window.location.origin}/blog/${path}`;
@@ -40,45 +42,38 @@ export default function BlogCard({
       />
 
       <Card
-        sx={{ maxWidth: 345 }}
-        style={{
-          flexBasis: "33.333333%",
-          marginBottom: "5vh",
-          marginLeft: "0px",
-          marginRight: "20px",
+        sx={{
+          borderRadius: "0",
         }}
       >
         <CardActionArea component={Link} to={subPath}>
-          <CardMedia
-            component="img"
-            height="140"
-            image={image || "https://picsum.photos/200/300"}
-            alt="green iguana"
-          />
+          <CardContent
+            sx={{
+              bgcolor,
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                height="300vh"
+                src={image || "https://picsum.photos/200/300"}
+              />
+            </div>
+          </CardContent>
+
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography
+              align="center"
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
               {title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography align="center" variant="body2" color="text.secondary">
               {description}
             </Typography>
           </CardContent>
         </CardActionArea>
-        {/* <CardActions>
-          <Link to={subPath}>
-            <Button size="small" color="primary">
-              Read
-            </Button>
-          </Link>
-
-          <Button
-            size="small"
-            color="primary"
-            onClick={() => copyToClipboard(fullUrl)}
-          >
-            Share
-          </Button>
-        </CardActions> */}
       </Card>
     </>
   );

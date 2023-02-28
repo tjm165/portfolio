@@ -1,8 +1,7 @@
 import React from "react";
 import "./App.css";
-import { createTheme, Palette } from "@mui/material";
+import { createTheme, Palette, PaletteColor } from "@mui/material";
 
-// https://coolors.co/89ae82-ddf0ff-7c809b
 // https://mui.com/material-ui/customization/palette/
 
 declare module "@mui/material/styles" {
@@ -21,13 +20,38 @@ declare module "@mui/material/Button" {
   }
 }
 
+interface MyPalette extends Palette {
+  blue: PaletteColor;
+  green: PaletteColor;
+  yellow: PaletteColor;
+  pink: PaletteColor;
+  purple: PaletteColor;
+  graphite: PaletteColor;
+}
+
+// https://coolors.co/90cce9-84f0c3-fff3a8-eec5ca-996cc6
+const colors = {
+  blue: "#6ebdb5",
+  green: "#43aa9a",
+  yellow: "#e4c3a7",
+  pink: "#cdbac2",
+  purple: "#bbbacd",
+  graphite: "#232021",
+};
+
 const myTheme = createTheme({
   palette: {
     mode: "light",
-    primary: { main: "#89ae82" },
-    secondary: { main: "#ddf0ff" },
-    accent: { main: "#7C809B" },
-  } as Palette,
+    primary: { main: colors.blue },
+    secondary: { main: colors.green },
+    accent: { main: colors.yellow },
+    blue: { main: colors.blue },
+    green: { main: colors.green },
+    yellow: { main: colors.yellow },
+    pink: { main: colors.pink },
+    purple: { main: colors.purple },
+    graphite: { main: colors.graphite },
+  } as MyPalette,
 });
 
 export default myTheme;

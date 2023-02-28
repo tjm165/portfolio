@@ -1,106 +1,49 @@
-import { Outlet, useLoaderData } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import BlogCard, { BlogCardProps } from "./BlogCard";
-import { SimpleSection } from "../../common/section";
+import { SimpleSection, Align } from "../../common/section";
+import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import Stack from "@mui/material/Stack";
 
 export default function Blog() {
-  const highlights: BlogCardProps[] = [
+  const highlights: {
+    title: string;
+    description: string;
+    path: string;
+    image?: string;
+    bgcolor: string;
+  }[] = [
     {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
-    },
-    {
-      title: "My first blog",
-      description: "my description",
-      path: "abc",
+      title: "Hello Blog",
+      description: "React is great!",
+      path: "abcd",
+      image:
+        "https://d307urd3htsez.cloudfront.net/portfolio/blog/react-icon.png",
+      bgcolor: "graphite.main",
     },
   ];
 
   return (
     <>
       <Outlet />
-      <Container maxWidth="lg">
-        <SimpleSection
-          headingText="Wow Tommy has some interesting stuff to say!"
-          subHeadingText="From experiences to code snippets this is really exciting to read!"
-        >
-          <Stack
-            direction="row"
-            alignItems="flex-start"
-            spacing={2}
-            flexWrap="wrap"
-          >
-            {highlights.map(({ title, description, path }, i) => (
-              <BlogCard
-                key={i}
-                title={title}
-                description={description}
-                path={path}
-              />
-            ))}
-          </Stack>
+      <Container maxWidth="md">
+        <SimpleSection headingText="Blog" alignHeading={Align.CENTER}>
+          <Grid container justifyContent={"space-evenly"} spacing={4}>
+            {highlights.map(
+              ({ title, description, path, image, bgcolor }, i) => (
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                  <BlogCard
+                    key={i}
+                    title={title}
+                    description={description}
+                    path={path}
+                    isLeft={i % 2 == 0}
+                    image={image || undefined}
+                    bgcolor={bgcolor}
+                  />
+                </Grid>
+              )
+            )}
+          </Grid>
         </SimpleSection>
       </Container>
     </>
