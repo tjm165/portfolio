@@ -5,8 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { Home, About, ErrorPage, Blog, Contact } from "./components/pages";
-import { blogPostLoader } from "./components/pages/blog/blog-post";
-import BlogPost from "./components/pages/blog/blog-post";
+import BlogPost, {
+  blogPostLoader,
+} from "./components/pages/blog/BlogPostWrapper";
 
 const router = createBrowserRouter([
   {

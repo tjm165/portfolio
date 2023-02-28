@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { Container, Grid, Box } from "@mui/material";
-import { Align, SimpleSection } from "../../../common/section";
+import { Align, SimpleSection } from "../../common/section";
 import MuiMarkdown from "mui-markdown";
 
 export default function BlogPost() {
@@ -28,9 +28,9 @@ type BlogData = {
 };
 
 export async function blogPostLoader({ params }: any) {
-  const metadata = require(`../posts/${params.blogId}/metadata.json`);
+  const metadata = require(`./posts/${params.blogId}/metadata.json`);
 
-  const static_media_path = require(`../posts/${params.blogId}/body.md`);
+  const static_media_path = require(`./posts/${params.blogId}/body.md`);
   const body_response = await fetch(static_media_path);
   const body = await body_response.text();
 
