@@ -3,6 +3,7 @@ import BlogCard, { BlogCardProps } from "./BlogCard";
 import { SimpleSection, Align } from "../../common/section";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
+import { consts } from "../../common";
 
 export default function Blog() {
   const highlights: {
@@ -16,8 +17,7 @@ export default function Blog() {
       title: "Hello Blog",
       description: "React is great!",
       path: "my-first-blog-post",
-      image:
-        "https://d307urd3htsez.cloudfront.net/portfolio/blog/posts/my-first-blog-post/react-icon.png",
+      image: `${consts.cdnBlogPosts}/my-first-blog-post/${consts.cdnBlogImageSuffix}`,
       bgcolor: "graphite.main",
     },
   ];

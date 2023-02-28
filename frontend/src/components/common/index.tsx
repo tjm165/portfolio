@@ -2,6 +2,7 @@ import COLOR from "./colors";
 import MyLandingContainer from "./MyLandingContainer";
 import MyDivider from "./section/MyDivider";
 import AbsoluteToast, { Severity, Position } from "./AbsoluteToast";
+import * as consts from "./consts";
 
 export {
   COLOR,
@@ -10,4 +11,5 @@ export {
   Severity,
   Position,
   MyDivider,
+  consts,
 };
