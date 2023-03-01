@@ -39,7 +39,30 @@ const colors = {
   graphite: "#232021",
 };
 
+const headingFontFamily = "monospace";
+
 const myTheme = createTheme({
+  typography: {
+    fontFamily: "Arial",
+    h1: {
+      fontFamily: headingFontFamily,
+    },
+    h2: {
+      fontFamily: headingFontFamily,
+    },
+    h3: {
+      fontFamily: headingFontFamily,
+    },
+    h4: {
+      fontFamily: headingFontFamily,
+    },
+    h5: {
+      fontFamily: headingFontFamily,
+    },
+    h6: {
+      fontFamily: headingFontFamily,
+    },
+  },
   palette: {
     mode: "light",
     primary: { main: colors.blue },
