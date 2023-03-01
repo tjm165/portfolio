@@ -17,7 +17,7 @@ export enum Align {
 export default function SimpleSection({
   headingText,
   subHeadingText,
-  alignHeading = Align.RIGHT,
+  alignHeading = Align.LEFT,
   children,
 }: PropTypes) {
   const gridContainerStyle: React.CSSProperties = {

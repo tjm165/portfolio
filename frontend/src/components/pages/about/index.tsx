@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 export default function Contact() {
   return (
     <Container maxWidth="lg">
-      <SimpleSection headingText="About">
+      <SimpleSection headingText="About Me">
         <div>about me</div>
       </SimpleSection>
     </Container>

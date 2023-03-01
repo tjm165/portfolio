@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 export default function WelcomeSection() {
   return (
     <HeroSection
-      heading="Hi my name is Tommy Moawad. I'm a full stack software engineer"
+      heading="Hi my name is Thomas Moawad.\nI'm a full stack software engineer"
       subheading="I love serverless, cloud, and scalability."
       //@ts-ignore
       contentImageSrc={require("../../../moawad.jpg")}

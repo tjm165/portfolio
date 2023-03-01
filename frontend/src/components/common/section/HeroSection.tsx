@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { Paper, Container, Grid, Typography, Box, Hidden } from "@mui/material";
+import { splitNewLines } from "../utils";
 
 const imgStyle: React.CSSProperties = {
   borderRadius: "50%",
@@ -47,9 +48,9 @@ export default function HeroSection({
   const paperStyle = {
     height: height || "90vh",
     backgroundImage: `url(${backgroundImageSrc})`,
-    // backgroundColor: "white",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    whiteSpace: "pre-line",
   };
 
   const containerStyle: React.CSSProperties = {
@@ -81,6 +82,7 @@ export default function HeroSection({
   });
 
   return (
+    //@ts-ignore style doesn't like whiteSpace
     <Paper style={paperStyle} elevation={0}>
       {backgroundImageSrc && <div style={overlayStyle}></div>}
       <Container style={containerStyle} maxWidth="md">
@@ -93,7 +95,12 @@ export default function HeroSection({
           <Grid item sm={8}>
             <HeroImage top={true} src={contentImageSrc} />
             <Typography component="h1" variant="h3" ref={ref1}>
-              {heading}
+              {splitNewLines(heading).map((line: string, index: number) => (
+                <span key={index}>
+                  {line}
+                  <br />
+                </span>
+              ))}
             </Typography>
 
             {(subheading || boxChild) && (
