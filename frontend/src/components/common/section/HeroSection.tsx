@@ -61,6 +61,9 @@ export default function HeroSection({
 
   const gridContainerStyle: React.CSSProperties = {
     height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
   const overlayStyle: React.CSSProperties = {
@@ -90,6 +93,7 @@ export default function HeroSection({
           style={gridContainerStyle}
           container
           alignItems="center"
+          alignContent="center"
           justifyContent="space-between"
         >
           <Grid item sm={8}>
