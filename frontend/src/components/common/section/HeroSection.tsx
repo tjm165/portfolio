@@ -51,12 +51,18 @@ export default function HeroSection({
     backgroundSize: "cover",
     backgroundPosition: "center",
     whiteSpace: "pre-line",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
   const containerStyle: React.CSSProperties = {
     height: "100%",
     zIndex: 100,
     position: "relative",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
   const gridContainerStyle: React.CSSProperties = {
@@ -88,7 +94,7 @@ export default function HeroSection({
     //@ts-ignore style doesn't like whiteSpace
     <Paper style={paperStyle} elevation={0}>
       {backgroundImageSrc && <div style={overlayStyle}></div>}
-      <Container style={containerStyle} maxWidth="md">
+      <Container style={containerStyle} maxWidth="lg">
         <Grid
           style={gridContainerStyle}
           container
