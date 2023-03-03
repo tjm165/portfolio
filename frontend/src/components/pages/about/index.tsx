@@ -7,12 +7,9 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import HotelIcon from "@mui/icons-material/Hotel";
-import RepeatIcon from "@mui/icons-material/Repeat";
 import Typography from "@mui/material/Typography";
-import { debug } from "console";
+
+// import RepeatIcon from "@mui/icons-material/Repeat";
 
 const colors = [undefined, "primary", "primary"];
 const variants = ["filled", "filled", "outlined"];
@@ -28,14 +25,12 @@ const timelineItems = [
     date: "2009 - 2010",
     paragraph:
       "My parents instituted a rule preventing me from playing video games on weeknights. To find a way around this rule, I decided to create my own video game. This required me to learn about coding and web hosting. As my understanding of what goes into a website started to take form, I was able to incrementally build my game. Over time, I turned it into an HTML website where each image clicked would lead to different webpages that represented various game states.",
-    icon: <RepeatIcon />,
   },
   {
     title: "Middle School",
     date: "2011 - 2013",
     paragraph:
       "With a growing passion for computer programming I signed up for my school's computer class. However, I was disappointed to find that the class only covered the basics of the Microsoft suite. To pursue my interest, I turned to watching YouTube videos on programming in bash. During my class time, I would secretly create batch files that prompted users for inputs like their name and favorite color, and then responded accordingly. This allowed me to gain knowledge on inputs, conditional statements, loops, and the infamous `goto` command. Several of my classmates took interest in my project. During lunch, I took the opportunity to share my learnings with them.",
-    icon: <RepeatIcon />,
   },
   {
     title: "High School",
@@ -55,8 +50,6 @@ const timelineItems = [
         .
       </>
     ),
-
-    icon: <RepeatIcon />,
   },
   {
     title: "College, Case Western Reserve University",
