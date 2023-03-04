@@ -19,6 +19,18 @@ const getVariant = (i: any, list: any) => {
   return list[index];
 };
 
+const Link = ({ href, text, leftSpace = true, rightSpace = true }: any) => {
+  return (
+    <>
+      {leftSpace && " "}
+      <a href={href} target="_blank">
+        {text}
+      </a>
+      {rightSpace && " "}
+    </>
+  );
+};
+
 const timelineItems = [
   {
     title: "Fourth Grade",
@@ -44,9 +56,11 @@ const timelineItems = [
         camp but made a rookie mistake by signing up for a Java course instead
         of a JavaScript course. Nonetheless, I was able to learn the basics of
         Java programming and demonstrated my knowledge by creating a {""}
-        <a href="https://github.com/tjm165/Simon-Game" target="_blank">
-          Simon Says game
-        </a>
+        <Link
+          href="https://github.com/tjm165/Simon-Game"
+          text="Simon Says game"
+          rightSpace={false}
+        />
         .
       </>
     ),
@@ -54,7 +68,28 @@ const timelineItems = [
   {
     title: "College, Case Western Reserve University",
     date: "2017 - 2021",
-    paragraph: <>Internship at progress book Interneship at McKinsey</>,
+    paragraph: (
+      <>
+        I earned my bachelors of science in computer science, as well as minors
+        in economics and business management. As a resident assistant, I had the
+        privilege of mentoring freshmen students. I was also fortunate to have
+        served as the
+        <Link
+          href="https://engineering.case.edu/news/spartan-showcase-featuring-tommy-moawad"
+          text="President of the Case Engineers Council"
+        />
+        Furthermore I gained industry experience through internships at
+        <Link href="https://www.mckinsey.com/" text="McKinsey & Company" />
+        and
+        <Link
+          href="https://www.frontlineeducation.com/special-ed-software/"
+          text="ProgressBook (now Frontline Education)"
+          rightSpace={false}
+        />
+        . These opportunities enabled me to sharpen my technical, leadership,
+        and business skills.
+      </>
+    ),
   },
   {
     title: "McKinsey & Company",
