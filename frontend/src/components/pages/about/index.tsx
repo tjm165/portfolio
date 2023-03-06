@@ -8,8 +8,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import Typography from "@mui/material/Typography";
-
-// import RepeatIcon from "@mui/icons-material/Repeat";
+import { useTitle } from "../../../hooks";
 
 const colors = [undefined, "primary", "primary"];
 const variants = ["filled", "filled", "outlined"];
@@ -124,10 +123,14 @@ const timelineItems = [
   },
 ];
 
+const title = "About Me";
+
 export default function Contact() {
+  useTitle(title);
+
   return (
     <Container maxWidth="lg">
-      <SimpleSection headingText="About Me">
+      <SimpleSection headingText={title}>
         <CustomizedTimeline />
       </SimpleSection>
     </Container>
