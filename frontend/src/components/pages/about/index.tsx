@@ -95,7 +95,31 @@ const timelineItems = [
     title: "McKinsey & Company",
     date: "2021 - Current",
     paragraph: (
-      <>Engineer 1 on auth Engineer 2 on auth Engineer 2 on no code pro code</>
+      <>
+        <div>
+          <Typography variant="subtitle1" component="span">
+            Engineer 2 - Low Code Platform
+          </Typography>
+          <p>
+            Building a low code platform to eneble non-techincal collegues to
+            create technology.
+          </p>
+        </div>
+        <div>
+          <Typography variant="subtitle1" component="span">
+            Engineer 1 - Security Platform
+          </Typography>
+          <p>
+            I developed the Firm's identity and access management platform. This
+            was an essential core technology utilized in most of the firm's
+            software products. This was a unique challenge within the identity
+            space, due to the Firm's was created by its distinctive emphasis on
+            maintaining client confidentiality. I Specifically developed a
+            frontend for admin access, a data pipeline, and the forgot password
+            functionality.
+          </p>
+        </div>
+      </>
     ),
   },
 ];
