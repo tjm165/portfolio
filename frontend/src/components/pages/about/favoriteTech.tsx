@@ -3,7 +3,19 @@ import Paper from "@mui/material/Paper";
 import techCardData from "./favoriteTechData";
 import Box from "@mui/material/Box";
 import Modal from "../../common/Modal";
-import { InteractivePaper } from "../../common";
+import Typography from "@mui/material/Typography";
+import { SquareCard } from "../../common";
+
+//
+import { styled } from "@mui/material/styles";
+
+const Image = styled("img")({
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+});
+
+//
 
 export type TechCardPropTypes = {
   name: string;
@@ -19,10 +31,7 @@ function TechCard({ name, icon, description }: TechCardPropTypes) {
       <Modal open={open} setOpen={setOpen} title={name}>
         <div> {description}</div>
       </Modal>
-      <InteractivePaper onClick={() => setOpen(true)} elevation={3}>
-        <img height="10px" width="10px" src={icon} />
-        {name}
-      </InteractivePaper>
+      <SquareCard title={name} image={icon} onClick={() => setOpen(true)} />
     </>
   );
 }
@@ -35,8 +44,7 @@ export default function FavoriteTech() {
         flexWrap: "wrap",
         "& > :not(style)": {
           m: 1,
-          width: 128,
-          height: 128,
+          width: "100%",
         },
       }}
     >

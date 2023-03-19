@@ -48,7 +48,6 @@ export default function Blog() {
                     title={title}
                     description={description}
                     path={path}
-                    isLeft={i % 2 == 0}
                     image={image || undefined}
                     bgcolor={bgcolor}
                   />

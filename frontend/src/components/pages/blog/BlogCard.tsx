@@ -11,7 +11,6 @@ export type BlogCardProps = {
   description: string;
   path: string;
   image?: string;
-  isLeft: boolean;
   bgcolor: string;
 };
 
