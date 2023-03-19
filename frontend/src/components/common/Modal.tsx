@@ -16,7 +16,7 @@ function Modal({ open, setOpen, title, children }: PropTypes) {
   const handleClose = () => setOpen(false);
 
   const style = {
-    position: "absolute" as "absolute",
+    position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
@@ -25,6 +25,9 @@ function Modal({ open, setOpen, title, children }: PropTypes) {
     bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,
+    "&:focus": {
+      outline: "none",
+    },
   };
 
   const headerStyle = {
