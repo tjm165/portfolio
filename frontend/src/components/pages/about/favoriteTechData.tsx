@@ -1,4 +1,7 @@
-import ReactIcon from "./ReactIcon.svg";
+import ReactIcon from "./react_icon.svg";
+import TypescriptIcon from "./typescript_icon.svg";
+import AwsIcon from "./aws_icon.png";
+import OcamlIcon from "./ocaml_icon.svg";
 import { InlineLink } from "../../common";
 import { TechCardPropTypes } from "./favoriteTech";
 
@@ -10,17 +13,17 @@ const techCardData: TechCardPropTypes[] = [
   },
   {
     name: "Typescript",
-    icon: ReactIcon,
+    icon: TypescriptIcon,
     description: "Hmm",
   },
   {
-    name: "Amazon Web Services",
-    icon: ReactIcon,
+    name: "AWS",
+    icon: AwsIcon,
     description: "Hmm",
   },
   {
     name: "OCaml",
-    icon: ReactIcon,
+    icon: OcamlIcon,
     description: `${(
       <InlineLink
         href="https://github.com/tjm165/Simon-Game"

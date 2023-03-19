@@ -1,10 +1,7 @@
-import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import { Link } from "react-router-dom";
-import { AbsoluteToast, Severity, Position } from "../common";
 
 export type BlogCardProps = {
   title: string;
@@ -12,24 +9,44 @@ export type BlogCardProps = {
   onClick: any;
 };
 
-export default function TommyCard({ title, image, onClick }: BlogCardProps) {
+export default function SquareCard({ title, image, onClick }: BlogCardProps) {
   return (
     <>
       <Card
-        elevation={4}
         sx={{
           borderRadius: "0",
         }}
+        elevation={4}
       >
-        <CardActionArea onClick={onClick}>
+        <CardActionArea
+          onClick={onClick}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "15vh",
+            width: "15vh",
+          }}
+        >
           <CardContent>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <img height="300vh" src={image} />
+              <img
+                height="50vh"
+                src={image}
+                style={{
+                  objectFit: "cover",
+                }}
+              />
             </div>
           </CardContent>
-
           <CardContent>
-            <Typography align="center" variant="h5" component="div">
+            <Typography
+              align="center"
+              gutterBottom
+              variant="subtitle1"
+              component="div"
+            >
               {title}
             </Typography>
           </CardContent>
