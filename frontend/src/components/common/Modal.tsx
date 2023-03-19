@@ -3,6 +3,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import MuiModal from "@mui/material/Modal";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 type PropTypes = {
   open: boolean;
@@ -25,6 +27,13 @@ function Modal({ open, setOpen, title, children }: PropTypes) {
     p: 4,
   };
 
+  const headerStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: "1rem",
+  };
+
   return (
     <MuiModal
       open={open}
@@ -33,9 +42,14 @@ function Modal({ open, setOpen, title, children }: PropTypes) {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-          {title}
-        </Typography>
+        <Box sx={headerStyle}>
+          <Typography id="modal-modal-title" component="h1" variant="h4">
+            {title}
+          </Typography>
+          <IconButton onClick={handleClose}>
+            <CloseIcon />
+          </IconButton>
+        </Box>
         {children}
       </Box>
     </MuiModal>
