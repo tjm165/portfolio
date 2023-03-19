@@ -3,6 +3,7 @@ import Paper from "@mui/material/Paper";
 import techCardData from "./favoriteTechData";
 import Box from "@mui/material/Box";
 import Modal from "../../common/Modal";
+import { InteractivePaper } from "../../common";
 
 export type TechCardPropTypes = {
   name: string;
@@ -18,10 +19,10 @@ function TechCard({ name, icon, description }: TechCardPropTypes) {
       <Modal open={open} setOpen={setOpen} title={name}>
         <div> {description}</div>
       </Modal>
-      <Paper onClick={() => setOpen(true)} elevation={3}>
+      <InteractivePaper onClick={() => setOpen(true)} elevation={3}>
         <img height="10px" width="10px" src={icon} />
         {name}
-      </Paper>
+      </InteractivePaper>
     </>
   );
 }
