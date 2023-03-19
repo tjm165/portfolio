@@ -9,18 +9,30 @@ import { Button } from "@mui/material";
 type PropTypes = {
   children: JSX.Element;
   color?: string;
+  autoHeight?: boolean;
 };
 
 const StyledDiv = styled("div")(({ theme, color }) => ({
   backgroundColor: color,
 }));
 
-export default function MyLandingContainer({ children, color }: PropTypes) {
+export default function MyLandingContainer({
+  children,
+  color,
+  autoHeight,
+}: PropTypes) {
   return (
     <React.Fragment>
       <StyledDiv color={color && color}>
         <Container>
-          <Box sx={{ bgcolor: color && color, height: "90vh" }}>{children}</Box>
+          <Box
+            sx={{
+              bgcolor: color && color,
+              height: autoHeight ? "auto" : "90vh",
+            }}
+          >
+            {children}
+          </Box>
         </Container>
       </StyledDiv>
     </React.Fragment>

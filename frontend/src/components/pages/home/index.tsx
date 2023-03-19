@@ -1,8 +1,7 @@
 import React from "react";
-import { MyLandingContainer } from "../../common";
 import { useTheme } from "@mui/material/styles";
 import WelcomeSection from "./WelcomeSection";
-import TimelineSection from "./TimelineSection";
+import FavoriteTechSection from "./FavoriteTechSection";
 import { Outlet } from "react-router-dom";
 
 export default function Home() {
@@ -11,7 +10,7 @@ export default function Home() {
     <>
       <Outlet />
       <WelcomeSection />
-      {/* <TimelineSection /> */}
+      <FavoriteTechSection />
     </>
   );
 }

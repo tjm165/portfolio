@@ -31,9 +31,6 @@ export default function WelcomeSection() {
           </>
         }
       />
-      <SimpleSection headingText="None">
-        <FavoriteTech />
-      </SimpleSection>
     </>
   );
 }

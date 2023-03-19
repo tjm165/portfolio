@@ -2,7 +2,7 @@ import { Typography, Container, Grid, Box, Hidden } from "@mui/material";
 import MyDivider from "./MyDivider";
 
 type PropTypes = {
-  headingText: string;
+  headingText?: string;
   subHeadingText?: string;
   alignHeading?: Align;
   children?: JSX.Element;
@@ -34,18 +34,19 @@ export default function SimpleSection({
     <>
       <Grid style={gridContainerStyle} container>
         <Grid item style={headingStyle} sm={8}>
-          <Typography component="h1" variant="h3">
-            {headingText}
-          </Typography>
-
+          {headingText && (
+            <Typography component="h1" variant="h3">
+              {headingText}
+            </Typography>
+          )}
           {subHeadingText && (
             <Typography variant="h5">{subHeadingText}</Typography>
           )}
         </Grid>
+        {(headingText || subHeadingText) && <MyDivider />}
       </Grid>
       {children && (
         <Grid>
-          <MyDivider />
           <Grid item sm={8}>
             <Box my={2}>{children}</Box>
           </Grid>
