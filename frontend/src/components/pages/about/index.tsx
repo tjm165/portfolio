@@ -100,8 +100,8 @@ const timelineItems = [
             Engineer 2 - Low Code Platform
           </Typography>
           <p>
-            Building a low code platform to eneble non-techincal collegues to
-            create technology.
+            Currently building a low code platform to eneble non-techincal
+            collegues to create technology.
           </p>
         </div>
         <div>

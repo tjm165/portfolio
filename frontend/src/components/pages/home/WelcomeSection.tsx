@@ -1,5 +1,6 @@
 import { HeroSection } from "../../common/section";
 import { Button } from "@mui/material";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function WelcomeSection() {
   return (
@@ -18,6 +19,7 @@ export default function WelcomeSection() {
           </div>
           <br></br>
           <Button
+            startIcon={<LinkedInIcon />}
             href="mailto:tom.moawad@gmail.com"
             color="primary"
             variant="contained"
