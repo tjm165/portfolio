@@ -53,10 +53,10 @@ export default function CustomizedTimeline() {
       {timelineItemsData
         .slice()
         .reverse()
-        .map((val, i) => (
+        .map((data, i) => (
           <Record
             key={i}
-            {...val}
+            {...data}
             color={getVariant(i, colors)}
             variant={getVariant(i, variants)}
           />

@@ -1,16 +1,5 @@
 import Typography from "@mui/material/Typography";
-
-const Link = ({ href, text, leftSpace = true, rightSpace = true }: any) => {
-  return (
-    <>
-      {leftSpace && " "}
-      <a href={href} target="_blank">
-        {text}
-      </a>
-      {rightSpace && " "}
-    </>
-  );
-};
+import { InlineLink } from "../../common";
 
 const timelineItems = [
   {
@@ -37,7 +26,7 @@ const timelineItems = [
         camp but made a rookie mistake by signing up for a Java course instead
         of a JavaScript course. Nonetheless, I was able to learn the basics of
         Java programming and demonstrated my knowledge by creating a {""}
-        <Link
+        <InlineLink
           href="https://github.com/tjm165/Simon-Game"
           text="Simon Says game"
           rightSpace={false}
@@ -55,14 +44,17 @@ const timelineItems = [
         in economics and business management. As a resident assistant, I had the
         privilege of mentoring freshmen students. I was also fortunate to have
         served as the
-        <Link
+        <InlineLink
           href="https://engineering.case.edu/news/spartan-showcase-featuring-tommy-moawad"
           text="President of the Case Engineers Council"
         />
         Furthermore I gained industry experience through internships at
-        <Link href="https://www.mckinsey.com/" text="McKinsey & Company" />
+        <InlineLink
+          href="https://www.mckinsey.com/"
+          text="McKinsey & Company"
+        />
         and
-        <Link
+        <InlineLink
           href="https://www.frontlineeducation.com/special-ed-software/"
           text="ProgressBook (now Frontline Education)"
           rightSpace={false}
