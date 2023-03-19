@@ -3,9 +3,9 @@ import TypescriptIcon from "./typescript_icon.svg";
 import AwsIcon from "./aws_icon.png";
 import OcamlIcon from "./ocaml_icon.svg";
 import { InlineLink } from "../../common";
-import { TechCardPropTypes } from "./favoriteTech";
+import TechCardPropTypes from "./type";
 
-const techCardData: TechCardPropTypes[] = [
+const data: TechCardPropTypes[] = [
   {
     name: "React",
     icon: ReactIcon,
@@ -79,4 +79,4 @@ const techCardData: TechCardPropTypes[] = [
   },
 ];
 
-export default techCardData;
+export default data;

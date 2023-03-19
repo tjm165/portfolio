@@ -3,7 +3,7 @@ import { SimpleSubSection } from "../../common/section";
 import Container from "@mui/material/Container";
 import { useTitle } from "../../../hooks";
 import Timeline from "./timeline";
-import FavoriteTech from "./favoriteTech";
+import { FavoriteTech } from "../../static";
 import Typography from "@mui/material/Typography";
 
 export default function About() {

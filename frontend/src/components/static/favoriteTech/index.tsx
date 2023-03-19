@@ -1,15 +1,9 @@
 import { ReactNode, useState } from "react";
-import techCardData from "./favoriteTechData";
+import data from "./data";
 import Grid from "@mui/material/Grid";
 import Modal from "../../common/Modal";
 import { SquareCard } from "../../common";
-
-export type TechCardPropTypes = {
-  name: string;
-  fullName?: string;
-  icon: string;
-  description: ReactNode;
-};
+import TechCardPropTypes from "./type";
 
 function TechCard({ name, fullName, icon, description }: TechCardPropTypes) {
   const [open, setOpen] = useState(false);
@@ -27,7 +21,7 @@ function TechCard({ name, fullName, icon, description }: TechCardPropTypes) {
 export default function FavoriteTech() {
   return (
     <Grid container justifyContent={"space-evenly"} spacing={4}>
-      {techCardData.map((data, i) => (
+      {data.map((data, i) => (
         <TechCard key={i} {...data} />
       ))}
     </Grid>
