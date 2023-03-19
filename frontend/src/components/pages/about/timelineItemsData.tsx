@@ -92,12 +92,12 @@ const timelineItems = [
           </Typography>
           <p>
             I developed the Firm's identity and access management platform. This
-            was an essential core technology utilized in most of the firm's
-            software products. This was a unique challenge within the identity
-            space, due to the Firm's was created by its distinctive emphasis on
-            maintaining client confidentiality. I Specifically developed a
-            frontend for admin access, a data pipeline, and the forgot password
-            functionality.
+            was an essential core technology that is utilized in most of the
+            firm's software products. This was a unique challenge within the
+            identity space, due to the Firm's was created by its distinctive
+            emphasis on maintaining client confidentiality. I Specifically
+            developed a frontend for admin access, a data pipeline, and the
+            forgot password functionality.
           </p>
         </div>
       </>
