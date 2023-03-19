@@ -11,7 +11,7 @@ type PropTypes = {
 export default function SimpleSection({ headingText, children }: PropTypes) {
   const alignHeading = Align.LEFT;
   const gridContainerStyle: React.CSSProperties = {
-    paddingTop: "10vh",
+    paddingTop: "1vh",
     alignItems: alignHeading,
     justifyContent: alignHeading,
   };
