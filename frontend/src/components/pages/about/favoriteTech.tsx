@@ -1,6 +1,8 @@
-import Box from "@mui/material/Box";
+import { useState } from "react";
 import Paper from "@mui/material/Paper";
 import techCardData from "./favoriteTechData";
+import Box from "@mui/material/Box";
+import Modal from "../../common/Modal";
 
 export type TechCardPropTypes = {
   name: string;
@@ -9,12 +11,18 @@ export type TechCardPropTypes = {
 };
 
 function TechCard({ name, icon, description }: TechCardPropTypes) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Paper elevation={3}>
-      <img height="10px" width="10px" src={icon} />
-      {name}
-      {description}
-    </Paper>
+    <>
+      <Modal open={open} setOpen={setOpen} title={name}>
+        <div> {description}</div>
+      </Modal>
+      <Paper onClick={() => setOpen(true)} elevation={3}>
+        <img height="10px" width="10px" src={icon} />
+        {name}
+      </Paper>
+    </>
   );
 }
 
