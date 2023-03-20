@@ -1,7 +1,7 @@
 import { MyLandingContainer } from "../../common";
 import { useTitle } from "../../../hooks";
 import Timeline from "./timeline";
-import FavoriteTechSection from "../../static/favoriteTech/realIndex";
+import FavoriteTech from "../../static/favoriteTech";
 import { useTheme } from "@mui/material/styles";
 import Page from "../Page";
 
@@ -10,8 +10,10 @@ export default function About() {
 
   return (
     <Page headingText="About Me">
-      <FavoriteTechSection />
       <MyLandingContainer autoHeight color={theme.palette.primary.main}>
+        <FavoriteTech />
+      </MyLandingContainer>
+      <MyLandingContainer autoHeight>
         <Timeline />
       </MyLandingContainer>
     </Page>

@@ -1,7 +1,8 @@
-import { ReactNode } from "react";
+import { Children, cloneElement, ReactNode } from "react";
 import { useTitle } from "../../hooks";
 import { MyLandingContainer } from "../common";
 import { Align } from "../common/section"; // todo put this in common
+import { useTheme } from "@mui/material/styles";
 
 type PropTypes = {
   headingText: string;
@@ -17,15 +18,22 @@ export default function Page({
   children,
 }: PropTypes) {
   useTitle(headingText);
+  const theme = useTheme();
+
+  const colors = [theme.palette.primary.main, theme.palette.secondary.main];
+
   return (
     <>
       <MyLandingContainer
+        color={theme.palette.primary.main}
         autoHeight
         headingText={headingText}
         subHeadingText={subHeadingText}
         alignHeading={alignHeading}
       />
-      {children}
+      {Children.map(children, (child: any, index) => {
+        return cloneElement(child, { color: "blue" });
+      })}
     </>
   );
 }
