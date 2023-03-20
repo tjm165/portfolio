@@ -58,13 +58,7 @@ export default function MyLandingContainer({
               </Grid>
               {(headingText || subHeadingText) && <MyDivider />}
             </Grid>
-            {children && (
-              <Grid>
-                <Grid item sm={8}>
-                  <Box my={2}>{children}</Box>
-                </Grid>
-              </Grid>
-            )}
+            {children}
           </>
         </Box>
       </Container>
