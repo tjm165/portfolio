@@ -1,5 +1,4 @@
 import { MyLandingContainer } from "../../common";
-import { useTitle } from "../../../hooks";
 import Timeline from "./timeline";
 import FavoriteTech from "../../static/favoriteTech";
 import { useTheme } from "@mui/material/styles";
