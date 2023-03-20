@@ -8,7 +8,6 @@ type PropTypes = {
   children?: JSX.Element;
   color?: string;
   autoHeight?: boolean;
-
   headingText?: string;
   subHeadingText?: string;
   alignHeading?: Align;
@@ -22,7 +21,6 @@ export default function MyLandingContainer({
   children,
   color,
   autoHeight,
-
   headingText,
   subHeadingText,
   alignHeading = Align.LEFT,
