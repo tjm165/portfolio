@@ -27,19 +27,21 @@ export default function Page({
 
   return (
     <>
-      <Grid style={gridContainerStyle} container>
-        <Grid item style={headingStyle} sm={8}>
-          {headingText && (
-            <Typography component="h1" variant="h3">
-              {headingText}
-            </Typography>
-          )}
-          {subHeadingText && (
-            <Typography variant="h5">{subHeadingText}</Typography>
-          )}
+      <Container maxWidth="lg">
+        <Grid style={gridContainerStyle} container>
+          <Grid item style={headingStyle} sm={8}>
+            {headingText && (
+              <Typography component="h1" variant="h3">
+                {headingText}
+              </Typography>
+            )}
+            {subHeadingText && (
+              <Typography variant="h5">{subHeadingText}</Typography>
+            )}
+          </Grid>
+          {(headingText || subHeadingText) && <MyDivider />}
         </Grid>
-        {(headingText || subHeadingText) && <MyDivider />}
-      </Grid>
+      </Container>
 
       {children}
     </>
