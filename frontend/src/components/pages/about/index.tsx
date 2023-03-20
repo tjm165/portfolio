@@ -10,7 +10,7 @@ export default function About() {
 
   return (
     <Page headingText="About Me">
-      <MyLandingContainer autoHeight color={theme.palette.primary.main}>
+      <MyLandingContainer autoHeight>
         <FavoriteTech />
       </MyLandingContainer>
       <MyLandingContainer autoHeight>

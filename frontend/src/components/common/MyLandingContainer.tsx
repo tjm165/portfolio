@@ -1,11 +1,11 @@
-import * as React from "react";
+import React, { ReactNode } from "react";
 import { styled } from "@mui/system";
 import { Align } from "./section";
 import { Typography, Container, Grid, Box, Hidden } from "@mui/material";
 import MyDivider from "./section/MyDivider";
 
 type PropTypes = {
-  children?: JSX.Element;
+  children?: ReactNode | ReactNode[];
   color?: string;
   autoHeight?: boolean;
   headingText?: string;

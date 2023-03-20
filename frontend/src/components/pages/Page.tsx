@@ -8,7 +8,7 @@ type PropTypes = {
   headingText: string;
   subHeadingText?: string;
   alignHeading?: Align;
-  children?: ReactNode[];
+  children?: ReactNode | ReactNode[];
 };
 
 export default function Page({
