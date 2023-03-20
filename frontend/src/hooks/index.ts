@@ -1,8 +1,20 @@
 import { useEffect } from "react";
 
-function useTitle(title: string) {
+function getDecoration(title?: string) {
+  switch (title) {
+    case undefined:
+      return "";
+    default:
+      return title + " |";
+  }
+}
+
+function useTitle(title?: string) {
   useEffect(() => {
-    document.title = `${title} | Thomas Moawad`;
+    switch (title) {
+      case undefined:
+    }
+    document.title = `${getDecoration(title)} Thomas Moawad`;
   }, []);
 }
 

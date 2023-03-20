@@ -1,7 +1,6 @@
 import { MyLandingContainer } from "../../common";
 import Timeline from "./timeline";
 import FavoriteTech from "../../static/favoriteTech";
-import { useTheme } from "@mui/material/styles";
 import Page from "../Page";
 
 export default function About() {
