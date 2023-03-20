@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 import WelcomeSection from "./WelcomeSection";
-import FavoriteTechSection from "./FavoriteTechSection";
+import FavoriteTechSection from "../../static/favoriteTech/realIndex";
 import { Outlet } from "react-router-dom";
 
 export default function Home() {
