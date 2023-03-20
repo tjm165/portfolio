@@ -13,7 +13,7 @@ function TechCard({ name, fullName, icon, description }: TechCardPropTypes) {
       <Modal open={open} setOpen={setOpen} title={fullName || name}>
         <div> {description}</div>
       </Modal>
-      <Tech title={name} image={icon} onClick={() => setOpen(true)} />
+      <Tech image={icon} onClick={() => setOpen(true)} />
     </Grid>
   );
 }

@@ -1,28 +1,36 @@
-import Typography from "@mui/material/Typography";
 import { Paper } from "@mui/material";
 
 export type BlogCardProps = {
-  title: string;
   image?: string;
   onClick: any;
 };
 
+const clickablePaperStyle = {
+  cursor: "pointer",
+  transition: "box-shadow 0.2s ease-out",
+  "&:hover": {
+    boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.2)",
+  },
+};
 const backgroundColor = "transparent";
-export default function Tech({ title, image, onClick }: BlogCardProps) {
+export default function Tech({ image, onClick }: BlogCardProps) {
   return (
     <Paper
       sx={{
-        padding: "12px",
+        height: "6vh",
+        width: "8vw",
+        padding: "6px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor,
+        ...clickablePaperStyle,
       }}
       onClick={onClick}
-      elevation={3}
+      elevation={5}
     >
       <img
-        height="40vh"
+        width="80%"
         src={image}
         style={{
           objectFit: "cover",
