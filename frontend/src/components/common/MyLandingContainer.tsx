@@ -36,40 +36,38 @@ export default function MyLandingContainer({
   };
 
   return (
-    <React.Fragment>
-      <StyledDiv color={color && color}>
-        <Container>
-          <Box
-            sx={{
-              bgcolor: color && color,
-              height: autoHeight ? "auto" : "90vh",
-            }}
-          >
-            <>
-              <Grid style={gridContainerStyle} container>
-                <Grid item style={headingStyle} sm={8}>
-                  {headingText && (
-                    <Typography component="h1" variant="h3">
-                      {headingText}
-                    </Typography>
-                  )}
-                  {subHeadingText && (
-                    <Typography variant="h5">{subHeadingText}</Typography>
-                  )}
-                </Grid>
-                {(headingText || subHeadingText) && <MyDivider />}
+    <StyledDiv color={color && color}>
+      <Container>
+        <Box
+          sx={{
+            bgcolor: color && color,
+            height: autoHeight ? "auto" : "90vh",
+          }}
+        >
+          <>
+            <Grid style={gridContainerStyle} container>
+              <Grid item style={headingStyle} sm={8}>
+                {headingText && (
+                  <Typography component="h1" variant="h3">
+                    {headingText}
+                  </Typography>
+                )}
+                {subHeadingText && (
+                  <Typography variant="h5">{subHeadingText}</Typography>
+                )}
               </Grid>
-              {children && (
-                <Grid>
-                  <Grid item sm={8}>
-                    <Box my={2}>{children}</Box>
-                  </Grid>
+              {(headingText || subHeadingText) && <MyDivider />}
+            </Grid>
+            {children && (
+              <Grid>
+                <Grid item sm={8}>
+                  <Box my={2}>{children}</Box>
                 </Grid>
-              )}
-            </>
-          </Box>
-        </Container>
-      </StyledDiv>
-    </React.Fragment>
+              </Grid>
+            )}
+          </>
+        </Box>
+      </Container>
+    </StyledDiv>
   );
 }
