@@ -105,8 +105,8 @@ export default function HeroSection({
           <Grid item sm={8}>
             <HeroImage top={true} src={contentImageSrc} />
             <Typography component="h1" variant="h3" ref={ref1}>
-              {splitNewLines(heading).map((line: string, index: number) => (
-                <span key={index}>
+              {splitNewLines(heading).map((line: string, i: number) => (
+                <span key={i}>
                   {line}
                   <br />
                 </span>

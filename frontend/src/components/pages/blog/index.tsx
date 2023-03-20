@@ -45,9 +45,8 @@ export default function Blog() {
             <Grid container justifyContent={"space-evenly"} spacing={4}>
               {highlights.map(
                 ({ title, description, path, image, bgcolor }, i) => (
-                  <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+                  <Grid key={i} item xs={12} sm={12} md={12} lg={6} xl={6}>
                     <BlogCard
-                      key={i}
                       title={title}
                       description={description}
                       path={path}
