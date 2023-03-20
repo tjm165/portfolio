@@ -11,6 +11,7 @@ type PropTypes = {
   headingText?: string;
   subHeadingText?: string;
   alignHeading?: Align;
+  unsafeIsPageHeader?: boolean;
 };
 
 const StyledDiv = styled("div")(({ theme, color }) => ({
@@ -24,10 +25,12 @@ export default function MyLandingContainer({
   headingText,
   subHeadingText,
   alignHeading = Align.LEFT,
+  unsafeIsPageHeader = false,
 }: PropTypes) {
+  const padding = "2vh";
   const gridContainerStyle: React.CSSProperties = {
-    paddingTop: "1vh",
-    paddingBottom: "1vh",
+    paddingTop: unsafeIsPageHeader ? "10vh" : padding,
+    paddingBottom: padding,
     alignItems: alignHeading,
     justifyContent: alignHeading,
   };

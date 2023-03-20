@@ -46,7 +46,7 @@ export default function HeroSection({
   height,
 }: PropTypes) {
   const paperStyle = {
-    height: height || "90vh",
+    height: height || "60vh",
     backgroundImage: `url(${backgroundImageSrc})`,
     backgroundSize: "cover",
     backgroundPosition: "center",

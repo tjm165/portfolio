@@ -5,8 +5,6 @@ import { useTheme } from "@mui/material/styles";
 import Page from "../Page";
 
 export default function About() {
-  const theme = useTheme();
-
   return (
     <Page headingText="About Me">
       <MyLandingContainer autoHeight subHeadingText="My Favorite Tech">
