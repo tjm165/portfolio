@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { styled } from "@mui/system";
-import { Align } from "./section";
+import { Align, MySpacer } from "./section";
 import { Typography, Container, Grid, Box, Hidden } from "@mui/material";
 import MyDivider from "./section/MyDivider";
 
@@ -61,6 +61,7 @@ export default function MyLandingContainer({
               {(headingText || subHeadingText) && <MyDivider />}
             </Grid>
             {children}
+            {children && <MySpacer />}
           </>
         </Box>
       </Container>
