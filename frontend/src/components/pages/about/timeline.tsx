@@ -34,7 +34,7 @@ function Record({ color, variant, date, title, paragraph, icon }: any) {
         <Typography variant="h6" component="span">
           {title}
         </Typography>
-        <Typography>{paragraph}</Typography>
+        <Typography component="span">{paragraph}</Typography>
       </TimelineContent>
     </TimelineItem>
   );

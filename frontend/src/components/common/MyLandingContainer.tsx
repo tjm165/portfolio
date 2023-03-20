@@ -52,9 +52,7 @@ export default function MyLandingContainer({
             <Grid style={gridContainerStyle} container>
               <Grid item style={headingStyle} sm={8}>
                 {headingText && (
-                  <Typography component="h1" variant="h3">
-                    {headingText}
-                  </Typography>
+                  <Typography variant="h3">{headingText}</Typography>
                 )}
                 {subHeadingText && (
                   <Typography variant="h5">{subHeadingText}</Typography>
