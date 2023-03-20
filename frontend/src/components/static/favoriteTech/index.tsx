@@ -2,7 +2,7 @@ import { ReactNode, useState } from "react";
 import data from "./data";
 import Grid from "@mui/material/Grid";
 import Modal from "../../common/Modal";
-import { SquareCard } from "../../common";
+import SquareCard from "./SquareCard";
 import TechCardPropTypes from "./type";
 
 function TechCard({ name, fullName, icon, description }: TechCardPropTypes) {

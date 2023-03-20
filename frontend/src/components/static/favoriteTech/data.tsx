@@ -1,11 +1,22 @@
-import ReactIcon from "./react_icon.svg";
-import TypescriptIcon from "./typescript_icon.svg";
-import AwsIcon from "./aws_icon.png";
-import OcamlIcon from "./ocaml_icon.svg";
-import { InlineLink } from "../../common";
+import ReactIcon from "./logos/react.svg";
+import TypescriptIcon from "./logos/typescript.svg";
+import AwsIcon from "./logos/aws.svg";
+import OcamlIcon from "./logos/ocaml.svg";
+import GoLogo from "./logos/go.png";
+import TerraformLogo from "./logos/terraform.svg";
 import TechCardPropTypes from "./type";
+import { InlineLink } from "../../common";
+
+// Logos from https://logosear.ch/logos/typescript/index.html
 
 const data: TechCardPropTypes[] = [
+  {
+    name: "AWS",
+    fullName: "Amazon Web Services",
+    icon: AwsIcon,
+    description:
+      "I have a certification as an AWS Cloud Practitioner and am pursuing the AWS Solutions Architect certificate. With regards to my professional experience, I have successfully designed several intricate systems, including McKinsey's forgot password UI and API as well as their data ingestion system. In designing these systems, security and reliability were critical factors. I enjoy working with AWS's serverless technologies, and continually strive to enhance my skills in this domain.",
+  },
   {
     name: "React",
     icon: ReactIcon,
@@ -19,12 +30,11 @@ const data: TechCardPropTypes[] = [
       "As a developer, I am deeply committed to writing high-quality code that adheres to industry best practices. In utilizing Typescript, I have been able to leverage its powerful type system to ensure the robustness and reliability of my applications. I also prioritize the utilization of automated testing frameworks, such as Jest, to further guarantee the stability and quality of the software I develop.",
   },
   {
-    name: "AWS",
-    fullName: "Amazon Web Services",
-    icon: AwsIcon,
-    description:
-      "I have a certification as an AWS Cloud Practitioner and am pursuing the AWS Solutions Architect certificate. With regards to my professional experience, I have successfully designed several intricate systems, including McKinsey's forgot password UI and API as well as their data ingestion system. In designing these systems, security and reliability were critical factors. I enjoy working with AWS's serverless technologies, and continually strive to enhance my skills in this domain.",
+    name: "Terraform",
+    icon: TerraformLogo,
+    description: "",
   },
+
   {
     name: "OCaml",
     icon: OcamlIcon,
@@ -76,6 +86,11 @@ const data: TechCardPropTypes[] = [
         </p>
       </>
     ),
+  },
+  {
+    name: "Go-lang",
+    icon: GoLogo,
+    description: "",
   },
 ];
 
