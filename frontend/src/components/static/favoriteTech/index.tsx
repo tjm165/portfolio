@@ -2,7 +2,7 @@ import { ReactNode, useState } from "react";
 import data from "./data";
 import Grid from "@mui/material/Grid";
 import Modal from "../../common/Modal";
-import SquareCard from "./SquareCard";
+import Tech from "./Tech";
 import TechCardPropTypes from "./type";
 
 function TechCard({ name, fullName, icon, description }: TechCardPropTypes) {
@@ -13,7 +13,7 @@ function TechCard({ name, fullName, icon, description }: TechCardPropTypes) {
       <Modal open={open} setOpen={setOpen} title={fullName || name}>
         <div> {description}</div>
       </Modal>
-      <SquareCard title={name} image={icon} onClick={() => setOpen(true)} />
+      <Tech title={name} image={icon} onClick={() => setOpen(true)} />
     </Grid>
   );
 }
