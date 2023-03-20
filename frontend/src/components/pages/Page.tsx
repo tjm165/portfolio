@@ -20,19 +20,19 @@ export default function Page({
   useTitle(headingText);
   const theme = useTheme();
 
-  const colors = [theme.palette.primary.main, theme.palette.secondary.main];
+  const colors = [theme.extraPalette.white, theme.palette.primary.main];
 
   return (
     <>
       <MyLandingContainer
-        color={theme.palette.primary.main}
+        color={colors[0]}
         autoHeight
         headingText={headingText}
         subHeadingText={subHeadingText}
         alignHeading={alignHeading}
       />
       {Children.map(children, (child: any, index) => {
-        return cloneElement(child, { color: "blue" });
+        return cloneElement(child, { color: colors[index % colors.length] });
       })}
     </>
   );
