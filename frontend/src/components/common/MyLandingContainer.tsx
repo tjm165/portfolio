@@ -26,7 +26,8 @@ export default function MyLandingContainer({
   alignHeading = Align.LEFT,
 }: PropTypes) {
   const gridContainerStyle: React.CSSProperties = {
-    paddingTop: "10vh",
+    paddingTop: "1vh",
+    paddingBottom: "1vh",
     alignItems: alignHeading,
     justifyContent: alignHeading,
   };
