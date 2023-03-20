@@ -1,4 +1,3 @@
-import { SimpleSection } from "../../common/section";
 import { MyLandingContainer } from "../../common";
 import { useTitle } from "../../../hooks";
 import Timeline from "./timeline";
@@ -14,9 +13,7 @@ export default function About() {
     <>
       <FavoriteTechSection />
       <MyLandingContainer autoHeight color={theme.palette.primary.main}>
-        <SimpleSection headingText="Career Timeline">
-          <Timeline />
-        </SimpleSection>
+        <Timeline />
       </MyLandingContainer>
     </>
   );

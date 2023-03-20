@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import BlogCard, { BlogCardProps } from "./BlogCard";
-import { SimpleSection, Align } from "../../common/section";
+import { Align } from "../../common/section";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { consts } from "../../common";
@@ -38,7 +38,9 @@ export default function Blog() {
     <>
       <Outlet />
       <Container maxWidth="md">
-        <SimpleSection headingText="Blog" alignHeading={Align.CENTER}>
+        <div
+        //  headingText="Blog" alignHeading={Align.CENTER}
+        >
           <Grid container justifyContent={"space-evenly"} spacing={4}>
             {highlights.map(
               ({ title, description, path, image, bgcolor }, i) => (
@@ -55,7 +57,7 @@ export default function Blog() {
               )
             )}
           </Grid>
-        </SimpleSection>
+        </div>
       </Container>
     </>
   );

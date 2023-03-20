@@ -1,5 +1,3 @@
-import { SimpleSection } from "../../common/section";
-import Container from "@mui/material/Container";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";

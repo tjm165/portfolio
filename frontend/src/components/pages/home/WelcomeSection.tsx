@@ -1,4 +1,4 @@
-import { HeroSection, SimpleSection } from "../../common/section";
+import { HeroSection } from "../../common/section";
 import { Button } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { FavoriteTech } from "../../static";
