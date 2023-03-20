@@ -5,7 +5,7 @@ import { Typography, Container, Grid, Box, Hidden } from "@mui/material";
 import MyDivider from "./section/MyDivider";
 
 type PropTypes = {
-  children: JSX.Element;
+  children?: JSX.Element;
   color?: string;
   autoHeight?: boolean;
 
