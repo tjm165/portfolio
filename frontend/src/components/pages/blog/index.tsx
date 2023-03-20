@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
 import BlogCard, { BlogCardProps } from "./BlogCard";
-import { SimpleSection, Align } from "../../common/section";
+import { Align } from "../../common/section";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { consts } from "../../common";
 import catalogue from "./catalogue";
+import Page from "../Page";
+import { MyLandingContainer } from "../../common";
 
 type cardInput = {
   title: string;
@@ -37,26 +39,27 @@ export default function Blog() {
   return (
     <>
       <Outlet />
-      <Container maxWidth="md">
-        <SimpleSection headingText="Blog" alignHeading={Align.CENTER}>
-          <Grid container justifyContent={"space-evenly"} spacing={4}>
-            {highlights.map(
-              ({ title, description, path, image, bgcolor }, i) => (
-                <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-                  <BlogCard
-                    key={i}
-                    title={title}
-                    description={description}
-                    path={path}
-                    image={image || undefined}
-                    bgcolor={bgcolor}
-                  />
-                </Grid>
-              )
-            )}
-          </Grid>
-        </SimpleSection>
-      </Container>
+      <Page headingText="Blog" alignHeading={Align.CENTER}>
+        <MyLandingContainer autoHeight>
+          <Container maxWidth="md">
+            <Grid container justifyContent={"space-evenly"} spacing={4}>
+              {highlights.map(
+                ({ title, description, path, image, bgcolor }, i) => (
+                  <Grid key={i} item xs={12} sm={12} md={12} lg={6} xl={6}>
+                    <BlogCard
+                      title={title}
+                      description={description}
+                      path={path}
+                      image={image || undefined}
+                      bgcolor={bgcolor}
+                    />
+                  </Grid>
+                )
+              )}
+            </Grid>
+          </Container>
+        </MyLandingContainer>
+      </Page>
     </>
   );
 }

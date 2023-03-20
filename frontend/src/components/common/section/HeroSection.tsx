@@ -46,7 +46,7 @@ export default function HeroSection({
   height,
 }: PropTypes) {
   const paperStyle = {
-    height: height || "90vh",
+    height: height || "65vh",
     backgroundImage: `url(${backgroundImageSrc})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -105,8 +105,8 @@ export default function HeroSection({
           <Grid item sm={8}>
             <HeroImage top={true} src={contentImageSrc} />
             <Typography component="h1" variant="h3" ref={ref1}>
-              {splitNewLines(heading).map((line: string, index: number) => (
-                <span key={index}>
+              {splitNewLines(heading).map((line: string, i: number) => (
+                <span key={i}>
                   {line}
                   <br />
                 </span>

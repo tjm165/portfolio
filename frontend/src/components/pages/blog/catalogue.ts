@@ -7,7 +7,7 @@ const catalogue = [
   },
   {
     path: "my-first-blog-post",
-    title: "My First Blog Pos My First Blog Pos My First Blog Post",
+    title: "log Post",
     description: "Hey!",
     bgcolor: "graphite.main",
   },

@@ -1,5 +1,8 @@
 import HeroSection from "./HeroSection";
-import SimpleSection, { Align } from "./SimpleSection";
-import SimpleSubSection from "./SimpleSubSection";
+enum Align {
+  RIGHT = "right",
+  CENTER = "center",
+  LEFT = "left",
+}
 
-export { HeroSection, SimpleSection, SimpleSubSection, Align };
+export { HeroSection, Align };

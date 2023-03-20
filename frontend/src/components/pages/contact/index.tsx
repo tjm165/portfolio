@@ -1,12 +1,12 @@
-import { SimpleSection } from "../../common/section";
-import Container from "@mui/material/Container";
+import { MyLandingContainer } from "../../common";
+import Page from "../Page";
 
 export default function Contact() {
   return (
-    <Container maxWidth="lg">
-      <SimpleSection headingText="Contact">
-        <div>Use linkedin please</div>
-      </SimpleSection>
-    </Container>
+    <Page headingText="Contact Me">
+      <MyLandingContainer autoHeight>
+        <div> Use LinkedIn Please </div>
+      </MyLandingContainer>
+    </Page>
   );
 }

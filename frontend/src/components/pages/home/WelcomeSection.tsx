@@ -1,7 +1,8 @@
-import { HeroSection, SimpleSection } from "../../common/section";
+import { HeroSection } from "../../common/section";
 import { Button } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { FavoriteTech } from "../../static";
+
+// TODO: I would like WelcomeSection and Title to be one
 
 export default function WelcomeSection() {
   return (

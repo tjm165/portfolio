@@ -145,8 +145,8 @@ export default function MyAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+              {pages.map((page, i) => (
+                <MenuItem key={i} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page.title}</Typography>s{" "}
                 </MenuItem>
               ))}
@@ -171,9 +171,9 @@ export default function MyAppBar() {
             THOMAS MOAWAD
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page, i) => (
               <Button
-                key={page.title}
+                key={i}
                 onClick={() => {
                   handleCloseNavMenu();
                   navigate(page.push, { replace: true });
@@ -211,8 +211,8 @@ export default function MyAppBar() {
         <Divider />
 
         <List>
-          {pages.map((page, index) => (
-            <ListItem key={index} disablePadding>
+          {pages.map((page, i) => (
+            <ListItem key={i} disablePadding>
               <ListItemButton>
                 <ListItemText
                   primary={page.title}

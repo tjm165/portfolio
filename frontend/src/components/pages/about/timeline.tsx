@@ -1,5 +1,3 @@
-import { SimpleSection } from "../../common/section";
-import Container from "@mui/material/Container";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
@@ -36,7 +34,7 @@ function Record({ color, variant, date, title, paragraph, icon }: any) {
         <Typography variant="h6" component="span">
           {title}
         </Typography>
-        <Typography>{paragraph}</Typography>
+        <Typography component="span">{paragraph}</Typography>
       </TimelineContent>
     </TimelineItem>
   );
