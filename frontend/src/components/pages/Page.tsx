@@ -25,7 +25,7 @@ export default function Page({
   return (
     <>
       <MyLandingContainer
-        color={colors[0]}
+        color={colors[1]}
         autoHeight
         headingText={headingText}
         subHeadingText={subHeadingText}

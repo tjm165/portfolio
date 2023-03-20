@@ -9,10 +9,10 @@ export default function About() {
 
   return (
     <Page headingText="About Me">
-      <MyLandingContainer autoHeight>
+      <MyLandingContainer autoHeight subHeadingText="My Favorite Tech">
         <FavoriteTech />
       </MyLandingContainer>
-      <MyLandingContainer autoHeight>
+      <MyLandingContainer autoHeight subHeadingText="Career Timeline">
         <Timeline />
       </MyLandingContainer>
     </Page>

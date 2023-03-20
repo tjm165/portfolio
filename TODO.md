@@ -6,3 +6,4 @@ Before the About Page is Done:
 1. Modal should show image
 1. Fix styling on favorite tech cards. It looks a bit off.
 1. Modal needs to size accordingly and scroll
+1. Home should be a Page

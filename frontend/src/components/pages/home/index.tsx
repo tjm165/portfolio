@@ -11,7 +11,11 @@ export default function Home() {
     <>
       <Outlet />
       <WelcomeSection />
-      <MyLandingContainer autoHeight color={theme.palette.primary.main}>
+      <MyLandingContainer
+        subHeadingText="My Favorite Tech"
+        autoHeight
+        color={theme.palette.primary.main}
+      >
         <FavoriteTech />
       </MyLandingContainer>
     </>
