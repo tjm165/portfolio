@@ -1,5 +1,5 @@
 import { MyLandingContainer } from "../../common";
-import Timeline from "./timeline";
+import CareerTimeline from "./careerTimeline";
 import FavoriteTech from "../../static/favoriteTech";
 import Page from "../Page";
 
@@ -10,7 +10,7 @@ export default function About() {
         <FavoriteTech />
       </MyLandingContainer>
       <MyLandingContainer autoHeight subHeadingText="My Path">
-        <Timeline />
+        <CareerTimeline />
       </MyLandingContainer>
     </Page>
   );

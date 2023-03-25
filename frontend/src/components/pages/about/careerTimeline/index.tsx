@@ -6,7 +6,6 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import Typography from "@mui/material/Typography";
-import { useTitle } from "../../../hooks";
 import timelineItemsData from "./timelineItemsData";
 
 const colors = [undefined, "primary", "primary"];
@@ -40,7 +39,7 @@ function Record({ color, variant, date, title, paragraph, icon }: any) {
   );
 }
 
-export default function CustomizedTimeline() {
+export default function careerTimeline() {
   const getVariant = (i: any, list: any) => {
     const index = i % list.length;
     return list[index];

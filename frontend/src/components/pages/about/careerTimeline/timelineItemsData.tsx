@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import { InlineLink } from "../../common";
+import { InlineLink } from "../../../common";
 
 const timelineItems = [
   {
