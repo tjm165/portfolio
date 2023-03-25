@@ -30,14 +30,15 @@ interface ExtraPalette {
   graphite: string;
 }
 
-// https://coolors.co/90cce9-84f0c3-fff3a8-eec5ca-996cc6
+// https://coolors.co/66b8e1-dceff9-84f0c3-fff3a8-eec5ca-996cc6-232021
 const colors = {
   white: "#ffffff",
-  blue: "#6ebdb5",
-  green: "#43aa9a",
-  yellow: "#e4c3a7",
-  pink: "#cdbac2",
-  purple: "#bbbacd",
+  blue: "#66b8e1",
+  lightBlue: "#dceff9",
+  green: "#84f0c3",
+  yellow: "#fff3a8",
+  pink: "#eec5ca",
+  purple: "#996cc6",
   graphite: "#232021",
 };
 
@@ -48,9 +49,6 @@ declare module "@mui/material/styles" {
   interface CustomTheme {
     extraPalette: {
       white: string;
-      blue: string;
-      green: string;
-      yellow: string;
       pink: string;
       purple: string;
       graphite: string;
@@ -85,15 +83,12 @@ const myTheme = createTheme({
   },
   palette: {
     mode: "light",
-    primary: { main: colors.blue },
+    primary: { main: colors.blue, light: colors.lightBlue },
     secondary: { main: colors.green },
     accent: { main: colors.yellow },
   },
   extraPalette: {
     white: colors.white,
-    blue: colors.blue,
-    green: colors.green,
-    yellow: colors.yellow,
     pink: colors.pink,
     purple: colors.purple,
     graphite: colors.graphite,

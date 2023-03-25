@@ -3,7 +3,6 @@ import { useTitle } from "../../hooks";
 import { MyLandingContainer } from "../common";
 import { Align } from "../common/section"; // todo put this in common
 import { useTheme } from "@mui/material/styles";
-import { elementAcceptingRef } from "@mui/utils";
 
 type PropTypes = {
   headingText?: string;
@@ -20,7 +19,7 @@ export default function Page({
 }: PropTypes) {
   useTitle(headingText);
   const theme = useTheme();
-  const colors = [theme.extraPalette.white, theme.palette.primary.main];
+  const colors = [theme.extraPalette.white, theme.palette.primary.light];
 
   document.body.style.backgroundColor =
     colors[(Children.count(children) - 1) % colors.length];
