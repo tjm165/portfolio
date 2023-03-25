@@ -2,7 +2,7 @@ import ReactIcon from "./logos/react.svg";
 import TypescriptIcon from "./logos/typescript.svg";
 import AwsIcon from "./logos/aws.svg";
 import OcamlIcon from "./logos/ocaml.svg";
-import GoLogo from "./logos/go.png";
+import GoLogo from "./logos/go.svg";
 import TerraformLogo from "./logos/terraform.svg";
 import TechCardPropTypes from "./type";
 import { InlineLink } from "../../common";
