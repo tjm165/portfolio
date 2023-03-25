@@ -9,7 +9,7 @@ export default function About() {
       <MyLandingContainer autoHeight subHeadingText="My Favorite Tech">
         <FavoriteTech />
       </MyLandingContainer>
-      <MyLandingContainer autoHeight subHeadingText="Career Timeline">
+      <MyLandingContainer autoHeight subHeadingText="My Path">
         <Timeline />
       </MyLandingContainer>
     </Page>
