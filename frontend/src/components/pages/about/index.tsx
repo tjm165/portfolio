@@ -1,5 +1,5 @@
 import { MyLandingContainer } from "../../common";
-import CareerTimeline from "./careerTimeline";
+import CareerTimeline from "../../static/careerTimeline";
 import FavoriteTech from "../../static/favoriteTech";
 import Page from "../Page";
 
