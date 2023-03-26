@@ -16,6 +16,7 @@ function Modal({ open, setOpen, title, children }: PropTypes) {
   const handleClose = () => setOpen(false);
 
   const style = {
+    overflow: "auto",
     position: "absolute",
     top: "50%",
     left: "50%",
