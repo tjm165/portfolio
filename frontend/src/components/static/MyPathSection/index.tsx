@@ -1,19 +1,4 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import { InView } from "react-intersection-observer";
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Sidebar,
-} from "semantic-ui-react";
+import { Grid, Header, Segment } from "semantic-ui-react";
 
 const MyPathSection = () => {
   return (
