@@ -1,7 +1,8 @@
 import { ReactNode, useState } from "react";
 import data from "./data";
 import Grid from "@mui/material/Grid";
-import Modal from "../../common/Modal";
+import MyModal from "../../common/Modal";
+import { Image, Modal } from "semantic-ui-react";
 import Tech from "./Tech";
 import TechCardPropTypes from "./type";
 
@@ -16,9 +17,12 @@ function TechCard({
 
   return (
     <Grid item>
-      <Modal open={open} setOpen={setOpen} title={fullName || name}>
-        <div> {description}</div>
-      </Modal>
+      <MyModal open={open} setOpen={setOpen} title={fullName || name}>
+        <Modal.Content image>
+          <Image size="medium" src={icon} wrapped />
+          <Modal.Description>{description}</Modal.Description>
+        </Modal.Content>
+      </MyModal>
       <Tech
         image={icon}
         backgroundColor={backgroundColor}
