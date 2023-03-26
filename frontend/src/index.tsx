@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { Home, About, ErrorPage, Blog, Contact } from "./components/pages";
+import HomeV2 from "./components/pages/homeV2";
 import BlogPost, {
   blogPostLoader,
 } from "./components/pages/blog/BlogPostWrapper";
@@ -13,6 +14,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App view={<Home />} />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/2",
+    element: <App view={<HomeV2 />} />,
     errorElement: <ErrorPage />,
   },
   {
