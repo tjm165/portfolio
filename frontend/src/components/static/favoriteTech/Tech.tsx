@@ -1,33 +1,24 @@
-import { Paper } from "@mui/material";
+import { Button } from "@mui/material";
 
-export type BlogCardProps = {
+export type PropTypes = {
   image?: string;
   onClick: any;
+  backgroundColor: string;
 };
 
-const clickablePaperStyle = {
-  cursor: "pointer",
-  transition: "box-shadow 0.2s ease-out",
-  "&:hover": {
-    boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.2)",
-  },
-};
-const backgroundColor = "transparent";
-export default function Tech({ image, onClick }: BlogCardProps) {
+export default function Tech({ backgroundColor, image, onClick }: PropTypes) {
   return (
-    <Paper
+    <Button
       sx={{
         height: "6vh",
         width: "8vw",
-        padding: "6px",
+        padding: "1vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor,
-        ...clickablePaperStyle,
       }}
       onClick={onClick}
-      elevation={5}
     >
       <img
         width="80%"
@@ -36,6 +27,6 @@ export default function Tech({ image, onClick }: BlogCardProps) {
           objectFit: "cover",
         }}
       />
-    </Paper>
+    </Button>
   );
 }

@@ -5,7 +5,13 @@ import Modal from "../../common/Modal";
 import Tech from "./Tech";
 import TechCardPropTypes from "./type";
 
-function TechCard({ name, fullName, icon, description }: TechCardPropTypes) {
+function TechCard({
+  name,
+  fullName,
+  icon,
+  backgroundColor,
+  description,
+}: TechCardPropTypes) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -13,7 +19,11 @@ function TechCard({ name, fullName, icon, description }: TechCardPropTypes) {
       <Modal open={open} setOpen={setOpen} title={fullName || name}>
         <div> {description}</div>
       </Modal>
-      <Tech image={icon} onClick={() => setOpen(true)} />
+      <Tech
+        image={icon}
+        backgroundColor={backgroundColor}
+        onClick={() => setOpen(true)}
+      />
     </Grid>
   );
 }

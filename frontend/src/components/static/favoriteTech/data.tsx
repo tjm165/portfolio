@@ -14,30 +14,35 @@ const data: TechCardPropTypes[] = [
     name: "AWS",
     fullName: "Amazon Web Services",
     icon: AwsIcon,
+    backgroundColor: "#23282e",
     description:
       "I have a certification as an AWS Cloud Practitioner and am pursuing the AWS Solutions Architect certificate. With regards to my professional experience, I have successfully designed several intricate systems, including McKinsey's forgot password UI and API as well as their data ingestion system. In designing these systems, security and reliability were critical factors. I enjoy working with AWS's serverless technologies, and continually strive to enhance my skills in this domain.",
   },
   {
     name: "React",
     icon: ReactIcon,
+    backgroundColor: "#23282e",
     description:
       "I gained my exposure to React experience at hackathon in 2018. Since then it has become a central component to my skill set as a full stack engineer. I have leveraged this knowledge to develop and React-based applications in various professional settings, including McKinsey and ProgressBook.",
   },
   {
     name: "Typescript",
     icon: TypescriptIcon,
+    backgroundColor: "#23282e",
     description:
       "As a developer, I am deeply committed to writing high-quality code that adheres to industry best practices. In utilizing Typescript, I have been able to leverage its powerful type system to ensure the robustness and reliability of my applications. I also prioritize the utilization of automated testing frameworks, such as Jest, to further guarantee the stability and quality of the software I develop.",
   },
   {
     name: "Terraform",
     icon: TerraformLogo,
+    backgroundColor: "#23282e",
     description: "",
   },
 
   {
     name: "OCaml",
     icon: OcamlIcon,
+    backgroundColor: "#23282e",
     description: (
       <>
         <p>
@@ -89,6 +94,7 @@ const data: TechCardPropTypes[] = [
   },
   {
     name: "Go-lang",
+    backgroundColor: "#23282e",
     icon: GoLogo,
     description: "",
   },
