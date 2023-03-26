@@ -1,3 +1,4 @@
 import FavoriteTech from "./favoriteTech";
-import MyFavoriteTech from "./MyFavoriteTech";
-export { FavoriteTech, MyFavoriteTech };
+import MyFavoriteTechSection from "./MyFavoriteTechSection";
+import MyPathSection from "./MyPathSection";
+export { FavoriteTech, MyFavoriteTechSection, MyPathSection };

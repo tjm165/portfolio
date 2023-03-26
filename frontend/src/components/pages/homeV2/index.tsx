@@ -6,17 +6,16 @@ import { InView } from "react-intersection-observer";
 import {
   Button,
   Container,
-  Divider,
   Grid,
   Header,
   Icon,
-  Image,
   List,
   Menu,
   Segment,
   Sidebar,
 } from "semantic-ui-react";
 import HomepageHeading from "./Welcome";
+import { MyFavoriteTechSection, MyPathSection } from "../../static";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -173,38 +172,6 @@ const ResponsiveContainer = ({ children }) => (
 
 ResponsiveContainer.propTypes = {
   children: PropTypes.node,
-};
-
-const MyFavoriteTechSection = () => {
-  return (
-    <Segment style={{ padding: "8em 0em" }} vertical>
-      <Grid container stackable verticalAlign="middle">
-        <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              My Favorite Tech
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
-  );
-};
-
-const MyPathSection = () => {
-  return (
-    <Segment style={{ padding: "8em 0em" }} vertical>
-      <Grid container stackable verticalAlign="middle">
-        <Grid.Row>
-          <Grid.Column width={8}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              My Path
-            </Header>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
-  );
 };
 
 const FooterSection = () => {
