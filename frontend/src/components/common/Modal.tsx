@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import MuiModal from "@mui/material/Modal";
 import IconButton from "@mui/material/IconButton";
@@ -12,24 +12,38 @@ type PropTypes = {
   title: string;
   children: ReactNode;
 };
+
+const StyledModal = styled(MuiModal)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const StyledPaper = styled("div")(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  border: "2px solid #000",
+  boxShadow: theme.shadows[5],
+  padding: theme.spacing(2, 4, 3),
+  maxWidth: "80vw",
+  width: "auto",
+  maxHeight: "80vh",
+  height: "auto",
+  overflowY: "scroll",
+  position: "relative",
+  [theme.breakpoints.down("xs")]: {
+    maxWidth: "100vw",
+    maxHeight: "100vh",
+  },
+}));
+
+const CloseButton = styled(IconButton)(({ theme }) => ({
+  position: "absolute",
+  top: theme.spacing(1),
+  right: theme.spacing(1),
+}));
+
 function Modal({ open, setOpen, title, children }: PropTypes) {
   const handleClose = () => setOpen(false);
-
-  const style = {
-    overflow: "auto",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "50%",
-    height: "50%",
-    bgcolor: "background.paper",
-    boxShadow: 24,
-    p: 4,
-    "&:focus": {
-      outline: "none",
-    },
-  };
 
   const headerStyle = {
     display: "flex",
@@ -39,24 +53,22 @@ function Modal({ open, setOpen, title, children }: PropTypes) {
   };
 
   return (
-    <MuiModal
+    <StyledModal
       open={open}
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={style}>
-        <Box sx={headerStyle}>
-          <Typography id="modal-modal-title" component="h1" variant="h4">
-            {title}
-          </Typography>
-          <IconButton onClick={handleClose}>
-            <CloseIcon />
-          </IconButton>
-        </Box>
+      <StyledPaper>
+        <CloseButton onClick={handleClose}>
+          <CloseIcon />
+        </CloseButton>
+        <Typography id="modal-modal-title" component="h1" variant="h4">
+          {title}
+        </Typography>
         {children}
-      </Box>
-    </MuiModal>
+      </StyledPaper>
+    </StyledModal>
   );
 }
 

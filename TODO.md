@@ -8,3 +8,9 @@ Before the About Page is Done:
 Next Ticket
 
 1. Redesign
+
+Mobile
+
+1. Modal
+2. NavBar Mobile
+3. Hero
