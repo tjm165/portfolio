@@ -1,2 +1,3 @@
 import FavoriteTech from "./favoriteTech";
-export { FavoriteTech };
+import MyFavoriteTech from "./MyFavoriteTech";
+export { FavoriteTech, MyFavoriteTech };
