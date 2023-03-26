@@ -4,8 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import { Home, About, ErrorPage, Blog, Contact } from "./components/pages";
-import HomeV2 from "../src/App/homeLayout";
+import {
+  Home,
+  About,
+  ErrorPage,
+  Blog,
+  Contact,
+  HomeV2,
+} from "./components/pages";
 import BlogPost, {
   blogPostLoader,
 } from "./components/pages/blog/BlogPostWrapper";
