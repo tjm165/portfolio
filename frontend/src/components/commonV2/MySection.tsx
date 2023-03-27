@@ -10,7 +10,7 @@ type PropTypes = {
 const MySection = ({ color, children, headingText }: PropTypes) => {
   return (
     <Segment style={{ backgroundColor: color, padding: "8em 0em" }} vertical>
-      <Container text>
+      <Container>
         <Header style={{ fontSize: "2em" }}>{headingText}</Header>
         {children}
       </Container>
