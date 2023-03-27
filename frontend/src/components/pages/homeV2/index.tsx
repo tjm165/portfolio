@@ -214,12 +214,15 @@ const FooterSection = () => {
   );
 };
 
-const HomepageLayout = () => (
-  <ResponsiveContainer>
-    <MyFavoriteTechSection />
-    <MyPathSection />
-    <FooterSection />
-  </ResponsiveContainer>
-);
+const HomepageLayout = () => {
+  const sections = [<MyFavoriteTechSection />, <MyPathSection />];
+
+  return (
+    <ResponsiveContainer>
+      {sections}
+      <FooterSection />
+    </ResponsiveContainer>
+  );
+};
 
 export default HomepageLayout;
