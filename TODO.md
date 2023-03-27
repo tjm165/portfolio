@@ -11,3 +11,6 @@ Mobile
 
 2. NavBar Mobile
 3. Hero
+
+https://www.npmjs.com/package/react-vertical-timeline-component
+https://stephanemonnot.com/
