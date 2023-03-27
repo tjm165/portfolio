@@ -1,4 +1,5 @@
 import { MySection } from "../../commonV2";
+import Timeline from "./Timeline";
 
 type PropTypes = {
   color: string;
@@ -7,7 +8,7 @@ type PropTypes = {
 const MyPathSection = ({ color }: PropTypes) => {
   return (
     <MySection color={color} headingText="My Path">
-      Hello World
+      <Timeline />
     </MySection>
   );
 };
