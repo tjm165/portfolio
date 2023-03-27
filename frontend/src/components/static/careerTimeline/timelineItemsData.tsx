@@ -66,7 +66,7 @@ const timelineItems = [
   },
   {
     title: "McKinsey & Company",
-    date: "2021 - Current",
+    date: "2021 - Present",
     paragraph: (
       <>
         <div>
