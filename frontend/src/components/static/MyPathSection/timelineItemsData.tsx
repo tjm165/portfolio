@@ -1,11 +1,15 @@
 import Typography from "@mui/material/Typography";
 import { ReactElement } from "react";
 import { InlineLink } from "../../common";
+import WorkIcon from "@material-ui/icons/Work";
+import SchoolIcon from "@mui/icons-material/School";
+import CodeIcon from "@mui/icons-material/Code";
 
 type TimelineItem = {
   title: string;
   date: string;
   paragraph: ReactElement | string;
+  icon: any;
   location: string;
 };
 
@@ -14,6 +18,7 @@ const timelineItems: TimelineItem[] = [
     title: "Fourth Grade",
     date: "2009 - 2010",
     location: "Cleveland, OH",
+    icon: <CodeIcon />,
     paragraph:
       "My parents instituted a rule preventing me from playing video games on weeknights. To find a way around this rule, I decided to create my own video game. This required me to learn about coding and web hosting. As my understanding of what goes into a website started to take form, I was able to incrementally build my game. Over time, I turned it into an HTML website where each image clicked would lead to different webpages that represented various game states.",
   },
@@ -21,7 +26,7 @@ const timelineItems: TimelineItem[] = [
     title: "Middle School",
     date: "2011 - 2013",
     location: "Cleveland, OH",
-
+    icon: <CodeIcon />,
     paragraph:
       "With a growing passion for computer programming I signed up for my school's computer class. However, I was disappointed to find that the class only covered the basics of the Microsoft suite. To pursue my interest, I turned to watching YouTube videos on programming in bash. During my class time, I would secretly create batch files that prompted users for inputs like their name and favorite color, and then responded accordingly. This allowed me to gain knowledge on inputs, conditional statements, loops, and the infamous `goto` command. Several of my classmates took interest in my project. During lunch, I took the opportunity to share my learnings with them.",
   },
@@ -29,7 +34,7 @@ const timelineItems: TimelineItem[] = [
     title: "High School",
     date: "2013 - 2017",
     location: "Cleveland, OH",
-
+    icon: <CodeIcon />,
     paragraph: (
       <>
         I was eager to expand my programming skills beyond the limitations of
@@ -52,7 +57,7 @@ const timelineItems: TimelineItem[] = [
     title: "College, Case Western Reserve University",
     date: "2017 - 2021",
     location: "Cleveland, OH",
-
+    icon: <SchoolIcon />,
     paragraph: (
       <>
         I earned my bachelors of science in computer science, as well as minors
@@ -83,7 +88,7 @@ const timelineItems: TimelineItem[] = [
     title: "McKinsey & Company",
     date: "2021 - Current",
     location: "Chicago, IL",
-
+    icon: <WorkIcon />,
     paragraph: (
       <>
         <div>
