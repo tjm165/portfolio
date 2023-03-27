@@ -42,6 +42,21 @@ const colors = {
   graphite: "#232021",
 };
 
+export const myPalette = {
+  abstract: {
+    mode: "light",
+    primary: { main: colors.blue, light: colors.lightBlue },
+    secondary: { main: colors.green },
+    accent: { main: colors.yellow },
+  },
+  specific: {
+    white: colors.white,
+    pink: colors.pink,
+    purple: colors.purple,
+    graphite: colors.graphite,
+  },
+};
+
 const headingFontFamily = "monospace";
 
 // https://stackoverflow.com/questions/58168798/add-custom-theme-variable-in-createtheme

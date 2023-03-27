@@ -1,7 +1,15 @@
 import { MySection } from "../../commonV2";
 
-const MyPathSection = () => {
-  return <MySection headingText="My Path">Hello World</MySection>;
+type PropTypes = {
+  color: string;
+};
+
+const MyPathSection = ({ color }: PropTypes) => {
+  return (
+    <MySection color={color} headingText="My Path">
+      Hello World
+    </MySection>
+  );
 };
 
 export default MyPathSection;

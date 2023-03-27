@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { createMedia } from "@artsy/fresnel";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -16,6 +15,7 @@ import {
 } from "semantic-ui-react";
 import HomepageHeading from "./Welcome";
 import { MyFavoriteTechSection, MyPathSection } from "../../static";
+import { myPalette } from "../../../App/myTheme";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -214,12 +214,16 @@ const FooterSection = () => {
   );
 };
 
+// Tommy this is basically a Page
 const HomepageLayout = () => {
-  const sections = [<MyFavoriteTechSection />, <MyPathSection />];
+  const Elements = [MyFavoriteTechSection, MyPathSection];
+  const colors = [myPalette.specific.white, myPalette.abstract.primary.light];
 
   return (
     <ResponsiveContainer>
-      {sections}
+      {Elements.map((Element, index) => (
+        <Element color={colors[index % colors.length]} />
+      ))}
       <FooterSection />
     </ResponsiveContainer>
   );
