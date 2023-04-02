@@ -1,15 +1,25 @@
 import TechCardPropTypes from "./type";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Image, Dimmer, Segment } from "semantic-ui-react";
+import { useState } from "react";
 
-const TechCard = ({ icon, name }: TechCardPropTypes) => {
+const TechCard = ({ icon, name, description }: TechCardPropTypes) => {
+  const [hovered, setHovered] = useState(false);
+
   return (
-    <Card>
+    <Card
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <Image
-        // style={{ width: "50%", paddingBottom: "50%" }}
         src={icon}
         wrapped
         ui={false}
         fluid
+        dimmer={{
+          active: hovered,
+          blurring: true,
+          content: <>{description}</>,
+        }}
       />
 
       <Card.Content>
