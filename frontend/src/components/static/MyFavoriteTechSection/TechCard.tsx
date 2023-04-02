@@ -10,17 +10,23 @@ const TechCard = ({ icon, name, description }: TechCardPropTypes) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <Image
-        src={icon}
-        wrapped
-        ui={false}
-        fluid
-        dimmer={{
-          active: hovered,
-          blurring: true,
-          content: <>{description}</>,
-        }}
-      />
+      <Dimmer.Dimmable as={Image} blurring dimmed={hovered}>
+        <Dimmer active={hovered}>
+          <h4>{description}</h4>
+        </Dimmer>
+
+        <Image
+          src={icon}
+          //   wrapped
+          ui={false}
+          //   fluid
+          // dimmer={{
+          //   active: hovered,
+          //   blurring: true,
+          //   content: <>{description}</>,
+          // }}
+        />
+      </Dimmer.Dimmable>
 
       <Card.Content>
         <Card.Header>{name}</Card.Header>

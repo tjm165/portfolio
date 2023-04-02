@@ -1,16 +1,11 @@
 Before the About Page is Done:
 
-1. Make sure it looks good on mobile
-1. Write description for Terraform and Go
-
-Next Ticket
-
-1. Redesign
-
-Mobile
-
-2. NavBar Mobile
-3. Hero
-
-https://www.npmjs.com/package/react-vertical-timeline-component
-https://stephanemonnot.com/
+1. Much briefer descriptions for tech
+1. Description for Terraform
+1. Center "my favorite tech"
+1. Clean up hero screen
+1. Cleanup nav bar even if the code is sloppy
+1. Clean up footer
+1. Remove legacy code
+1. Redo the blog https://blog.piio.co/posts
+1. Logo
