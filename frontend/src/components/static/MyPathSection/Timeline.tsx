@@ -17,7 +17,8 @@ function Timeline() {
           contentStyle={{ background: "white", color: "#333" }}
           contentArrowStyle={{ borderRight: "7px solid  white" }}
           iconStyle={{ background: "white", color: "#333" }}
-          date={date} // yes I intentionally flip flopped this because I think it looks better
+          //@ts-ignore
+          date={<h3>{date}</h3>}
           icon={icon}
         >
           <h3 className="vertical-timeline-element-title">{title}</h3>
