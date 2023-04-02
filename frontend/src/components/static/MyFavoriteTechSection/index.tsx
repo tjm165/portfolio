@@ -1,5 +1,5 @@
 import { MySection } from "../../commonV2";
-import data from "../favoriteTech/data";
+import data from "./data";
 import TechCard from "./TechCard";
 import { Card } from "semantic-ui-react";
 

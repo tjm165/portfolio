@@ -3,10 +3,8 @@ import TypescriptIcon from "./logos/typescript.svg";
 import AwsIcon from "./logos/aws.webp";
 import OcamlIcon from "./logos/ocaml.png";
 import TerraformLogo from "./logos/terraform.png";
-import TechCardPropTypes from "../MyFavoriteTechSection/type";
+import TechCardPropTypes from "./type";
 import { InlineLink } from "../../common";
-
-// Logos from https://logosear.ch/logos/typescript/index.html
 
 const data: TechCardPropTypes[] = [
   {
