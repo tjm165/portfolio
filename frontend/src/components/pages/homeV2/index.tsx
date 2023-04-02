@@ -1,6 +1,5 @@
 import { createMedia } from "@artsy/fresnel";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import { Component, ReactNode } from "react";
 import { InView } from "react-intersection-observer";
 import {
   Button,
@@ -25,17 +24,21 @@ const { MediaContextProvider, Media } = createMedia({
   },
 });
 
+type DesktopContainerPropTypes = {
+  children: ReactNode;
+};
+
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
  * It can be more complicated, but you can create really flexible markup.
  */
 class DesktopContainer extends Component {
-  state = {};
+  state = {} as { fixed: boolean };
 
-  toggleFixedMenu = (inView) => this.setState({ fixed: !inView });
+  toggleFixedMenu = (inView: boolean) => this.setState({ fixed: !inView });
 
   render() {
-    const { children } = this.props;
+    const { children } = this.props as DesktopContainerPropTypes;
     const { fixed } = this.state;
 
     return (
@@ -48,7 +51,7 @@ class DesktopContainer extends Component {
             vertical
           >
             <Menu
-              fixed={fixed ? "top" : null}
+              fixed={fixed ? "top" : undefined}
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
@@ -63,7 +66,7 @@ class DesktopContainer extends Component {
                 <Menu.Item as="a">Careers</Menu.Item>
               </Container>
             </Menu>
-            <HomepageHeading />
+            <HomepageHeading mobile={false} />
           </Segment>
         </InView>
 
@@ -73,23 +76,23 @@ class DesktopContainer extends Component {
   }
 }
 
-DesktopContainer.propTypes = {
-  children: PropTypes.node,
+type MobileContainerPropTypes = {
+  children: ReactNode;
 };
 
 class MobileContainer extends Component {
-  state = {};
+  state = {} as { sidebarOpened: boolean };
 
   handleSidebarHide = () => this.setState({ sidebarOpened: false });
 
   handleToggle = () => this.setState({ sidebarOpened: true });
 
   render() {
-    const { children } = this.props;
+    const { children } = this.props as MobileContainerPropTypes;
     const { sidebarOpened } = this.state;
 
     return (
-      <Media as={Sidebar.Pushable} at="mobile">
+      <Media at="mobile">
         <Sidebar.Pushable>
           <Sidebar
             as={Menu}
@@ -140,11 +143,11 @@ class MobileContainer extends Component {
   }
 }
 
-MobileContainer.propTypes = {
-  children: PropTypes.node,
+type ResponsiveContainerPropTypes = {
+  children: ReactNode;
 };
 
-const ResponsiveContainer = ({ children }) => (
+const ResponsiveContainer = ({ children }: ResponsiveContainerPropTypes) => (
   /* Heads up!
    * For large applications it may not be best option to put all page into these containers at
    * they will be rendered twice for SSR.
@@ -154,10 +157,6 @@ const ResponsiveContainer = ({ children }) => (
     <MobileContainer>{children}</MobileContainer>
   </MediaContextProvider>
 );
-
-ResponsiveContainer.propTypes = {
-  children: PropTypes.node,
-};
 
 const FooterSection = () => {
   return (
