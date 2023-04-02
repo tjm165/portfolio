@@ -1,9 +1,8 @@
-import ReactIcon from "./logos/react.svg";
+import ReactIcon from "./logos/react.png";
 import TypescriptIcon from "./logos/typescript.svg";
-import AwsIcon from "./logos/aws.svg";
-import OcamlIcon from "./logos/ocaml.svg";
-import GoLogo from "./logos/go.svg";
-import TerraformLogo from "./logos/terraform.svg";
+import AwsIcon from "./logos/aws.webp";
+import OcamlIcon from "./logos/ocaml.png";
+import TerraformLogo from "./logos/terraform.png";
 import TechCardPropTypes from "./type";
 import { InlineLink } from "../../common";
 
@@ -11,8 +10,7 @@ import { InlineLink } from "../../common";
 
 const data: TechCardPropTypes[] = [
   {
-    name: "AWS",
-    fullName: "Amazon Web Services",
+    name: "Amazon Web Services",
     icon: AwsIcon,
     backgroundColor: "#23282e",
     description:
@@ -91,12 +89,6 @@ const data: TechCardPropTypes[] = [
         </p>
       </>
     ),
-  },
-  {
-    name: "Go-lang",
-    backgroundColor: "#23282e",
-    icon: GoLogo,
-    description: "",
   },
 ];
 

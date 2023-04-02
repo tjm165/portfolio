@@ -1,6 +1,6 @@
 import ReactIcon from "./logos/react.svg";
 import TypescriptIcon from "./logos/typescript.svg";
-import AwsIcon from "./logos/aws.svg";
+import AwsIcon from "./logos/aws.webp";
 import OcamlIcon from "./logos/ocaml.svg";
 import GoLogo from "./logos/go.svg";
 import TerraformLogo from "./logos/terraform.svg";
@@ -12,7 +12,6 @@ import { InlineLink } from "../../common";
 const data: TechCardPropTypes[] = [
   {
     name: "AWS",
-    fullName: "Amazon Web Services",
     icon: AwsIcon,
     description:
       "I have a certification as an AWS Cloud Practitioner and am pursuing the AWS Solutions Architect certificate. With regards to my professional experience, I have successfully designed several intricate systems, including McKinsey's forgot password UI and API as well as their data ingestion system. In designing these systems, security and reliability were critical factors. I enjoy working with AWS's serverless technologies, and continually strive to enhance my skills in this domain.",
