@@ -4,14 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import {
-  Home,
-  About,
-  ErrorPage,
-  Blog,
-  Contact,
-  HomeV2,
-} from "./components/pages";
+import { ErrorPage, Blog, Contact, HomeV2 } from "./components/pages";
 import BlogPost, {
   blogPostLoader,
 } from "./components/pages/blog/BlogPostWrapper";
@@ -19,17 +12,13 @@ import BlogPost, {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App view={<Home />} />,
+    element: <App view={<HomeV2 />} />,
     errorElement: <ErrorPage />,
   },
   {
     path: "/2",
     element: <App view={<HomeV2 />} />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/about",
-    element: <App view={<About />} />,
   },
   {
     path: "/blog",
