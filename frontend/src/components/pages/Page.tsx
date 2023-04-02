@@ -1,7 +1,7 @@
 import { Children, cloneElement, ReactNode, useEffect } from "react";
 import { useTitle } from "../../hooks";
 import { MyLandingContainer } from "../common";
-import { useTheme } from "@mui/material/styles";
+import { myPalette } from "../../App/myTheme";
 
 type PropTypes = {
   headingText?: string;
@@ -15,8 +15,8 @@ export default function Page({
   children,
 }: PropTypes) {
   useTitle(headingText);
-  const theme = useTheme();
-  const colors = [theme.extraPalette.white, theme.palette.primary.light];
+
+  const colors = [myPalette.specific.white, myPalette.abstract.primary.light];
 
   document.body.style.backgroundColor =
     colors[(Children.count(children) - 1) % colors.length];
