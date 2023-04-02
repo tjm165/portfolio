@@ -1,8 +1,6 @@
 import React, { ReactNode } from "react";
 import { styled } from "@mui/system";
-import { Align, MySpacer } from "./section";
 import { Typography, Container, Grid, Box, Hidden } from "@mui/material";
-import MyDivider from "./section/MyDivider";
 
 type PropTypes = {
   children?: ReactNode | ReactNode[];
@@ -10,7 +8,6 @@ type PropTypes = {
   autoHeight?: boolean;
   headingText?: string;
   subHeadingText?: string;
-  alignHeading?: Align;
   unsafeIsPageHeader?: boolean;
 };
 
@@ -24,19 +21,12 @@ export default function MyLandingContainer({
   autoHeight,
   headingText,
   subHeadingText,
-  alignHeading = Align.LEFT,
   unsafeIsPageHeader = false,
 }: PropTypes) {
   const padding = "2vh";
   const gridContainerStyle: React.CSSProperties = {
     paddingTop: unsafeIsPageHeader ? "10vh" : padding,
     paddingBottom: padding,
-    alignItems: alignHeading,
-    justifyContent: alignHeading,
-  };
-
-  const headingStyle: React.CSSProperties = {
-    textAlign: alignHeading,
   };
 
   return (
@@ -50,7 +40,7 @@ export default function MyLandingContainer({
         >
           <>
             <Grid style={gridContainerStyle} container>
-              <Grid item style={headingStyle} sm={8}>
+              <Grid item sm={8}>
                 {headingText && (
                   <Typography variant="h3">{headingText}</Typography>
                 )}
@@ -58,10 +48,10 @@ export default function MyLandingContainer({
                   <Typography variant="h5">{subHeadingText}</Typography>
                 )}
               </Grid>
-              {(headingText || subHeadingText) && <MyDivider />}
+              {headingText || subHeadingText}
             </Grid>
             {children}
-            {children && <MySpacer />}
+            {children}
           </>
         </Box>
       </Container>

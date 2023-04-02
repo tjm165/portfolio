@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 import { Container, Grid, Box } from "@mui/material";
-import { Align } from "../../common/section";
 import MuiMarkdown from "mui-markdown";
 import { consts } from "../../common";
 import Page from "../Page";

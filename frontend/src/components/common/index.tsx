@@ -1,5 +1,4 @@
 import MyLandingContainer from "./MyLandingContainer";
-import MyDivider from "./section/MyDivider";
 import AbsoluteToast, { Severity, Position } from "./AbsoluteToast";
 import InlineLink from "./InlineLink";
 import * as consts from "./consts";
@@ -10,7 +9,6 @@ export {
   AbsoluteToast,
   Severity,
   Position,
-  MyDivider,
   InlineLink,
   consts,
   utils,

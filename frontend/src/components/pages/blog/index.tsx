@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import BlogCard, { BlogCardProps } from "./BlogCard";
-import { Align } from "../../common/section";
+// import { Align } from "../../common/section";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { consts } from "../../common";
@@ -39,7 +39,7 @@ export default function Blog() {
   return (
     <>
       <Outlet />
-      <Page headingText="Blog" alignHeading={Align.CENTER}>
+      <Page headingText="Blog">
         <MyLandingContainer autoHeight>
           <Container maxWidth="md">
             <Grid container justifyContent={"space-evenly"} spacing={4}>
