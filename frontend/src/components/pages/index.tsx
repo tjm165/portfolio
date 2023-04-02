@@ -1,6 +1,6 @@
-import HomeV2 from "./homeV2";
+import Home from "./home";
 import ErrorPage from "./error-page";
 import Blog from "./blog";
 import Contact from "./contact";
 
-export { HomeV2, ErrorPage, Blog, Contact };
+export { Home, ErrorPage, Blog, Contact };
