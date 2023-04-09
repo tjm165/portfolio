@@ -12,4 +12,4 @@ This PR
 Next PR
 
 1. Redo the blog https://blog.piio.co/posts
-1. Logo
+1. Add an About Me page
