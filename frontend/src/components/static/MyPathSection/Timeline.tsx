@@ -10,7 +10,7 @@ function Timeline() {
   const flipped = timelineItems.reverse();
 
   return (
-    <VerticalTimeline>
+    <VerticalTimeline animate={false}>
       {flipped.map(({ title, icon, date, paragraph, location }, index) => (
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
