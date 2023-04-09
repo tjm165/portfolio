@@ -2,8 +2,6 @@ Before the About Page is Done:
 
 This PR
 
-1. Much briefer descriptions for tech
-1. Description for Terraform
 1. Center "my favorite tech"
 
 1. Cleanup nav bar
