@@ -3,7 +3,6 @@ Before the About Page is Done:
 This PR
 
 1. Cleanup nav bar
-1. Clean up footer
 1. Remove legacy code
 
 Next PR

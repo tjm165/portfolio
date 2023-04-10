@@ -1,4 +1,5 @@
 import { Container, Grid, Header, List, Segment } from "semantic-ui-react";
+import { UndecoratedAnchor } from "../../commonV2";
 
 const FooterSection = () => {
   return (
@@ -7,15 +8,22 @@ const FooterSection = () => {
         <Grid divided inverted stackable>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Header inverted as="h4" content="About" />
+              <Header inverted as="h4" content="Contact" />
               <List link inverted>
-                <List.Item as="a">Sitemap</List.Item>
-                <List.Item as="a">Contact Us</List.Item>
+                <List.Item as="a">
+                  <UndecoratedAnchor
+                    href="https://www.linkedin.com/in/thomasmoawad/"
+                    target="_blank"
+                  >
+                    <>Connect on LinkedIn</>
+                  </UndecoratedAnchor>
+                </List.Item>
+                {/* <List.Item as="a">Contact Us</List.Item>
                 <List.Item as="a">Religious Ceremonies</List.Item>
-                <List.Item as="a">Gazebo Plans</List.Item>
+                <List.Item as="a">Gazebo Plans</List.Item> */}
               </List>
             </Grid.Column>
-            <Grid.Column width={3}>
+            {/* <Grid.Column width={3}>
               <Header inverted as="h4" content="Services" />
               <List link inverted>
                 <List.Item as="a">Banana Pre-Order</List.Item>
@@ -32,7 +40,7 @@ const FooterSection = () => {
                 Extra space for a call to action inside the footer that could
                 help re-engage users.
               </p>
-            </Grid.Column>
+            </Grid.Column> */}
           </Grid.Row>
         </Grid>
       </Container>
