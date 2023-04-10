@@ -23,7 +23,7 @@ const data: TechCardPropTypes[] = [
     name: "Typescript",
     icon: TypescriptIcon,
     description:
-      "Prioritizing Typescript's type safety and using automated testing frameworks like Jest elevates the entire team by promoting consistency, standardization, and efficiency.",
+      "I have found that pairing Typescript's type safety with a automated testing frameworks like Jest elevates the entire team by promoting consistency, and standardization. This, in return leads to increased team efficiency.",
   },
   {
     name: "Terraform",
@@ -45,7 +45,7 @@ const data: TechCardPropTypes[] = [
             text="0.244% of all code on Github,"
             rightSpace={true}
           />
-          OCaml has played a crucial role in several high profile companies like
+          OCaml is used at several high profile companies like
           <InlineLink
             href="https://sandny.com/2018/12/18/why-did-facebook-pick-ocaml/"
             text="Facebook Messenger,"
@@ -59,11 +59,11 @@ const data: TechCardPropTypes[] = [
             leftSpace={true}
             rightSpace={true}
           />
-          OCaml is both functional (like Typescript) yet compiled (like C). This
-          provides high performance and reliable code. While OCaml can be
-          challenging due to the lack of learning resources, I saw this as an
-          opportunity to demonstrate my adaptability and willingness to tackle
-          new challenges.
+          Like Typescript, OCaml is a functional language. Yet, like C, it is
+          compiled. This best of both worlds leads to high performance and
+          reliable code. OCaml can be challenging due to the lack of learning
+          resources. I saw this as a chance to demonstrate my adaptability and
+          willingness to tackle new challenges.
         </p>
       </>
     ),

@@ -33,7 +33,7 @@ interface ExtraPalette {
 const colors = {
   white: "#ffffff",
   blue: "#66b8e1",
-  lightBlue: "#dceff9",
+  lightBlue: "#aad7ee",
   green: "#84f0c3",
   yellow: "#fff3a8",
   pink: "#eec5ca",
