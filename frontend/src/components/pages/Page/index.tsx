@@ -35,26 +35,29 @@ const ResponsiveContainer = ({ children }: ResponsiveContainerPropTypes) => (
 
 export interface PageSectionPropTypes {
   color: string;
-  [prop: string]: any;
 }
 
-export type PageSection = ({
-  color,
-  ...rest
-}: PageSectionPropTypes) => JSX.Element;
+export type PageSection = ({ color }: PageSectionPropTypes) => JSX.Element;
+
+export type HeroSection = () => JSX.Element;
 
 type PagePropTypes = {
-  PageSections: PageSection[];
+  HeroSection?: HeroSection;
+  PageSections?: PageSection[];
 };
 
-const Page = ({ PageSections }: PagePropTypes) => {
+const Page = ({ HeroSection, PageSections }: PagePropTypes) => {
   const colors = [myPalette.specific.white, myPalette.abstract.primary.light];
 
   return (
     <ResponsiveContainer>
-      {PageSections.map((PageSection, index) => (
-        <PageSection key={index} color={colors[index % colors.length]} />
-      ))}
+      <>
+        {HeroSection && <HeroSection />}
+        {PageSections?.map((PageSection, index) => (
+          <PageSection key={index} color={colors[index % colors.length]} />
+        ))}
+      </>
+
       <FooterSection />
     </ResponsiveContainer>
   );

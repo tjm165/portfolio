@@ -4,7 +4,7 @@ import { PageSectionPropTypes } from "../Page";
 
 const mobile = true; // TOMMY SUPPORT BIG TIME
 
-const WelcomeSection = ({ color }: PageSectionPropTypes) => {
+const WelcomeSection = () => {
   const divStyle = {
     backgroundImage: "linear-gradient(to bottom right, #70CFFF, #5C08AF)",
   };

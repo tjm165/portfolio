@@ -1,16 +1,12 @@
 import { MyFavoriteTechSection, MyPathSection } from "../../static";
 import Page, { PageSection } from "../Page";
-import HomepageHeading from "./Welcome";
+import HomepageHeading from "./WelcomeSection";
 
 // Tommy this is basically a Page
 const HomepageLayout = () => {
-  const Elements: PageSection[] = [
-    HomepageHeading,
-    MyFavoriteTechSection,
-    MyPathSection,
-  ];
+  const PageSections: PageSection[] = [MyFavoriteTechSection, MyPathSection];
 
-  return <Page PageSections={Elements} />;
+  return <Page HeroSection={HomepageHeading} PageSections={PageSections} />;
 };
 
 export default HomepageLayout;
