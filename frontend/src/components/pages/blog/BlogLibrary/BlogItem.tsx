@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AbsoluteToast, Severity, Position } from "../../../common";
+import {
+  AbsoluteToast,
+  Severity,
+  Position,
+  UndecoratedLink,
+} from "../../../common";
+import { Image as ImageComponent, Item } from "semantic-ui-react";
 
 export type BlogItemProps = {
   title: string;
@@ -29,9 +35,20 @@ export default function BlogItem({ title, description, path }: BlogItemProps) {
         position={Position.BOTTOM_LEFT}
       />
 
-      {title}
+      <Item>
+        <Item.Image size="tiny" src="/images/avatar/large/stevie.jpg" />
 
-      {description}
+        <Item.Content>
+          <Item.Header>
+            <Link to={path}>
+              <>{title}</>
+            </Link>
+          </Item.Header>
+
+          <Item.Description>{description}</Item.Description>
+        </Item.Content>
+      </Item>
+      {/*  */}
     </>
   );
 }

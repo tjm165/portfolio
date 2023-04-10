@@ -6,6 +6,7 @@ import DesktopContainer from "../../../pages/home/DesktopContainer";
 import MobileContainer from "../../../pages/home/MobileContainer";
 import FooterSection from "../../../pages/home/FooterSection";
 import library from "./library";
+import { Image as ImageComponent, Item } from "semantic-ui-react";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -63,14 +64,17 @@ export default function BlogLibrary() {
       <ResponsiveContainer>
         <Outlet />
 
-        {highlights.map(({ title, description, path }, i) => (
-          <BlogItem
-            key={i}
-            title={title}
-            description={description}
-            path={path}
-          />
-        ))}
+        <Item.Group>
+          {highlights.map(({ title, description, path }, i) => (
+            <BlogItem
+              key={i}
+              title={title}
+              description={description}
+              path={path}
+            />
+          ))}
+        </Item.Group>
+
         <FooterSection />
       </ResponsiveContainer>
     </>
