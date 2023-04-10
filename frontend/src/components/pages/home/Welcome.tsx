@@ -1,19 +1,5 @@
 import PropTypes from "prop-types";
-import React, { Component } from "react";
-import { InView } from "react-intersection-observer";
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Sidebar,
-} from "semantic-ui-react";
+import { Button, Grid, Header, Icon, Image } from "semantic-ui-react";
 import { UndecoratedAnchor } from "../../common";
 
 type PropTypes = {
@@ -21,7 +7,12 @@ type PropTypes = {
 };
 
 const HomepageHeading = ({ mobile }: PropTypes) => (
-  <Grid container stackable verticalAlign="middle">
+  <Grid
+    style={{ minHeight: 700, padding: "1em 0em" }}
+    container
+    stackable
+    verticalAlign="middle"
+  >
     <Grid.Row>
       <Grid.Column
         floated="right"
