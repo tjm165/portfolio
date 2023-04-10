@@ -3,6 +3,7 @@ This PR
 1. Redo the blog Library https://blog.piio.co/posts
 1. Make sure that the blog post still looks good
 1. Abstract to Page component
+1. MAKE SURE TO SUPPORT MOBILE WITHIN THE PAGE ABSTRACTION
 1. S3 Sync for blog posts. Yeah that would make sense
 
 Next PR

@@ -34,11 +34,15 @@ const ResponsiveContainer = ({ children }: ResponsiveContainerPropTypes) => (
   </MediaContextProvider>
 );
 
-export type PageSectionPropTypes = {
+export interface PageSectionPropTypes {
   color: string;
-};
+  [prop: string]: any;
+}
 
-type PageSection = ({ color }: PageSectionPropTypes) => JSX.Element;
+export type PageSection = ({
+  color,
+  ...rest
+}: PageSectionPropTypes) => JSX.Element;
 
 type PagePropTypes = {
   PageSections: PageSection[];

@@ -3,10 +3,12 @@ import { Button, Grid, Header, Icon, Image } from "semantic-ui-react";
 import { UndecoratedAnchor } from "../../common";
 
 type PropTypes = {
-  mobile: boolean;
+  color?: string;
 };
 
-const HomepageHeading = ({ mobile }: PropTypes) => (
+const mobile = true; // TOMMY SUPPORT BIG TIME
+
+const HomepageHeading = ({ color }: PropTypes) => (
   <Grid
     style={{ minHeight: 700, padding: "1em 0em" }}
     container
