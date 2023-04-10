@@ -1,4 +1,4 @@
-const catalogue = [
+const library = [
   {
     path: "my-first-blog-post",
     title: "My First Blog Post",
@@ -21,4 +21,4 @@ const catalogue = [
   },
 ];
 
-export default catalogue;
+export default library;

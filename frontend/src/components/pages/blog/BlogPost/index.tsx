@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import MuiMarkdown from "mui-markdown";
-import { consts } from "../../common";
+import { consts } from "../../../common";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;

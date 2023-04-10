@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AbsoluteToast, Severity, Position } from "../../common";
+import { AbsoluteToast, Severity, Position } from "../../../common";
 
 export type BlogCardProps = {
   title: string;
