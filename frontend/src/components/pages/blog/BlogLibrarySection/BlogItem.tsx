@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AbsoluteToast, Position, UndecoratedLink } from "../../../common";
-import { Image as ImageComponent, Item } from "semantic-ui-react";
+
+import { Item, Button, Icon } from "semantic-ui-react";
 
 export type BlogItemProps = {
   title: string;
@@ -20,21 +20,19 @@ export default function BlogItem({
   const fullUrl = `${window.location.origin}/blog/${path}`;
   const [showCopySuccess, setShowCopySuccess] = useState(false);
 
+  // TODO make this a util
   async function copyToClipboard(data: string) {
     await navigator.clipboard.writeText(data);
+  }
+
+  async function handleCopyToClipboard() {
+    await copyToClipboard(fullUrl);
     setShowCopySuccess(true);
   }
 
   // TODO Make this rows not cards
   return (
     <>
-      <AbsoluteToast
-        show={showCopySuccess}
-        setShow={setShowCopySuccess}
-        text="Copied to clipboard!"
-        position={Position.BOTTOM_LEFT}
-      />
-
       <Item>
         <Item.Image
           size="tiny"
@@ -51,7 +49,15 @@ export default function BlogItem({
           <Item.Description>{description}</Item.Description>
         </Item.Content>
         <Item.Content>
-          <button onClick={() => copyToClipboard(fullUrl)}>Copy</button>
+          <Button
+            icon
+            labelPosition="left"
+            onClick={() => handleCopyToClipboard()}
+            color={showCopySuccess ? "green" : undefined}
+          >
+            <Icon name={showCopySuccess ? "clipboard check" : "clipboard"} />
+            {showCopySuccess ? "Copied" : "Copy"}
+          </Button>
         </Item.Content>
       </Item>
       {/*  */}
