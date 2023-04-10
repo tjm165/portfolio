@@ -1,18 +1,11 @@
 import { useLoaderData } from "react-router-dom";
-import { Container, Grid, Box } from "@mui/material";
 import MuiMarkdown from "mui-markdown";
 import { consts } from "../../common";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
 
-  return (
-    <Grid>
-      <Grid item sm={8}>
-        <MuiMarkdown>{blog.body}</MuiMarkdown>
-      </Grid>
-    </Grid>
-  );
+  return <MuiMarkdown>{blog.body}</MuiMarkdown>;
 }
 
 type BlogData = {

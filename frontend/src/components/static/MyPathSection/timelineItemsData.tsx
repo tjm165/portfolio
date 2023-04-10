@@ -1,9 +1,9 @@
-import Typography from "@mui/material/Typography";
 import { ReactElement } from "react";
 import { InlineLink } from "../../common";
 import WorkIcon from "@material-ui/icons/Work";
 import SchoolIcon from "@mui/icons-material/School";
 import CodeIcon from "@mui/icons-material/Code";
+import { Divider } from "semantic-ui-react";
 
 type TimelineItem = {
   title: string;
@@ -92,18 +92,16 @@ const timelineItems: TimelineItem[] = [
     paragraph: (
       <>
         <div>
-          <Typography variant="subtitle1" component="span">
-            Engineer 2 - Low Code Platform
-          </Typography>
+          <strong>Engineer 2 - Low Code Platform</strong>
           <p>
             Currently building a low code platform to eneble non-techincal
             collegues to create technology.
           </p>
         </div>
+        <Divider />
+
         <div>
-          <Typography variant="subtitle1" component="span">
-            Engineer 1 - Security Platform
-          </Typography>
+          <strong>Engineer 1 - Security Platform</strong>
           <p>
             I developed the Firm's identity and access management platform. This
             was an essential core technology that is utilized in most of the

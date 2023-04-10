@@ -1,8 +1,6 @@
 import { Outlet } from "react-router-dom";
 import BlogCard, { BlogCardProps } from "./BlogCard";
-// import { Align } from "../../common/section";
-import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
+
 import { consts } from "../../common";
 import catalogue from "./catalogue";
 
@@ -37,21 +35,17 @@ export default function Blog() {
   return (
     <>
       <Outlet />
-      <Container maxWidth="md">
-        <Grid container justifyContent={"space-evenly"} spacing={4}>
-          {highlights.map(({ title, description, path, image, bgcolor }, i) => (
-            <Grid key={i} item xs={12} sm={12} md={12} lg={6} xl={6}>
-              <BlogCard
-                title={title}
-                description={description}
-                path={path}
-                image={image || undefined}
-                bgcolor={bgcolor}
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+
+      {highlights.map(({ title, description, path, image, bgcolor }, i) => (
+        <BlogCard
+          key={i}
+          title={title}
+          description={description}
+          path={path}
+          image={image || undefined}
+          bgcolor={bgcolor}
+        />
+      ))}
     </>
   );
 }
