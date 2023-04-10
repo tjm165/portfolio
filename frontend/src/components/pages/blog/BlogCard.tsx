@@ -6,17 +6,9 @@ export type BlogCardProps = {
   title: string;
   description: string;
   path: string;
-  image?: string;
-  bgcolor: string;
 };
 
-export default function BlogCard({
-  title,
-  description,
-  path,
-  image,
-  bgcolor,
-}: BlogCardProps) {
+export default function BlogCard({ title, description, path }: BlogCardProps) {
   const subPath = `/blog/${path}`;
   const fullUrl = `${window.location.origin}/blog/${path}`;
   const [showCopySuccess, setShowCopySuccess] = useState(false);
@@ -36,10 +28,6 @@ export default function BlogCard({
         text="Copied to clipboard"
         position={Position.BOTTOM_LEFT}
       />
-
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <img height="300vh" src={image || "https://picsum.photos/200/300"} />
-      </div>
 
       {title}
 

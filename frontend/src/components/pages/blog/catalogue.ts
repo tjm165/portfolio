@@ -3,25 +3,21 @@ const catalogue = [
     path: "my-first-blog-post",
     title: "My First Blog Post",
     description: "Hey!",
-    bgcolor: "graphite.main",
   },
   {
     path: "my-first-blog-post",
     title: "log Post",
     description: "Hey!",
-    bgcolor: "graphite.main",
   },
   {
     path: "my-first-blog-post",
     title: "My First Blog Post",
     description: "Hey!",
-    bgcolor: "graphite.main",
   },
   {
     path: "my-first-blog-post",
     title: "My First Blog Post",
     description: "Hey!",
-    bgcolor: "graphite.main",
   },
 ];
 
