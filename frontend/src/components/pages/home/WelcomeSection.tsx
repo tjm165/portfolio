@@ -10,7 +10,7 @@ const WelcomeSection = () => {
   };
 
   return (
-    <div style={divStyle}>
+    <div className="Gradient">
       <Grid
         style={{ minHeight: 700, padding: "1em 0em" }}
         container
