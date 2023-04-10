@@ -1,5 +1,5 @@
 import { Container, Grid, Header, List, Segment } from "semantic-ui-react";
-import { UndecoratedAnchor } from "../../commonV2";
+import { UndecoratedAnchor } from "../../common";
 
 const FooterSection = () => {
   return (

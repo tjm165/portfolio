@@ -1,4 +1,4 @@
-import { MySection, Types } from "../../commonV2";
+import { MySection, Types } from "../../common";
 import data from "./data";
 import TechCard from "./TechCard";
 import { Card } from "semantic-ui-react";

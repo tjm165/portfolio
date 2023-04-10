@@ -14,7 +14,7 @@ import {
   Segment,
   Sidebar,
 } from "semantic-ui-react";
-import { UndecoratedAnchor } from "../../commonV2";
+import { UndecoratedAnchor } from "../../common";
 
 type PropTypes = {
   mobile: boolean;
@@ -46,7 +46,10 @@ const HomepageHeading = ({ mobile }: PropTypes) => (
             marginTop: mobile ? "0.5em" : "1.5em",
           }}
         />
-        <UndecoratedAnchor href="https://www.linkedin.com/in/thomasmoawad/" target="_blank">
+        <UndecoratedAnchor
+          href="https://www.linkedin.com/in/thomasmoawad/"
+          target="_blank"
+        >
           <Button primary color="linkedin" size="huge">
             <Icon name="linkedin" /> Connect on LinkedIn
           </Button>

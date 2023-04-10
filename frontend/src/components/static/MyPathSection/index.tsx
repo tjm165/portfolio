@@ -1,4 +1,4 @@
-import { MySection, Types } from "../../commonV2";
+import { MySection, Types } from "../../common";
 import Timeline from "./Timeline";
 
 type PropTypes = {
