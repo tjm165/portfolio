@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AbsoluteToast, Severity, Position } from "../../../common";
 
-export type BlogCardProps = {
+export type BlogItemProps = {
   title: string;
   description: string;
   path: string;
 };
 
-export default function BlogCard({ title, description, path }: BlogCardProps) {
+export default function BlogItem({ title, description, path }: BlogItemProps) {
   const subPath = `/blog/${path}`;
   const fullUrl = `${window.location.origin}/blog/${path}`;
   const [showCopySuccess, setShowCopySuccess] = useState(false);

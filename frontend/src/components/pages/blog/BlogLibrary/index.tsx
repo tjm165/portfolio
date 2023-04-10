@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import BlogCard, { BlogCardProps } from "./BlogCard";
+import BlogItem, { BlogItemProps } from "./BlogItem";
 
 import library from "./library";
 
@@ -31,7 +31,7 @@ export default function BlogLibrary() {
       <Outlet />
 
       {highlights.map(({ title, description, path }, i) => (
-        <BlogCard key={i} title={title} description={description} path={path} />
+        <BlogItem key={i} title={title} description={description} path={path} />
       ))}
     </>
   );
