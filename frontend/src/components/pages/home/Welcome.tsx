@@ -23,7 +23,15 @@ type PropTypes = {
 const HomepageHeading = ({ mobile }: PropTypes) => (
   <Grid container stackable verticalAlign="middle">
     <Grid.Row>
-      <Grid.Column floated="right" width={8}>
+      <Grid.Column
+        floated="right"
+        width={8}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Header
           as="h1"
           content="Hi, I'm Thomas Moawad"
@@ -31,8 +39,6 @@ const HomepageHeading = ({ mobile }: PropTypes) => (
           style={{
             fontSize: mobile ? "2em" : "4em",
             fontWeight: "normal",
-            marginBottom: 0,
-            marginTop: mobile ? "1.5em" : "3em",
           }}
         />
         <Header
@@ -55,7 +61,14 @@ const HomepageHeading = ({ mobile }: PropTypes) => (
           </Button>
         </UndecoratedAnchor>
       </Grid.Column>
-      <Grid.Column width={8}>
+      <Grid.Column
+        width={8}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Image src={require("../../../moawad.jpg")} circular />
       </Grid.Column>
     </Grid.Row>
