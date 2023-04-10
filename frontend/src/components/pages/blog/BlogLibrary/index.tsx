@@ -7,6 +7,8 @@ import MobileContainer from "../../../pages/home/MobileContainer";
 import FooterSection from "../../../pages/home/FooterSection";
 import library from "./library";
 import { Image as ImageComponent, Item } from "semantic-ui-react";
+import Page, { ElementPropTypes } from "../../Page";
+import { MySection, Types } from "../../../common";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -47,28 +49,41 @@ const getCardData = (inputs: BlogItemProps[]) => {
   });
 };
 
+type PropTypes = {
+  color: string;
+};
+
+function BlogLibrarySection({ color }: ElementPropTypes) {
+  const highlights: BlogItemProps[] = getCardData(library);
+  return (
+    <MySection
+      color={color}
+      headingText="Blog Posts"
+      headingTextCenter={Types.Position.CENTER}
+    >
+      <Item.Group>
+        {highlights.map(({ title, description, path, image }, i) => (
+          <BlogItem
+            key={i}
+            title={title}
+            description={description}
+            path={path}
+            image={image}
+          />
+        ))}
+      </Item.Group>
+    </MySection>
+  );
+}
+
 export default function BlogLibrary() {
   const highlights: BlogItemProps[] = getCardData(library);
 
   return (
     <>
-      <ResponsiveContainer>
-        <Outlet />
+      <Outlet />
 
-        <Item.Group>
-          {highlights.map(({ title, description, path, image }, i) => (
-            <BlogItem
-              key={i}
-              title={title}
-              description={description}
-              path={path}
-              image={image}
-            />
-          ))}
-        </Item.Group>
-
-        <FooterSection />
-      </ResponsiveContainer>
+      <Page Elements={[BlogLibrarySection]} />
     </>
   );
 }
