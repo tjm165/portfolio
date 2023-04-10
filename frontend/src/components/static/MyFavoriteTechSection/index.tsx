@@ -1,4 +1,4 @@
-import { MySection } from "../../commonV2";
+import { MySection, Types } from "../../commonV2";
 import data from "./data";
 import TechCard from "./TechCard";
 import { Card } from "semantic-ui-react";
@@ -9,7 +9,11 @@ type PropTypes = {
 
 const MyFavoriteTechSection = ({ color }: PropTypes) => {
   return (
-    <MySection color={color} headingText="My Favorite Tech">
+    <MySection
+      color={color}
+      headingText="My Favorite Tech"
+      headingTextCenter={Types.Position.CENTER}
+    >
       <Card.Group centered>
         {data.map((datam) => (
           <TechCard {...datam} />
