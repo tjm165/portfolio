@@ -1,9 +1,3 @@
-Before the About Page is Done:
-
-This PR
-
-1. Remove legacy code
-
 Next PR
 
 1. Redo the blog https://blog.piio.co/posts
