@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  AbsoluteToast,
-  Severity,
-  Position,
-  UndecoratedLink,
-} from "../../../common";
+import { AbsoluteToast, Position, UndecoratedLink } from "../../../common";
 import { Image as ImageComponent, Item } from "semantic-ui-react";
 
 export type BlogItemProps = {
@@ -36,8 +31,7 @@ export default function BlogItem({
       <AbsoluteToast
         show={showCopySuccess}
         setShow={setShowCopySuccess}
-        severity={Severity.SUCCESS}
-        text="Copied to clipboard"
+        text="Copied to clipboard!"
         position={Position.BOTTOM_LEFT}
       />
 
@@ -55,6 +49,9 @@ export default function BlogItem({
           </Item.Header>
 
           <Item.Description>{description}</Item.Description>
+        </Item.Content>
+        <Item.Content>
+          <button onClick={() => copyToClipboard(fullUrl)}>Copy</button>
         </Item.Content>
       </Item>
       {/*  */}

@@ -1,8 +1,5 @@
 import { useEffect } from "react";
-
-export enum Severity {
-  SUCCESS = "success",
-}
+import { Message, Icon } from "semantic-ui-react";
 
 export enum Position {
   TOP_LEFT,
@@ -14,7 +11,6 @@ export enum Position {
 type AbsoluteToastProps = {
   show: boolean;
   text: string;
-  severity: Severity;
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
   position: Position;
 };
@@ -22,7 +18,6 @@ type AbsoluteToastProps = {
 export default function AbsoluteToast({
   show,
   text,
-  severity,
   setShow,
   position,
 }: AbsoluteToastProps) {
@@ -49,9 +44,13 @@ export default function AbsoluteToast({
 
   return (
     // TODO Add Semantic UI transition fade with timeout
-    <div style={{ zIndex: "100", position: "fixed", ...positionCss() }}>
-      {/* TODO Add Semantic UI message with POSITIVE/SUCCESS */}
-      {text}
-    </div>
+
+    <Message
+      icon="clipboard check"
+      header={text}
+      positive
+      compact
+      style={{ ...positionCss }}
+    />
   );
 }
