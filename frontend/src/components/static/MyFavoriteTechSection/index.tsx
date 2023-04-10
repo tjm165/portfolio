@@ -10,6 +10,7 @@ const MyFavoriteTechSection = ({ color }: PageSectionPropTypes) => {
       color={color}
       headingText="My Favorite Tech"
       headingTextCenter={Types.Position.CENTER}
+      fluid
     >
       <Card.Group centered>
         {data.map((datam) => (
