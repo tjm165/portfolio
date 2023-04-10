@@ -1,11 +1,8 @@
 import { MySection, Types } from "../../common";
+import { PageSectionPropTypes } from "../../pages/Page";
 import Timeline from "./Timeline";
 
-type PropTypes = {
-  color: string;
-};
-
-const MyPathSection = ({ color }: PropTypes) => {
+const MyPathSection = ({ color }: PageSectionPropTypes) => {
   return (
     <MySection
       color={color}

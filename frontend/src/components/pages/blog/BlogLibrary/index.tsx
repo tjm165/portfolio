@@ -7,7 +7,7 @@ import MobileContainer from "../../../pages/home/MobileContainer";
 import FooterSection from "../../../pages/home/FooterSection";
 import library from "./library";
 import { Image as ImageComponent, Item } from "semantic-ui-react";
-import Page, { ElementPropTypes } from "../../Page";
+import Page, { PageSectionPropTypes } from "../../Page";
 import { MySection, Types } from "../../../common";
 
 const { MediaContextProvider, Media } = createMedia({
@@ -49,11 +49,7 @@ const getCardData = (inputs: BlogItemProps[]) => {
   });
 };
 
-type PropTypes = {
-  color: string;
-};
-
-function BlogLibrarySection({ color }: ElementPropTypes) {
+function BlogLibrarySection({ color }: PageSectionPropTypes) {
   const highlights: BlogItemProps[] = getCardData(library);
   return (
     <MySection
@@ -83,7 +79,7 @@ export default function BlogLibrary() {
     <>
       <Outlet />
 
-      <Page Elements={[BlogLibrarySection]} />
+      <Page PageSections={[BlogLibrarySection]} />
     </>
   );
 }

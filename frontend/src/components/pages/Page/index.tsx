@@ -34,24 +34,23 @@ const ResponsiveContainer = ({ children }: ResponsiveContainerPropTypes) => (
   </MediaContextProvider>
 );
 
-type Element = ({ color }: ElementPropTypes) => JSX.Element;
-
-type PagePropTypes = {
-  Elements: Element[];
-};
-
-export type ElementPropTypes = {
+export type PageSectionPropTypes = {
   color: string;
 };
 
-// TOMMY I really really want to make a type that requires a particular prop to be handled
-const Page = ({ Elements }: PagePropTypes) => {
+type PageSection = ({ color }: PageSectionPropTypes) => JSX.Element;
+
+type PagePropTypes = {
+  PageSections: PageSection[];
+};
+
+const Page = ({ PageSections }: PagePropTypes) => {
   const colors = [myPalette.specific.white, myPalette.abstract.primary.light];
 
   return (
     <ResponsiveContainer>
-      {Elements.map((Element, index) => (
-        <Element key={index} color={colors[index % colors.length]} />
+      {PageSections.map((PageSection, index) => (
+        <PageSection key={index} color={colors[index % colors.length]} />
       ))}
       <FooterSection />
     </ResponsiveContainer>
