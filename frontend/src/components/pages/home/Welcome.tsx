@@ -1,28 +1,28 @@
 import PropTypes from "prop-types";
-import React, { Component } from "react";
-import { InView } from "react-intersection-observer";
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Sidebar,
-} from "semantic-ui-react";
+import { Button, Grid, Header, Icon, Image } from "semantic-ui-react";
+import { UndecoratedAnchor } from "../../common";
 
 type PropTypes = {
   mobile: boolean;
 };
 
 const HomepageHeading = ({ mobile }: PropTypes) => (
-  <Grid container stackable verticalAlign="middle">
+  <Grid
+    style={{ minHeight: 700, padding: "1em 0em" }}
+    container
+    stackable
+    verticalAlign="middle"
+  >
     <Grid.Row>
-      <Grid.Column floated="right" width={8}>
+      <Grid.Column
+        floated="right"
+        width={8}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Header
           as="h1"
           content="Hi, I'm Thomas Moawad"
@@ -30,8 +30,6 @@ const HomepageHeading = ({ mobile }: PropTypes) => (
           style={{
             fontSize: mobile ? "2em" : "4em",
             fontWeight: "normal",
-            marginBottom: 0,
-            marginTop: mobile ? "1.5em" : "3em",
           }}
         />
         <Header
@@ -45,11 +43,23 @@ const HomepageHeading = ({ mobile }: PropTypes) => (
             marginTop: mobile ? "0.5em" : "1.5em",
           }}
         />
-        <Button primary color="linkedin" size="huge">
-          <Icon name="linkedin" /> Connect on LinkedIn
-        </Button>
+        <UndecoratedAnchor
+          href="https://www.linkedin.com/in/thomasmoawad/"
+          target="_blank"
+        >
+          <Button primary color="linkedin" size="huge">
+            <Icon name="linkedin" /> Connect on LinkedIn
+          </Button>
+        </UndecoratedAnchor>
       </Grid.Column>
-      <Grid.Column width={8}>
+      <Grid.Column
+        width={8}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Image src={require("../../../moawad.jpg")} circular />
       </Grid.Column>
     </Grid.Row>

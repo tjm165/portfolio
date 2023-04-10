@@ -1,5 +1,3 @@
-import Alert from "@mui/material/Alert";
-import Fade from "@mui/material/Fade";
 import { useEffect } from "react";
 
 export enum Severity {
@@ -50,11 +48,10 @@ export default function AbsoluteToast({
   };
 
   return (
-    <Fade in={show} style={{ transformOrigin: "0 0 0" }} {...{ timeout: 1000 }}>
-      <div style={{ zIndex: "100", position: "fixed", ...positionCss() }}>
-        {/* @ts-ignore */}
-        <Alert severity={severity}>{text}</Alert>
-      </div>
-    </Fade>
+    // TODO Add Semantic UI transition fade with timeout
+    <div style={{ zIndex: "100", position: "fixed", ...positionCss() }}>
+      {/* TODO Add Semantic UI message with POSITIVE/SUCCESS */}
+      {text}
+    </div>
   );
 }

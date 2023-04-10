@@ -1,35 +1,52 @@
-import React from "react";
-import { useTheme } from "@mui/material/styles";
-import WelcomeSection from "./WelcomeSection";
-import FavoriteTech from "../../static/favoriteTech";
-import CareerTimeline from "../../static/careerTimeline";
-import { Outlet } from "react-router-dom";
-import { MyLandingContainer } from "../../common";
-import { Align } from "../../common/section";
-import Page from "../Page";
+import { createMedia } from "@artsy/fresnel";
+import { ReactNode } from "react";
+import { MyFavoriteTechSection, MyPathSection } from "../../static";
+import { myPalette } from "../../../App/myTheme";
+import DesktopContainer from "./DesktopContainer";
+import MobileContainer from "./MobileContainer";
+import FooterSection from "./FooterSection";
 
-export default function Home() {
-  const theme = useTheme();
+const { MediaContextProvider, Media } = createMedia({
+  breakpoints: {
+    mobile: 0,
+    tablet: 768,
+    computer: 1024,
+  },
+});
+
+type ResponsiveContainerPropTypes = {
+  children: ReactNode;
+};
+
+const ResponsiveContainer = ({ children }: ResponsiveContainerPropTypes) => (
+  /* Heads up!
+   * For large applications it may not be best option to put all page into these containers at
+   * they will be rendered twice for SSR.
+   */
+  <MediaContextProvider>
+    <Media greaterThan="mobile">
+      <DesktopContainer>{children}</DesktopContainer>
+    </Media>
+
+    <Media at="mobile">
+      <MobileContainer>{children}</MobileContainer>
+    </Media>
+  </MediaContextProvider>
+);
+
+// Tommy this is basically a Page
+const HomepageLayout = () => {
+  const Elements = [MyFavoriteTechSection, MyPathSection];
+  const colors = [myPalette.specific.white, myPalette.abstract.primary.light];
+
   return (
-    <>
-      <Outlet />
-      <Page>
-        <WelcomeSection />
-        <MyLandingContainer
-          alignHeading={Align.CENTER}
-          subHeadingText="My Favorite Tech"
-          autoHeight
-        >
-          <FavoriteTech />
-        </MyLandingContainer>
-        <MyLandingContainer
-          alignHeading={Align.CENTER}
-          subHeadingText="My Path"
-          autoHeight
-        >
-          <CareerTimeline />
-        </MyLandingContainer>
-      </Page>
-    </>
+    <ResponsiveContainer>
+      {Elements.map((Element, index) => (
+        <Element color={colors[index % colors.length]} />
+      ))}
+      <FooterSection />
+    </ResponsiveContainer>
   );
-}
+};
+
+export default HomepageLayout;

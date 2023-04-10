@@ -1,8 +1,4 @@
 import { useState } from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 import { AbsoluteToast, Severity, Position } from "../../common";
 
@@ -30,6 +26,7 @@ export default function BlogCard({
     setShowCopySuccess(true);
   }
 
+  // TODO Make this rows not cards
   return (
     <>
       <AbsoluteToast
@@ -40,40 +37,13 @@ export default function BlogCard({
         position={Position.BOTTOM_LEFT}
       />
 
-      <Card
-        sx={{
-          borderRadius: "0",
-        }}
-      >
-        <CardActionArea component={Link} to={subPath}>
-          <CardContent
-            sx={{
-              bgcolor,
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <img
-                height="300vh"
-                src={image || "https://picsum.photos/200/300"}
-              />
-            </div>
-          </CardContent>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <img height="300vh" src={image || "https://picsum.photos/200/300"} />
+      </div>
 
-          <CardContent>
-            <Typography
-              align="center"
-              gutterBottom
-              variant="h5"
-              component="div"
-            >
-              {title}
-            </Typography>
-            <Typography align="center" variant="body2" color="text.secondary">
-              {description}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+      {title}
+
+      {description}
     </>
   );
 }

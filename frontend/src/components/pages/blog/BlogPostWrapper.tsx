@@ -1,25 +1,11 @@
 import { useLoaderData } from "react-router-dom";
-import { Container, Grid, Box } from "@mui/material";
-import { Align } from "../../common/section";
 import MuiMarkdown from "mui-markdown";
 import { consts } from "../../common";
-import Page from "../Page";
-import { MyLandingContainer } from "../../common";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
 
-  return (
-    <Page headingText={blog.metadata.title}>
-      <MyLandingContainer autoHeight>
-        <Grid>
-          <Grid item sm={8}>
-            <MuiMarkdown>{blog.body}</MuiMarkdown>
-          </Grid>
-        </Grid>
-      </MyLandingContainer>
-    </Page>
-  );
+  return <MuiMarkdown>{blog.body}</MuiMarkdown>;
 }
 
 type BlogData = {

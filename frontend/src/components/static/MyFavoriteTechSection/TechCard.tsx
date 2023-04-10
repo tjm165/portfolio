@@ -1,6 +1,8 @@
 import TechCardPropTypes from "./type";
-import { Card, Image, Dimmer, Segment } from "semantic-ui-react";
+import { Card, Image, Dimmer } from "semantic-ui-react";
 import { useState } from "react";
+
+import { myPalette } from "../../../App/myTheme";
 
 const TechCard = ({ icon, name, description }: TechCardPropTypes) => {
   const [hovered, setHovered] = useState(false);
@@ -11,8 +13,8 @@ const TechCard = ({ icon, name, description }: TechCardPropTypes) => {
       onMouseLeave={() => setHovered(false)}
     >
       <Dimmer.Dimmable as={Image} blurring dimmed={hovered}>
-        <Dimmer active={hovered}>
-          <h4>{description}</h4>
+        <Dimmer inverted active={hovered}>
+          <h4 style={{ color: myPalette.specific.graphite }}>{description}</h4>
         </Dimmer>
 
         <Image
