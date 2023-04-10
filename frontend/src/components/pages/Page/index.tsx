@@ -1,6 +1,5 @@
 import { createMedia } from "@artsy/fresnel";
 import { ReactNode } from "react";
-import { MyFavoriteTechSection, MyPathSection } from "../../static";
 import { myPalette } from "../../../App/myTheme";
 import DesktopContainer from "./DesktopContainer";
 import MobileContainer from "./MobileContainer";
