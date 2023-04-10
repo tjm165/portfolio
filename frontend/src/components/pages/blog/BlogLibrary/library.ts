@@ -1,4 +1,6 @@
-const library = [
+import { BlogItemProps } from "./BlogItem";
+
+const library: BlogItemProps[] = [
   {
     path: "my-first-blog-post",
     title: "My First Blog Post",

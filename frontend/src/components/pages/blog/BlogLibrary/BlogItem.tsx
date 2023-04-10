@@ -12,9 +12,15 @@ export type BlogItemProps = {
   title: string;
   description: string;
   path: string;
+  image?: string;
 };
 
-export default function BlogItem({ title, description, path }: BlogItemProps) {
+export default function BlogItem({
+  title,
+  description,
+  path,
+  image,
+}: BlogItemProps) {
   const subPath = `/blog/${path}`;
   const fullUrl = `${window.location.origin}/blog/${path}`;
   const [showCopySuccess, setShowCopySuccess] = useState(false);
@@ -36,7 +42,10 @@ export default function BlogItem({ title, description, path }: BlogItemProps) {
       />
 
       <Item>
-        <Item.Image size="tiny" src="/images/avatar/large/stevie.jpg" />
+        <Item.Image
+          size="tiny"
+          src={image || "https://picsum.photos/300/300"}
+        />
 
         <Item.Content>
           <Item.Header>

@@ -36,28 +36,19 @@ const ResponsiveContainer = ({ children }: ResponsiveContainerPropTypes) => (
   </MediaContextProvider>
 );
 
-type cardInput = {
-  title: string;
-  path: string;
-  description: string;
-};
-
-const getCardData = (inputs: cardInput[]) => {
+const getCardData = (inputs: BlogItemProps[]) => {
   return inputs.map((input) => {
     return {
       title: input.title,
       description: input.description,
       path: input.path,
+      image: input.image,
     };
   });
 };
 
 export default function BlogLibrary() {
-  const highlights: {
-    title: string;
-    description: string;
-    path: string;
-  }[] = getCardData(library);
+  const highlights: BlogItemProps[] = getCardData(library);
 
   return (
     <>
@@ -65,12 +56,13 @@ export default function BlogLibrary() {
         <Outlet />
 
         <Item.Group>
-          {highlights.map(({ title, description, path }, i) => (
+          {highlights.map(({ title, description, path, image }, i) => (
             <BlogItem
               key={i}
               title={title}
               description={description}
               path={path}
+              image={image}
             />
           ))}
         </Item.Group>
