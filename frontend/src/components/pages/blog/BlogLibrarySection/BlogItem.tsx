@@ -82,7 +82,9 @@ export default function BlogItem({
               />
             </Item.Extra>
           </Item.Content>
-          {image && <Item.Image src={image} />}
+          <Media greaterThan="mobile">
+            {image && <Item.Image src={image} />}
+          </Media>
         </Item>
       </MediaContextProvider>
     </>
