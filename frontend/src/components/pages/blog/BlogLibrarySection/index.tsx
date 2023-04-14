@@ -23,7 +23,7 @@ export default function BlogLibrarySection({ color }: PageSectionPropTypes) {
       headingText="Blog Posts"
       headingTextCenter={Types.Position.CENTER}
     >
-      <Item.Group>
+      <Item.Group relaxed>
         {highlights.map(({ title, description, path, image }, i) => (
           <BlogItem
             key={i}

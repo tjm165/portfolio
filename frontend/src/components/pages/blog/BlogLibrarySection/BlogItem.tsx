@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Item, Button, Icon, Divider, Dropdown } from "semantic-ui-react";
+import { UndecoratedLink } from "../../../common";
 
 export type BlogItemProps = {
   title: string;
@@ -28,6 +29,9 @@ export default function BlogItem({
   async function handleCopyToClipboard() {
     await copyToClipboard(fullUrl);
     setShowCopySuccess(true);
+    setTimeout(function () {
+      setShowCopySuccess(false);
+    }, 3000); // 3000 milliseconds = 3 seconds
   }
 
   // TODO Make this rows not cards
@@ -37,26 +41,21 @@ export default function BlogItem({
       <Item>
         <Item.Content>
           <Item.Header>
-            <Link to={path}>
+            <UndecoratedLink to={path}>
               <>{title}</>
-            </Link>
+            </UndecoratedLink>
           </Item.Header>
 
           <Item.Description>{description}</Item.Description>
-        </Item.Content>
-        <Item.Content>
           <Button
             icon
-            labelPosition="left"
             onClick={() => handleCopyToClipboard()}
             color={showCopySuccess ? "green" : undefined}
           >
             <Icon name="linkify" />
-            {showCopySuccess ? "Copied" : "Copy Link"}
           </Button>
         </Item.Content>
-
-        {image && <Item.Image size="tiny" src={image} />}
+        {image && <Item.Image size="small" src={image} />}
       </Item>
       {/*  */}
     </>
