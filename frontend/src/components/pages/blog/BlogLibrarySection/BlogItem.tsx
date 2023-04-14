@@ -9,6 +9,7 @@ import {
   Image,
   Grid,
   Header,
+  Popup,
 } from "semantic-ui-react";
 import { UndecoratedLink } from "../../../common";
 
@@ -82,15 +83,21 @@ export default function BlogItem({
 
               <Grid.Row>
                 <Grid.Column textAlign="left">
-                  <Button
-                    size="small"
-                    icon
-                    circular
-                    onClick={() => handleCopyToClipboard()}
-                    color={showCopySuccess ? "green" : undefined}
-                  >
-                    <Icon name="linkify" />
-                  </Button>
+                  <Popup
+                    content={showCopySuccess ? "Link Copied!" : "Copy Link"}
+                    on={["hover"]}
+                    trigger={
+                      <Button
+                        size="small"
+                        icon
+                        circular
+                        onClick={() => handleCopyToClipboard()}
+                        color={showCopySuccess ? "green" : undefined}
+                      >
+                        <Icon name="linkify" />
+                      </Button>
+                    }
+                  />
                 </Grid.Column>
               </Grid.Row>
             </Grid>
