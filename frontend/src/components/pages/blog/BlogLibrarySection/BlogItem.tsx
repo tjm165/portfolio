@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Item, Button, Icon, Divider, Dropdown } from "semantic-ui-react";
+import { Item, Button, Icon, Divider, Image, Grid } from "semantic-ui-react";
 import { UndecoratedLink } from "../../../common";
 
 export type BlogItemProps = {
@@ -40,22 +40,43 @@ export default function BlogItem({
       <Divider />
       <Item>
         <Item.Content>
-          <Item.Header>
-            <UndecoratedLink to={path}>
-              <>{title}</>
-            </UndecoratedLink>
-          </Item.Header>
+          <Grid>
+            <Grid.Column width={9}>
+              <Grid.Row>
+                <Item.Header>
+                  <UndecoratedLink to={path}>
+                    <>{title}</>
+                  </UndecoratedLink>
+                </Item.Header>
+                <Item.Meta>Description</Item.Meta>
+                <Item.Description>{description}</Item.Description>
+              </Grid.Row>
+              <Grid.Row
+                style={{
+                  display: "flex",
+                  alignItems: "flex-end",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <Button
+                  icon
+                  onClick={() => handleCopyToClipboard()}
+                  color={showCopySuccess ? "green" : undefined}
+                >
+                  <Icon name="linkify" />
+                </Button>
+              </Grid.Row>
+            </Grid.Column>
 
-          <Item.Description>{description}</Item.Description>
-          <Button
-            icon
-            onClick={() => handleCopyToClipboard()}
-            color={showCopySuccess ? "green" : undefined}
-          >
-            <Icon name="linkify" />
-          </Button>
+            <Grid.Column width={4}>
+              {image && (
+                <Grid.Row>
+                  <Image src={image} />
+                </Grid.Row>
+              )}
+            </Grid.Column>
+          </Grid>
         </Item.Content>
-        {image && <Item.Image size="small" src={image} />}
       </Item>
       {/*  */}
     </>

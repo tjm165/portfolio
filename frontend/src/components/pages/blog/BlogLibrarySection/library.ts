@@ -9,7 +9,7 @@ const library: BlogItemProps[] = [
   },
   {
     path: "my-first-blog-post",
-    title: "log Post",
+    title: "Blog Post",
     description: "Hey!",
   },
   {
