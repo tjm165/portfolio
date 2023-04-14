@@ -81,9 +81,11 @@ export default function BlogItem({
               </Grid.Row>
 
               <Grid.Row>
-                <Grid.Column textAlign="right">
+                <Grid.Column textAlign="left">
                   <Button
+                    size="small"
                     icon
+                    circular
                     onClick={() => handleCopyToClipboard()}
                     color={showCopySuccess ? "green" : undefined}
                   >
