@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { createMedia } from "@artsy/fresnel";
 
-import { Item, Button, Icon, Divider, Image, Grid } from "semantic-ui-react";
+import {
+  Item,
+  Button,
+  Icon,
+  Divider,
+  Image,
+  Grid,
+  Header,
+} from "semantic-ui-react";
 import { UndecoratedLink } from "../../../common";
 
 const { MediaContextProvider, Media } = createMedia({
@@ -53,11 +61,14 @@ export default function BlogItem({
             <Grid>
               <Grid.Row>
                 <Grid.Column width={image ? 12 : 14}>
-                  <Item.Header>
-                    <UndecoratedLink to={path}>
-                      <>{title}</>
-                    </UndecoratedLink>
-                  </Item.Header>
+                  <UndecoratedLink to={path}>
+                    <Item.Header>
+                      <Header>
+                        <>{title}</>
+                      </Header>
+                    </Item.Header>
+                  </UndecoratedLink>
+
                   <Item.Meta>Description</Item.Meta>
                   <Item.Description>{description}</Item.Description>
                 </Grid.Column>
