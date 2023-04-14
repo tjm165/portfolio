@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Item, Button, Icon } from "semantic-ui-react";
+import { Item, Button, Icon, Divider, Dropdown } from "semantic-ui-react";
 
 export type BlogItemProps = {
   title: string;
@@ -33,12 +33,8 @@ export default function BlogItem({
   // TODO Make this rows not cards
   return (
     <>
+      <Divider />
       <Item>
-        <Item.Image
-          size="tiny"
-          src={image || "https://picsum.photos/300/300"}
-        />
-
         <Item.Content>
           <Item.Header>
             <Link to={path}>
@@ -55,10 +51,12 @@ export default function BlogItem({
             onClick={() => handleCopyToClipboard()}
             color={showCopySuccess ? "green" : undefined}
           >
-            <Icon name={showCopySuccess ? "clipboard check" : "clipboard"} />
-            {showCopySuccess ? "Copied" : "Copy"}
+            <Icon name="linkify" />
+            {showCopySuccess ? "Copied" : "Copy Link"}
           </Button>
         </Item.Content>
+
+        {image && <Item.Image size="tiny" src={image} />}
       </Item>
       {/*  */}
     </>
