@@ -51,7 +51,7 @@ export default function BlogItem({
         <Item>
           <Item.Content>
             <Grid>
-              <Grid.Column width={12}>
+              <Grid.Column width={image ? 10 : 14}>
                 <Item.Header>
                   <UndecoratedLink to={path}>
                     <>{title}</>
@@ -61,36 +61,26 @@ export default function BlogItem({
                 <Item.Description>{description}</Item.Description>
               </Grid.Column>
 
-              <Grid.Column width={4}>
-                <Grid.Row>{image && <Image src={image} />}</Grid.Row>
-
-                <Grid.Row>
-                  <Media greaterThan="mobile">
-                    <Item.Extra>
-                      <Button
-                        floated="right"
-                        icon
-                        onClick={() => handleCopyToClipboard()}
-                        color={showCopySuccess ? "green" : "blue"}
-                      >
-                        <Icon name="linkify" />
-                      </Button>
-                    </Item.Extra>
-                  </Media>
-                </Grid.Row>
-
-                <Media at="mobile">
-                  <Grid.Row>
-                    <Button
-                      icon
-                      onClick={() => handleCopyToClipboard()}
-                      color={showCopySuccess ? "green" : undefined}
-                    >
-                      <Icon name="linkify" />
-                    </Button>
-                  </Grid.Row>
-                </Media>
+              <Grid.Column width={2} verticalAlign="bottom">
+                <Item.Extra>
+                  <Button
+                    floated="right"
+                    icon
+                    onClick={() => handleCopyToClipboard()}
+                    color={showCopySuccess ? "green" : "blue"}
+                  >
+                    <Icon name="linkify" />
+                  </Button>
+                </Item.Extra>
               </Grid.Column>
+
+              {image && (
+                <Grid.Column width={4}>
+                  <Grid.Row>
+                    <Image size="small" src={image} />
+                  </Grid.Row>
+                </Grid.Column>
+              )}
             </Grid>
           </Item.Content>{" "}
         </Item>
