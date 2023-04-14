@@ -60,7 +60,11 @@ export default function BlogItem({
 
         <Item>
           <Item.Content style={{ display: "flex", flexDirection: "column" }}>
-            <Item.Header as="a">12 Years a Slave</Item.Header>
+            <Item.Header>
+              <UndecoratedLink to={subPath}>
+                <>{title}</>
+              </UndecoratedLink>
+            </Item.Header>
 
             <Item.Meta>Description</Item.Meta>
             <Item.Description>{description}</Item.Description>
