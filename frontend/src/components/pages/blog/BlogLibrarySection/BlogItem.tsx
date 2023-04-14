@@ -10,6 +10,7 @@ import {
   Grid,
   Header,
   Popup,
+  Segment,
 } from "semantic-ui-react";
 import { UndecoratedLink } from "../../../common";
 
@@ -58,50 +59,30 @@ export default function BlogItem({
         <Divider />
 
         <Item>
-          <Item.Content>
-            <Grid>
-              <Grid.Row>
-                <Grid.Column width={image ? 12 : 14}>
-                  <UndecoratedLink to={path}>
-                    <Item.Header>
-                      <Header>
-                        <>{title}</>
-                      </Header>
-                    </Item.Header>
-                  </UndecoratedLink>
+          <Item.Content style={{ display: "flex", flexDirection: "column" }}>
+            <Item.Header as="a">12 Years a Slave</Item.Header>
 
-                  <Item.Meta>Description</Item.Meta>
-                  <Item.Description>{description}</Item.Description>
-                </Grid.Column>
-
-                {image && (
-                  <Grid.Column width={4}>
-                    <Image floated="right" size="small" src={image} />
-                  </Grid.Column>
-                )}
-              </Grid.Row>
-
-              <Grid.Row>
-                <Grid.Column textAlign="left">
-                  <Popup
-                    content={showCopySuccess ? "Link Copied!" : "Copy Link"}
-                    on={["hover"]}
-                    trigger={
-                      <Button
-                        size="small"
-                        icon
-                        circular
-                        onClick={() => handleCopyToClipboard()}
-                        color={showCopySuccess ? "green" : undefined}
-                      >
-                        <Icon name="linkify" />
-                      </Button>
-                    }
-                  />
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
+            <Item.Meta>Description</Item.Meta>
+            <Item.Description>{description}</Item.Description>
+            <Item.Extra style={{ marginTop: "auto" }}>
+              <Popup
+                content={showCopySuccess ? "Link Copied!" : "Copy Link"}
+                on={["hover"]}
+                trigger={
+                  <Button
+                    size="small"
+                    icon
+                    circular
+                    onClick={() => handleCopyToClipboard()}
+                    color={showCopySuccess ? "green" : undefined}
+                  >
+                    <Icon name="linkify" />
+                  </Button>
+                }
+              />
+            </Item.Extra>
           </Item.Content>
+          {image && <Item.Image src={image} />}
         </Item>
       </MediaContextProvider>
     </>
