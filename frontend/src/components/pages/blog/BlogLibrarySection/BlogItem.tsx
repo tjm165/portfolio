@@ -68,13 +68,13 @@ export default function BlogItem({
               </Grid.Row>
             </Grid.Column>
 
-            <Grid.Column width={4}>
-              {image && (
+            {image && (
+              <Grid.Column width={4}>
                 <Grid.Row>
                   <Image src={image} />
                 </Grid.Row>
-              )}
-            </Grid.Column>
+              </Grid.Column>
+            )}
           </Grid>
         </Item.Content>
       </Item>
