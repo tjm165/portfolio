@@ -41,7 +41,7 @@ export default function BlogItem({
       <Item>
         <Item.Content>
           <Grid>
-            <Grid.Column width={9}>
+            <Grid.Column width={image ? 12 : 16}>
               <Grid.Row>
                 <Item.Header>
                   <UndecoratedLink to={path}>
