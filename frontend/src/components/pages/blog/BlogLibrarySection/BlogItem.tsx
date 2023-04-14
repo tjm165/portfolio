@@ -51,7 +51,7 @@ export default function BlogItem({
         <Item>
           <Item.Content>
             <Grid>
-              <Grid.Column width={image ? 12 : 16}>
+              <Grid.Column width={12}>
                 <Item.Header>
                   <UndecoratedLink to={path}>
                     <>{title}</>
@@ -59,23 +59,26 @@ export default function BlogItem({
                 </Item.Header>
                 <Item.Meta>Description</Item.Meta>
                 <Item.Description>{description}</Item.Description>
-
-                <Media greaterThan="mobile">
-                  <Item.Extra>
-                    <Button
-                      floated="right"
-                      icon
-                      onClick={() => handleCopyToClipboard()}
-                      color={showCopySuccess ? "green" : undefined}
-                    >
-                      <Icon name="linkify" />
-                    </Button>
-                  </Item.Extra>
-                </Media>
               </Grid.Column>
 
               <Grid.Column width={4}>
-                {image && <Image src={image} />}
+                <Grid.Row>{image && <Image src={image} />}</Grid.Row>
+
+                <Grid.Row>
+                  <Media greaterThan="mobile">
+                    <Item.Extra>
+                      <Button
+                        floated="right"
+                        icon
+                        onClick={() => handleCopyToClipboard()}
+                        color={showCopySuccess ? "green" : "blue"}
+                      >
+                        <Icon name="linkify" />
+                      </Button>
+                    </Item.Extra>
+                  </Media>
+                </Grid.Row>
+
                 <Media at="mobile">
                   <Grid.Row>
                     <Button
