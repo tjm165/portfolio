@@ -1,8 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { createMedia } from "@artsy/fresnel";
 
 import { Item, Button, Icon, Divider, Image, Grid } from "semantic-ui-react";
 import { UndecoratedLink } from "../../../common";
+
+const { MediaContextProvider, Media } = createMedia({
+  breakpoints: {
+    mobile: 0,
+    tablet: 768,
+    computer: 1024,
+  },
+});
 
 export type BlogItemProps = {
   title: string;
@@ -37,13 +45,13 @@ export default function BlogItem({
   // TODO Make this rows not cards
   return (
     <>
-      <Divider />
+      <MediaContextProvider>
+        <Divider />
 
-      <Item>
-        <Item.Content>
-          <Grid>
-            <Grid.Column width={image ? 12 : 16}>
-              <Grid.Row>
+        <Item>
+          <Item.Content>
+            <Grid>
+              <Grid.Column width={image ? 12 : 16}>
                 <Item.Header>
                   <UndecoratedLink to={path}>
                     <>{title}</>
@@ -51,26 +59,39 @@ export default function BlogItem({
                 </Item.Header>
                 <Item.Meta>Description</Item.Meta>
                 <Item.Description>{description}</Item.Description>
-                <Grid.Row style={{ position: "absolute", bottom: 0 }}>
-                  <Button
-                    icon
-                    onClick={() => handleCopyToClipboard()}
-                    color={showCopySuccess ? "green" : undefined}
-                  >
-                    <Icon name="linkify" />
-                  </Button>
-                </Grid.Row>
-              </Grid.Row>
-            </Grid.Column>
 
-            {image && (
-              <Grid.Column width={4}>
-                <Image src={image} />
+                <Media greaterThan="mobile">
+                  <Item.Extra>
+                    <Button
+                      floated="right"
+                      icon
+                      onClick={() => handleCopyToClipboard()}
+                      color={showCopySuccess ? "green" : undefined}
+                    >
+                      <Icon name="linkify" />
+                    </Button>
+                  </Item.Extra>
+                </Media>
               </Grid.Column>
-            )}
-          </Grid>
-        </Item.Content>{" "}
-      </Item>
+
+              <Grid.Column width={4}>
+                {image && <Image src={image} />}
+                <Media at="mobile">
+                  <Grid.Row>
+                    <Button
+                      icon
+                      onClick={() => handleCopyToClipboard()}
+                      color={showCopySuccess ? "green" : undefined}
+                    >
+                      <Icon name="linkify" />
+                    </Button>
+                  </Grid.Row>
+                </Media>
+              </Grid.Column>
+            </Grid>
+          </Item.Content>{" "}
+        </Item>
+      </MediaContextProvider>
     </>
   );
 }
