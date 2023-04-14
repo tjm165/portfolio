@@ -51,13 +51,7 @@ export default function BlogItem({
                 <Item.Meta>Description</Item.Meta>
                 <Item.Description>{description}</Item.Description>
               </Grid.Row>
-              <Grid.Row
-                style={{
-                  display: "flex",
-                  alignItems: "flex-end",
-                  justifyContent: "flex-end",
-                }}
-              >
+              <Grid.Row verticalAlign="bottom">
                 <Button
                   icon
                   onClick={() => handleCopyToClipboard()}
