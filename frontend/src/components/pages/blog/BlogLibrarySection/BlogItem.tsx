@@ -38,7 +38,7 @@ export default function BlogItem({
   return (
     <>
       <Divider />
-      <Item>
+      {/* <Item>
         <Item.Content>
           <Grid>
             <Grid.Column width={image ? 12 : 16}>
@@ -71,8 +71,34 @@ export default function BlogItem({
             )}
           </Grid>
         </Item.Content>
+      </Item> */}
+
+      <Item>
+        <Item.Content>
+          <Grid>
+            <Grid.Column width={image ? 12 : 16}>
+              <Grid.Row>
+                <Item.Header>
+                  <UndecoratedLink to={path}>
+                    <>{title}</>
+                  </UndecoratedLink>
+                </Item.Header>
+                <Item.Meta>Description</Item.Meta>
+                <Item.Description>{description}</Item.Description>
+              </Grid.Row>
+            </Grid.Column>
+
+            {image && (
+              <Grid.Column
+                // width={4}
+                verticalAlign="top"
+              >
+                <Image src={image} />
+              </Grid.Column>
+            )}
+          </Grid>
+        </Item.Content>{" "}
       </Item>
-      {/*  */}
     </>
   );
 }
