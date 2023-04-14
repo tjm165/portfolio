@@ -51,34 +51,35 @@ export default function BlogItem({
         <Item>
           <Item.Content>
             <Grid>
-              <Grid.Column width={image ? 12 : 14}>
-                <Item.Header>
-                  <UndecoratedLink to={path}>
-                    <>{title}</>
-                  </UndecoratedLink>
-                </Item.Header>
-                <Item.Meta>Description</Item.Meta>
-                <Item.Description>{description}</Item.Description>
-              </Grid.Column>
-
-              {image && (
-                <Grid.Column width={4}>
-                  <Image floated="right" size="small" src={image} />
+              <Grid.Row>
+                <Grid.Column width={image ? 12 : 14}>
+                  <Item.Header>
+                    <UndecoratedLink to={path}>
+                      <>{title}</>
+                    </UndecoratedLink>
+                  </Item.Header>
+                  <Item.Meta>Description</Item.Meta>
+                  <Item.Description>{description}</Item.Description>
                 </Grid.Column>
-              )}
 
-              <Item.Extra>
-                <Grid.Row floated="right">
+                {image && (
+                  <Grid.Column width={4}>
+                    <Image floated="right" size="small" src={image} />
+                  </Grid.Column>
+                )}
+              </Grid.Row>
+
+              <Grid.Row>
+                <Grid.Column textAlign="right">
                   <Button
-                    floated="right"
                     icon
                     onClick={() => handleCopyToClipboard()}
                     color={showCopySuccess ? "green" : undefined}
                   >
                     <Icon name="linkify" />
                   </Button>
-                </Grid.Row>
-              </Item.Extra>
+                </Grid.Column>
+              </Grid.Row>
             </Grid>
           </Item.Content>
         </Item>
