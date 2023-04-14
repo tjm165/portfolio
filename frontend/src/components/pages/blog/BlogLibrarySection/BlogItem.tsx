@@ -38,40 +38,6 @@ export default function BlogItem({
   return (
     <>
       <Divider />
-      {/* <Item>
-        <Item.Content>
-          <Grid>
-            <Grid.Column width={image ? 12 : 16}>
-              <Grid.Row>
-                <Item.Header>
-                  <UndecoratedLink to={path}>
-                    <>{title}</>
-                  </UndecoratedLink>
-                </Item.Header>
-                <Item.Meta>Description</Item.Meta>
-                <Item.Description>{description}</Item.Description>
-              </Grid.Row>
-              <Grid.Row verticalAlign="bottom">
-                <Button
-                  icon
-                  onClick={() => handleCopyToClipboard()}
-                  color={showCopySuccess ? "green" : undefined}
-                >
-                  <Icon name="linkify" />
-                </Button>
-              </Grid.Row>
-            </Grid.Column>
-
-            {image && (
-              <Grid.Column width={4}>
-                <Grid.Row>
-                  <Image src={image} />
-                </Grid.Row>
-              </Grid.Column>
-            )}
-          </Grid>
-        </Item.Content>
-      </Item> */}
 
       <Item>
         <Item.Content>
@@ -85,14 +51,20 @@ export default function BlogItem({
                 </Item.Header>
                 <Item.Meta>Description</Item.Meta>
                 <Item.Description>{description}</Item.Description>
+                <Grid.Row style={{ position: "absolute", bottom: 0 }}>
+                  <Button
+                    icon
+                    onClick={() => handleCopyToClipboard()}
+                    color={showCopySuccess ? "green" : undefined}
+                  >
+                    <Icon name="linkify" />
+                  </Button>
+                </Grid.Row>
               </Grid.Row>
             </Grid.Column>
 
             {image && (
-              <Grid.Column
-                // width={4}
-                verticalAlign="top"
-              >
+              <Grid.Column width={4}>
                 <Image src={image} />
               </Grid.Column>
             )}
