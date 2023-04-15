@@ -8,8 +8,6 @@ const FooterSection = () => {
       vertical
       style={{
         padding: "5em 0em",
-
-        position: "absolute",
         bottom: 0,
         width: "100%",
       }}
