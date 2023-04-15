@@ -4,14 +4,7 @@
     "numCharacters": 320,
     "title": "Hello Blog1 on Local",
     "description": "A description",
-    "isCdnHosted": false,
-    "image": "image.png"
-  },
-  {
-    "path": "my-second-post",
-    "numCharacters": 318,
-    "title": "Hello Blog1 on CDN",
-    "description": "A description",
-    "isCdnHosted": true
+    "draftMode": false,
+    "image": "https://d307urd3htsez.cloudfront.net/portfolio/blog/posts/my-first-blog-post/image.png"
   }
 ]

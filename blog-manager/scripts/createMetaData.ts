@@ -9,11 +9,11 @@ const bodySuffix = "body.md";
 const metadataSuffix = "metadata.json";
 
 enum Host {
-  local = "blog-manager/blog/posts",
+  local = "/Users/tommymoawad/Coding/portfolio/blog-manager/blog/posts",
   cdn = "https://d307urd3htsez.cloudfront.net/portfolio/blog/posts",
 }
 
-const localOnly = false;
+const draftMode = false;
 
 async function readDirectories(): Promise<string[]> {
   const files = await fs.readdir(basePath, { withFileTypes: true });
@@ -37,8 +37,7 @@ async function readPostFile(dir: string): Promise<ResultObj | BlankObj> {
     throw new Error(`Invalid metadata format for ${dir}`);
   }
 
-  if (metadataObj.isCdnHosted && localOnly) {
-    console.log("here");
+  if (metadataObj.draftMode && !draftMode) {
     return {};
   }
 
@@ -56,7 +55,11 @@ async function readPostFile(dir: string): Promise<ResultObj | BlankObj> {
   try {
     const imageStats = await fs.stat(imagePath);
     if (imageStats.isFile()) {
-      resultObj.image = imageSuffix;
+      if (draftMode) {
+        resultObj.image = `${Host.local}/${dir}/${imageSuffix}`;
+      } else {
+        resultObj.image = `${Host.cdn}/${dir}/${imageSuffix}`;
+      }
     }
   } catch (err) {}
 
