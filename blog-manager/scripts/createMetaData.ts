@@ -18,6 +18,23 @@ fs.readdir(postsDirectory, (err, files) => {
     if (fs.statSync(`${postsDirectory}/${file}`).isDirectory()) {
       // If it is a directory, print the name
       console.log(file);
+
+      const filePath = `${postsDirectory}/${file}/body.md`;
+
+      // Read the contents of the file
+      fs.readFile(filePath, "utf8", (err, data) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        // Count the number of characters in the file
+        const numCharacters = data.length;
+
+        console.log(
+          `The file at ${filePath} contains ${numCharacters} characters.`
+        );
+      });
     }
   });
 });
