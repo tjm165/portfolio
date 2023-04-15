@@ -11,6 +11,9 @@
     "create_metadata": "ts-node scripts/createMetaData.ts",
     "go": "yarn sync_blog && yarn invalidate_cdn"
   },
+  "experiments": {
+    "topLevelAwait": true
+  },
   "devDependencies": {
     "@types/node": "^18.15.11",
     "typescript": "^5.0.4"

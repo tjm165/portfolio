@@ -5,11 +5,9 @@ const postsDirectory = "blog/posts";
 
 function fileManagement() {
   const metadata = [];
-  let x = 1;
   // @ts-ignore
   fs.readdir(postsDirectory, (err, files) => {
     metadata.push("blog");
-    x += 1;
     if (err) {
       console.log(err);
       return;
@@ -33,21 +31,27 @@ function fileManagement() {
 
           // Count the number of characters in the file
           const numCharacters = data.length;
-          blog = {
+          const blog = {
             title: "My Title",
             path: file,
             numCharacters,
             description: "Hey this is my first blog!",
             image: "https://picsum.photos/300/300",
           };
-          console.log(blog);
+          console.log("a", blog);
           metadata.push(blog);
+          console.log("b", metadata);
         });
       }
     });
-  });
 
-  return x;
+    console.log(metadata);
+
+    fs.writeFile("example.txt", JSON.stringify(metadata), (err) => {
+      if (err) throw err;
+      console.log("Data written to file");
+    });
+  });
 }
 
 async function main() {
@@ -55,9 +59,8 @@ async function main() {
 
   console.log("Starting meta data");
   const m = await fileManagement();
-
-  console.log("***");
-  console.log(m);
 }
 
-main();
+main().then();
+
+// ts-node -e "import main from 'blog-manager/scripts/createMetaData.ts'; (async () => { await main(); })();"
