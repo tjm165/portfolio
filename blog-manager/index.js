@@ -1,3 +1,3 @@
-const Tommy = 1;
+import t from "./tommy.json";
 
-export default Tommy;
+export default t;
