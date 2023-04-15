@@ -15,3 +15,5 @@ Next Page PR
 Tech debt
 
 1. MediaContextProvider only once pls
+
+1. How will metadata sort the files? I might need to still figure out how to write all at once
