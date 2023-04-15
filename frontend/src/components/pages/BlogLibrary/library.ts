@@ -1,10 +1,12 @@
 import { BlogItemProps } from "./BlogItem";
+// @ts-ignore
+import Tommy from "@tommy";
 
 const library: BlogItemProps[] = [
   {
     path: "my-first-blog-post",
     title: "My First Blog Post",
-    description: "Hey!",
+    description: `${Tommy}`,
     image: "https://picsum.photos/300/300",
   },
   {
