@@ -5,7 +5,6 @@ Next Styling PR
 
 Next Architecture Blog PR
 
-1. Yarn command to load metadata into frontend code. And read minutes (aka word count)
 1. How to support local development of a blog post without pushing to cloudfront every few minutes.
 
 Next Page PR
