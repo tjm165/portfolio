@@ -1,8 +1,8 @@
 import BlogItem, { BlogItemProps } from "./BlogItem";
 import library from "./library";
 import { Item } from "semantic-ui-react";
-import { PageSectionPropTypes } from "../../Page";
-import { MySection, Types } from "../../../common";
+import { PageSectionPropTypes } from "../Page";
+import { MySection, Types } from "../../common";
 
 const getCardData = (inputs: BlogItemProps[]) => {
   return inputs.map((input) => {

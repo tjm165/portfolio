@@ -1,18 +1,8 @@
 import { useState } from "react";
 import { createMedia } from "@artsy/fresnel";
 
-import {
-  Item,
-  Button,
-  Icon,
-  Divider,
-  Image,
-  Grid,
-  Header,
-  Popup,
-  Segment,
-} from "semantic-ui-react";
-import { UndecoratedLink } from "../../../common";
+import { Item, Button, Icon, Divider, Popup } from "semantic-ui-react";
+import { UndecoratedLink } from "../../common";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
