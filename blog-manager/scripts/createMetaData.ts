@@ -13,7 +13,7 @@ enum Host {
   cdn = "https://d307urd3htsez.cloudfront.net/portfolio/blog/posts",
 }
 
-const cdnOnly = false;
+const localOnly = false;
 
 async function readDirectories(): Promise<string[]> {
   const files = await fs.readdir(basePath, { withFileTypes: true });
@@ -37,7 +37,7 @@ async function readPostFile(dir: string): Promise<ResultObj | BlankObj> {
     throw new Error(`Invalid metadata format for ${dir}`);
   }
 
-  if (metadataObj.isLocalHosted && cdnOnly) {
+  if (metadataObj.isCdnHosted && localOnly) {
     console.log("here");
     return {};
   }

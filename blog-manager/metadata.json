@@ -4,7 +4,7 @@
     "numCharacters": 320,
     "title": "Hello Blog1 on Local",
     "description": "A description",
-    "isLocalHosted": true,
+    "isCdnHosted": false,
     "image": "image.png"
   },
   {
@@ -12,6 +12,6 @@
     "numCharacters": 318,
     "title": "Hello Blog1 on CDN",
     "description": "A description",
-    "isLocalHosted": false
+    "isCdnHosted": true
   }
 ]

@@ -17,7 +17,7 @@ export function isResultObj(obj: unknown): obj is ResultObj {
 export type MetadataObj = {
   title: string;
   description: string;
-  isLocalHosted: boolean;
+  isCdnHosted: boolean;
 };
 
 export function isMetadata(obj: unknown): obj is MetadataObj {
@@ -26,6 +26,6 @@ export function isMetadata(obj: unknown): obj is MetadataObj {
     obj !== null &&
     "title" in obj &&
     "description" in obj &&
-    "isLocalHosted" in obj
+    "isCdnHosted" in obj
   );
 }
