@@ -1,0 +1,13 @@
+{
+  "name": "blog-manager",
+  "version": "1.0.0",
+  "description": "Manage portfolio blog posts",
+  "main": "index.js",
+  "author": "Thomas Moawad",
+  "license": "MIT",
+  "scripts": {
+    "sync_blog": "aws s3 sync blog s3://my-cdn-s3/portfolio/blog",
+    "invalidate_cdn": "aws cloudfront create-invalidation --distribution-id E100N2BSOXPXX3 --paths '/portfolio/blog/*'",
+    "publish:aws": "yarn sync_blog && yarn invalidate_cdn"
+  }
+}

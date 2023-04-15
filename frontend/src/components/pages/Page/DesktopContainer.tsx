@@ -1,7 +1,6 @@
 import { Component, ReactNode } from "react";
 import { InView } from "react-intersection-observer";
 import { Container, Menu, Segment } from "semantic-ui-react";
-import HomepageHeading from "./Welcome";
 
 type DesktopContainerPropTypes = {
   children: ReactNode;
@@ -23,7 +22,16 @@ class DesktopContainer extends Component {
     return (
       <>
         <InView onChange={this.toggleFixedMenu}>
-          <Segment inverted textAlign="center" vertical>
+          <Segment
+            inverted
+            textAlign="center"
+            vertical
+            style={{
+              minHeight: "5vh",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <Menu
               fixed={fixed ? "top" : undefined}
               inverted={!fixed}
@@ -40,7 +48,6 @@ class DesktopContainer extends Component {
                 <Menu.Item as="a">Careers</Menu.Item> */}
               </Container>
             </Menu>
-            <HomepageHeading mobile={false} />
           </Segment>
         </InView>
 

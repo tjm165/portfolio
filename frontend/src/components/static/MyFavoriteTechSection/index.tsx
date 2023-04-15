@@ -2,17 +2,15 @@ import { MySection, Types } from "../../common";
 import data from "./data";
 import TechCard from "./TechCard";
 import { Card } from "semantic-ui-react";
+import { PageSectionPropTypes } from "../../pages/Page";
 
-type PropTypes = {
-  color: string;
-};
-
-const MyFavoriteTechSection = ({ color }: PropTypes) => {
+const MyFavoriteTechSection = ({ color }: PageSectionPropTypes) => {
   return (
     <MySection
       color={color}
       headingText="My Favorite Tech"
       headingTextCenter={Types.Position.CENTER}
+      fluid
     >
       <Card.Group centered>
         {data.map((datam) => (

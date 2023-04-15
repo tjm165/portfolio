@@ -17,17 +17,7 @@ const TechCard = ({ icon, name, description }: TechCardPropTypes) => {
           <h4 style={{ color: myPalette.specific.graphite }}>{description}</h4>
         </Dimmer>
 
-        <Image
-          src={icon}
-          //   wrapped
-          ui={false}
-          //   fluid
-          // dimmer={{
-          //   active: hovered,
-          //   blurring: true,
-          //   content: <>{description}</>,
-          // }}
-        />
+        <Image src={icon} ui={false} />
       </Dimmer.Dimmable>
 
       <Card.Content>

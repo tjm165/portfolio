@@ -23,3 +23,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.Gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    #70cfff,
+    #5c08af
+  ) !important;
+}
+
+.Transparent {
+  background: rgba(0, 0, 0, 0.5) !important;
+}

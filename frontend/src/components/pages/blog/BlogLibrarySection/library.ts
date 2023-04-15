@@ -1,28 +1,27 @@
-const catalogue = [
+import { BlogItemProps } from "./BlogItem";
+
+const library: BlogItemProps[] = [
   {
     path: "my-first-blog-post",
     title: "My First Blog Post",
     description: "Hey!",
-    bgcolor: "graphite.main",
+    image: "https://picsum.photos/300/300",
   },
   {
     path: "my-first-blog-post",
-    title: "log Post",
+    title: "Blog Post",
     description: "Hey!",
-    bgcolor: "graphite.main",
-  },
-  {
-    path: "my-first-blog-post",
-    title: "My First Blog Post",
-    description: "Hey!",
-    bgcolor: "graphite.main",
   },
   {
     path: "my-first-blog-post",
     title: "My First Blog Post",
     description: "Hey!",
-    bgcolor: "graphite.main",
+  },
+  {
+    path: "my-first-blog-post",
+    title: "My First Blog Post",
+    description: "Hey!",
   },
 ];
 
-export default catalogue;
+export default library;
