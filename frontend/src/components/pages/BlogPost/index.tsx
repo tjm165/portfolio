@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import MuiMarkdown from "mui-markdown";
-import { consts, MySection, Types } from "../../../common";
-import Page, { PageSectionPropTypes } from "../../Page";
+import { consts, MySection, Types } from "../../common";
+import Page, { PageSectionPropTypes } from "../Page";
 
 function BlogSection({ color }: PageSectionPropTypes) {
   const blog: BlogData = useLoaderData() as BlogData;
