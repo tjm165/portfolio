@@ -53,7 +53,7 @@ const Page = ({ HeroSection, PageSections }: PagePropTypes) => {
     <ResponsiveContainer>
       <span
         style={{
-          minHeight: "100vh",
+          minHeight: "95vh",
           display: "flex",
           flexDirection: "column",
         }}
