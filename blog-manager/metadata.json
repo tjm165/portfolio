@@ -5,6 +5,13 @@
     "title": "Hello Blog1 on Local",
     "description": "A description",
     "draftMode": false,
-    "image": "https://d307urd3htsez.cloudfront.net/portfolio/blog/posts/my-first-blog-post/image.png"
+    "image": "/Users/tommymoawad/Coding/portfolio/blog-manager/blog/posts/my-first-blog-post/image.png"
+  },
+  {
+    "path": "my-second-post",
+    "numCharacters": 318,
+    "title": "Hello Blog1 on CDN",
+    "description": "A description",
+    "draftMode": true
   }
 ]

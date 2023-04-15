@@ -13,7 +13,7 @@ enum Host {
   cdn = "https://d307urd3htsez.cloudfront.net/portfolio/blog/posts",
 }
 
-const draftMode = false;
+const draftMode = true;
 
 async function readDirectories(): Promise<string[]> {
   const files = await fs.readdir(basePath, { withFileTypes: true });

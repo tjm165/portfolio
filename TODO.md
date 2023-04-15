@@ -1,3 +1,5 @@
+localhost image issue
+
 Next Styling PR
 
 1. Header needs to have name and all pages
