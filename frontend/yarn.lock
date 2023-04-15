@@ -2202,6 +2202,10 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+"@tommy/types@link:../blog-manager/types.ts":
+  version "0.0.0"
+  uid ""
+
 "@tommy@link:../blog-manager":
   version "0.0.0"
   uid ""

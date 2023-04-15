@@ -1,21 +1,12 @@
+import { isMetadata, ResultObj } from "../types";
+
 const fs = require("fs").promises;
 const path = require("path");
 
-type ResultObj = {
-  path: string;
-  numCharacters: number;
-  title: string;
-};
-
-type MetadataObj = {
-  title: string;
-};
-
-function isMetadata(obj: unknown): obj is MetadataObj {
-  return typeof obj === "object" && obj !== null && "title" in obj;
-}
-
 const basePath = "./blog/posts";
+const imageSuffix = "image.png";
+const bodySuffix = "body.md";
+const metadataSuffix = "metadata.json";
 
 async function readDirectories(): Promise<string[]> {
   const files = await fs.readdir(basePath, { withFileTypes: true });
@@ -29,11 +20,11 @@ async function readDirectories(): Promise<string[]> {
 }
 
 async function readPostFile(dir: string): Promise<ResultObj> {
-  const filePath = path.join(basePath, dir, "body.md");
+  const filePath = path.join(basePath, dir, bodySuffix);
   const data = await fs.readFile(filePath, "utf8");
   const numCharacters = data.length;
 
-  const metadataPath = path.join(basePath, dir, "metadata.json");
+  const metadataPath = path.join(basePath, dir, metadataSuffix);
   const metadata = await fs.readFile(metadataPath, "utf8");
   const metadataObj = JSON.parse(metadata);
 
@@ -47,11 +38,19 @@ async function readPostFile(dir: string): Promise<ResultObj> {
     ...metadataObj,
   };
 
+  const imagePath = path.join(basePath, dir, imageSuffix);
+  try {
+    const imageStats = await fs.stat(imagePath);
+    if (imageStats.isFile()) {
+      resultObj.image = imageSuffix;
+    }
+  } catch (err) {}
+
   return resultObj;
 }
 
 async function writeResultsToFile(results: ResultObj[]): Promise<void> {
-  const outputFilePath = path.join(basePath, "metadata.json");
+  const outputFilePath = path.join("metadata.json");
   const jsonData = JSON.stringify(results, null, 2);
   await fs.writeFile(outputFilePath, jsonData);
   console.log(`Results written to ${outputFilePath}`);
