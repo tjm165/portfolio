@@ -1,10 +1,12 @@
 [
   {
-    "path": "my-second-post",
-    "characterCount": 318
+    "path": "my-first-blog-post",
+    "numCharacters": 320,
+    "title": "Hello Blog1"
   },
   {
-    "path": "my-first-blog-post",
-    "characterCount": 317
+    "path": "my-second-post",
+    "numCharacters": 318,
+    "title": "Hello Blog"
   }
 ]
