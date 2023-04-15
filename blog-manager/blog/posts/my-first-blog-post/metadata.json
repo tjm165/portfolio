@@ -1,4 +1,5 @@
 {
-  "title": "Hello Blog1",
-  "description": "A description"
+  "title": "Hello Blog1 on Local",
+  "description": "A description",
+  "isLocalHosted": true
 }

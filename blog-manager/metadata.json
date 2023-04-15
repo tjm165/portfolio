@@ -2,14 +2,16 @@
   {
     "path": "my-first-blog-post",
     "numCharacters": 320,
-    "title": "Hello Blog1",
+    "title": "Hello Blog1 on Local",
     "description": "A description",
+    "isLocalHosted": true,
     "image": "image.png"
   },
   {
     "path": "my-second-post",
     "numCharacters": 318,
-    "title": "Hello Blog",
-    "description": "A description"
+    "title": "Hello Blog1 on CDN",
+    "description": "A description",
+    "isLocalHosted": false
   }
 ]

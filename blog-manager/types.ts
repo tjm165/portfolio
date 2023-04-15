@@ -4,9 +4,20 @@ export type ResultObj = MetadataObj & {
   image?: string;
 };
 
+export function isResultObj(obj: unknown): obj is ResultObj {
+  return (
+    typeof obj === "object" &&
+    obj !== null &&
+    "path" in obj &&
+    "numCharacters" in obj &&
+    isMetadata(obj)
+  );
+}
+
 export type MetadataObj = {
   title: string;
   description: string;
+  isLocalHosted: boolean;
 };
 
 export function isMetadata(obj: unknown): obj is MetadataObj {
@@ -14,6 +25,7 @@ export function isMetadata(obj: unknown): obj is MetadataObj {
     typeof obj === "object" &&
     obj !== null &&
     "title" in obj &&
-    "description" in obj
+    "description" in obj &&
+    "isLocalHosted" in obj
   );
 }

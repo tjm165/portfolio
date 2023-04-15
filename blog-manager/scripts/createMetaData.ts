@@ -1,4 +1,4 @@
-import { isMetadata, ResultObj } from "../types";
+import { isMetadata, isResultObj, ResultObj } from "../types";
 
 const fs = require("fs").promises;
 const path = require("path");
@@ -7,6 +7,13 @@ const basePath = "./blog/posts";
 const imageSuffix = "image.png";
 const bodySuffix = "body.md";
 const metadataSuffix = "metadata.json";
+
+enum Host {
+  local = "blog-manager/blog/posts",
+  cdn = "https://d307urd3htsez.cloudfront.net/portfolio/blog/posts",
+}
+
+const cdnOnly = false;
 
 async function readDirectories(): Promise<string[]> {
   const files = await fs.readdir(basePath, { withFileTypes: true });
@@ -19,11 +26,9 @@ async function readDirectories(): Promise<string[]> {
   return directories;
 }
 
-async function readPostFile(dir: string): Promise<ResultObj> {
-  const filePath = path.join(basePath, dir, bodySuffix);
-  const data = await fs.readFile(filePath, "utf8");
-  const numCharacters = data.length;
+type BlankObj = {};
 
+async function readPostFile(dir: string): Promise<ResultObj | BlankObj> {
   const metadataPath = path.join(basePath, dir, metadataSuffix);
   const metadata = await fs.readFile(metadataPath, "utf8");
   const metadataObj = JSON.parse(metadata);
@@ -31,6 +36,15 @@ async function readPostFile(dir: string): Promise<ResultObj> {
   if (!isMetadata(metadataObj)) {
     throw new Error(`Invalid metadata format for ${dir}`);
   }
+
+  if (metadataObj.isLocalHosted && cdnOnly) {
+    console.log("here");
+    return {};
+  }
+
+  const filePath = path.join(basePath, dir, bodySuffix);
+  const data = await fs.readFile(filePath, "utf8");
+  const numCharacters = data.length;
 
   const resultObj: ResultObj = {
     path: dir,
@@ -62,7 +76,9 @@ async function main(): Promise<void> {
 
   for (const dir of directories) {
     const resultObj = await readPostFile(dir);
-    results.push(resultObj);
+    if (isResultObj(resultObj)) {
+      results.push(resultObj);
+    }
   }
 
   await writeResultsToFile(results);

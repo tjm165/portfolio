@@ -1,4 +1,5 @@
 {
-  "title": "Hello Blog",
-  "description": "A description"
+  "title": "Hello Blog1 on CDN",
+  "description": "A description",
+  "isLocalHosted": false
 }
