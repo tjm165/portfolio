@@ -1,8 +1,10 @@
 [
   {
-    "my-second-post": 318
+    "path": "my-second-post",
+    "characterCount": 318
   },
   {
-    "my-first-blog-post": 317
+    "path": "my-first-blog-post",
+    "characterCount": 317
   }
 ]

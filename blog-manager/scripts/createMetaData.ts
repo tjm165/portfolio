@@ -24,7 +24,11 @@ fs.readdir(basePath, { withFileTypes: true }, (err, files) => {
       }
 
       const numChars = data.length;
-      results.push({ [dir]: numChars });
+      results.push({
+        path: dir,
+
+        characterCount: numChars,
+      });
 
       if (results.length === directories.length) {
         const outputFilePath = path.join(basePath, "metadata.json");
