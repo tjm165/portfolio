@@ -4,6 +4,8 @@ http://localhost:4566/tommy/blog/posts/my-first-blog-post/metadata.json
 aws --endpoint-url=http://localhost:4566 s3 mb s3://tommy
 aws --endpoint-url=http://localhost:4566 s3 sync ./blog s3://tommy/blog
 
+aws --endpoint-url=http://localhost:4566 s3api put-bucket-cors --bucket tommy --cors-configuration '{"CORSRules": [{"AllowedHeaders": ["*"],"AllowedMethods": ["GET", "PUT", "POST", "DELETE"],"AllowedOrigins": ["http://localhost:3000"],"ExposeHeaders": []}]}'
+
 Next Styling PR
 
 1. Header needs to have name and all pages
