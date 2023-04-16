@@ -24,3 +24,5 @@ Tech debt
 1. MediaContextProvider only once pls
 
 1. How will metadata sort the files? I might need to still figure out how to write all at once
+
+docker compose -f scripts/localstack.yml up -d && sh scripts/localstack.sh; docker-compose -f scripts/localstack.yml down
