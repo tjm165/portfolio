@@ -22,7 +22,11 @@ export default function BlogLibrarySection({ color }: PageSectionPropTypes) {
     >
       <Item.Group relaxed>
         {highlights.map((h, i) => (
-          <BlogItem key={i} {...h} />
+          <BlogItem
+            key={i}
+            {...h}
+            image={h.image && `${consts.cdnBlogPosts}/${h.path}/${h.image}`}
+          />
         ))}
       </Item.Group>
     </MySection>

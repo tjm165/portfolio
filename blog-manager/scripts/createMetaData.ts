@@ -7,12 +7,6 @@ const basePath = "./blog/posts";
 const imageSuffix = "image.png";
 const bodySuffix = "body.md";
 const metadataSuffix = "metadata.json";
-
-enum Host {
-  local = "/Users/tommymoawad/Coding/portfolio/blog-manager/blog/posts",
-  cdn = "https://d307urd3htsez.cloudfront.net/portfolio/blog/posts",
-}
-
 const draftMode = true;
 
 async function readDirectories(): Promise<string[]> {
@@ -55,11 +49,7 @@ async function readPostFile(dir: string): Promise<ResultObj | BlankObj> {
   try {
     const imageStats = await fs.stat(imagePath);
     if (imageStats.isFile()) {
-      if (draftMode) {
-        resultObj.image = `${Host.local}/${dir}/${imageSuffix}`;
-      } else {
-        resultObj.image = `${Host.cdn}/${dir}/${imageSuffix}`;
-      }
+      resultObj.image = imageSuffix;
     }
   } catch (err) {}
 
