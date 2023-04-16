@@ -27,16 +27,31 @@ type BlogData = {
 };
 
 export async function blogPostLoader({ params }: any) {
-  const metadata_response = await fetch(
-    `${consts.cdnBlogPosts}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`
-  );
-  const metadata = await metadata_response.json();
+  const draftMode = true;
 
-  const body_response = await fetch(
-    `${consts.cdnBlogPosts}/${params.blogId}/${consts.cdnBlogBodySuffix}`
-  );
+  if (!draftMode) {
+    const root = consts.cdnBlogPosts;
 
-  const body = await body_response.text();
+    const metadata_response = await fetch(
+      `${root}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`
+    );
+    const metadata = await metadata_response.json();
+
+    const body_response = await fetch(
+      `${root}/${params.blogId}/${consts.cdnBlogBodySuffix}`
+    );
+
+    const body = await body_response.text();
+
+    return { body, metadata };
+  }
+
+  const root = "/Users/tommymoawad/Coding/portfolio/blog-manager/blog/posts";
+
+  const metadata = require(`${root}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`);
+
+  const body =
+    await require(`${root}/${params.blogId}/${consts.cdnBlogBodySuffix}`);
 
   return { body, metadata };
 }
