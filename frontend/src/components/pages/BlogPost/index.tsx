@@ -31,15 +31,11 @@ export async function blogPostLoader({ params }: any) {
 
   let root = consts.cdnBlogPosts;
   if (draftMode) {
-    root = "file:///Users/tommymoawad/Coding/portfolio/blog-manager/blog/posts";
+    root = "http://localhost:4566/tommy/blog/posts";
   }
 
-  // const metadata_response = await fetch(
-  //   `${root}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`
-  // );
-
   const metadata_response = await fetch(
-    "file:///Users/tommymoawad/Coding/portfolio/blog-manager/blog/posts/my-first-blog-post/metadata.json"
+    `${root}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`
   );
 
   const metadata = await metadata_response.text();

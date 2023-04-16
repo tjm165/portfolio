@@ -1,4 +1,8 @@
-localhost image issue
+localhost image issue https://onexlab-io.medium.com/aws-s3-bucket-local-testing-using-localstack-1918fb375280
+http://localhost:4566/tommy/blog/posts/my-first-blog-post/metadata.json
+
+aws --endpoint-url=http://localhost:4566 s3 mb s3://tommy
+aws --endpoint-url=http://localhost:4566 s3 sync ./blog s3://tommy/blog
 
 Next Styling PR
 
