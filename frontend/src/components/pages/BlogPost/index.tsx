@@ -29,29 +29,31 @@ type BlogData = {
 export async function blogPostLoader({ params }: any) {
   const draftMode = true;
 
-  if (!draftMode) {
-    const root = consts.cdnBlogPosts;
-
-    const metadata_response = await fetch(
-      `${root}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`
-    );
-    const metadata = await metadata_response.json();
-
-    const body_response = await fetch(
-      `${root}/${params.blogId}/${consts.cdnBlogBodySuffix}`
-    );
-
-    const body = await body_response.text();
-
-    return { body, metadata };
+  let root = consts.cdnBlogPosts;
+  if (draftMode) {
+    root = "file:///Users/tommymoawad/Coding/portfolio/blog-manager/blog/posts";
   }
 
-  const root = "/Users/tommymoawad/Coding/portfolio/blog-manager/blog/posts";
+  // const metadata_response = await fetch(
+  //   `${root}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`
+  // );
 
-  const metadata = require(`${root}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`);
+  const metadata_response = await fetch(
+    "file:///Users/tommymoawad/Coding/portfolio/blog-manager/blog/posts/my-first-blog-post/metadata.json"
+  );
 
-  const body =
-    await require(`${root}/${params.blogId}/${consts.cdnBlogBodySuffix}`);
+  const metadata = await metadata_response.text();
+
+  console.log(metadata);
+
+  console.log(metadata);
+
+  const body_response = await fetch(
+    `${root}/${params.blogId}/${consts.cdnBlogBodySuffix}`
+  );
+
+  const body = await body_response.text();
+  console.log(body);
 
   return { body, metadata };
 }
