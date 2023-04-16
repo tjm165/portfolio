@@ -3,6 +3,7 @@ import library from "./library";
 import { Item } from "semantic-ui-react";
 import { PageSectionPropTypes } from "../Page";
 import { consts, MySection, Types } from "../../common";
+import config from "../../../config";
 
 const getCardData = (inputs: BlogItemProps[]) => {
   return inputs.map((input) => {
@@ -14,12 +15,15 @@ const getCardData = (inputs: BlogItemProps[]) => {
 
 export default function BlogLibrarySection({ color }: PageSectionPropTypes) {
   const highlights: BlogItemProps[] = getCardData(library);
-  const draftMode = true;
+  let draftMode = config.DRAFT_MODE;
+
   let root = consts.cdnBlogPosts;
 
   if (draftMode) {
     root = "http://localhost:4566/tommy/portfolio/blog/posts";
   }
+
+  console.log(draftMode);
 
   return (
     <MySection

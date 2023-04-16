@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import MuiMarkdown from "mui-markdown";
 import { consts, MySection, Types } from "../../common";
 import Page, { PageSectionPropTypes } from "../Page";
+import config from "../../../config";
 
 function BlogSection({ color }: PageSectionPropTypes) {
   const blog: BlogData = useLoaderData() as BlogData;
@@ -27,9 +28,10 @@ type BlogData = {
 };
 
 export async function blogPostLoader({ params }: any) {
-  const draftMode = true;
+  let draftMode = config.DRAFT_MODE;
 
   let root = consts.cdnBlogPosts;
+
   if (draftMode) {
     root = "http://localhost:4566/tommy/portfolio/blog/posts";
   }
