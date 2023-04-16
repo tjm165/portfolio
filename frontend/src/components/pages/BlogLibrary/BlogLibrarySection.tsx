@@ -14,6 +14,13 @@ const getCardData = (inputs: BlogItemProps[]) => {
 
 export default function BlogLibrarySection({ color }: PageSectionPropTypes) {
   const highlights: BlogItemProps[] = getCardData(library);
+  const draftMode = true;
+  let root = consts.cdnBlogPosts;
+
+  if (draftMode) {
+    root = "http://localhost:4566/tommy/portfolio/blog/posts";
+  }
+
   return (
     <MySection
       color={color}
@@ -25,7 +32,7 @@ export default function BlogLibrarySection({ color }: PageSectionPropTypes) {
           <BlogItem
             key={i}
             {...h}
-            image={h.image && `${consts.cdnBlogPosts}/${h.path}/${h.image}`}
+            image={h.image && `${root}/${h.path}/${h.image}`}
           />
         ))}
       </Item.Group>
