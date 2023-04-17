@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 type Config = {
   DRAFT_MODE: boolean;
 };
