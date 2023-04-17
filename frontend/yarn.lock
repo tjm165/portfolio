@@ -2143,10 +2143,6 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@tommy/types@link:../blog-manager/types":
-  version "0.0.0"
-  uid ""
-
 "@tommy@link:../blog-manager":
   version "0.0.0"
   uid ""
@@ -2475,6 +2471,10 @@
   integrity sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==
   dependencies:
     "@types/jest" "*"
+
+"@types/tommy@link:../blog-manager/types":
+  version "0.0.0"
+  uid ""
 
 "@types/trusted-types@^2.0.2":
   version "2.0.3"
