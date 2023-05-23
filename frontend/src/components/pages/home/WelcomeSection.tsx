@@ -1,4 +1,4 @@
-import { Button, Grid, Header, Icon, Image } from "semantic-ui-react";
+import { Button, Divider, Grid, Header, Icon, Image } from "semantic-ui-react";
 import { UndecoratedAnchor } from "../../common";
 import MyFavoriteTechBubbles from "../../static/MyFavoriteTechSection/MyFavoriteTechBubbles";
 import { PageSectionPropTypes } from "../Page";
@@ -56,6 +56,7 @@ const WelcomeSection = () => {
                 <Icon name="linkedin" /> Connect on LinkedIn
               </Button>
             </UndecoratedAnchor>
+            <Divider />
             <MyFavoriteTechBubbles />
           </Grid.Column>
           <Grid.Column
