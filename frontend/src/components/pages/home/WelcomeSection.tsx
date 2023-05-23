@@ -64,7 +64,7 @@ const WelcomeSection = () => {
               justifyContent: "center",
             }}
           >
-            <Image src={require("../../../moawad.jpg")} circular />
+            <Image src={require("../../../moawad.png")} circular />
           </Grid.Column>
         </Grid.Row>
       </Grid>
