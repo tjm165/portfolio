@@ -2,8 +2,6 @@ import TechCardPropTypes from "./type";
 import { Card, Image, Dimmer, Popup } from "semantic-ui-react";
 import { useState } from "react";
 
-import { myPalette } from "../../../App/myTheme";
-
 const TechCard = ({ icon, name, description }: TechCardPropTypes) => {
   const [hovered, setHovered] = useState(false);
 

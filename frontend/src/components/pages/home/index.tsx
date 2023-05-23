@@ -4,7 +4,7 @@ import HomepageHeading from "./WelcomeSection";
 
 // Tommy this is basically a Page
 const HomepageLayout = () => {
-  const PageSections: PageSection[] = [MyFavoriteTechSection, MyPathSection];
+  const PageSections: PageSection[] = [MyPathSection];
 
   return <Page HeroSection={HomepageHeading} PageSections={PageSections} />;
 };

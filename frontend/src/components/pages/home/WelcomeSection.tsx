@@ -1,5 +1,6 @@
 import { Button, Grid, Header, Icon, Image } from "semantic-ui-react";
 import { UndecoratedAnchor } from "../../common";
+import MyFavoriteTechBubbles from "../../static/MyFavoriteTechSection/MyFavoriteTechBubbles";
 import { PageSectionPropTypes } from "../Page";
 
 const mobile = true; // TOMMY SUPPORT BIG TIME
@@ -20,7 +21,7 @@ const WelcomeSection = () => {
         <Grid.Row>
           <Grid.Column
             floated="right"
-            width={8}
+            width={7}
             style={{
               display: "flex",
               alignItems: "center",
@@ -55,6 +56,7 @@ const WelcomeSection = () => {
                 <Icon name="linkedin" /> Connect on LinkedIn
               </Button>
             </UndecoratedAnchor>
+            <MyFavoriteTechBubbles />
           </Grid.Column>
           <Grid.Column
             width={8}
