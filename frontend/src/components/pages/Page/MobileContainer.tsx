@@ -7,7 +7,6 @@ import {
   Segment,
   Sidebar,
 } from "semantic-ui-react";
-import HomepageHeading from "./Welcome";
 
 type MobileContainerPropTypes = {
   children: ReactNode;
@@ -59,7 +58,6 @@ class MobileContainer extends Component {
                 </Menu.Item>
               </Menu>
             </Container>
-            <HomepageHeading mobile />
           </Segment>
 
           {children}

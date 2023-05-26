@@ -3,7 +3,15 @@ import { UndecoratedAnchor } from "../../common";
 
 const FooterSection = () => {
   return (
-    <Segment inverted vertical style={{ padding: "5em 0em" }}>
+    <Segment
+      inverted
+      vertical
+      style={{
+        padding: "5em 0em",
+        bottom: 0,
+        width: "100%",
+      }}
+    >
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>

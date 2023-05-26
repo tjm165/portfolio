@@ -10,6 +10,7 @@ const colors = {
   pink: "#eec5ca",
   purple: "#996cc6",
   graphite: "#232021",
+  offWhite: "#f7f7f7",
 };
 
 export const myPalette = {
@@ -24,5 +25,6 @@ export const myPalette = {
     pink: colors.pink,
     purple: colors.purple,
     graphite: colors.graphite,
+    offWhite: colors.offWhite,
   },
 };
