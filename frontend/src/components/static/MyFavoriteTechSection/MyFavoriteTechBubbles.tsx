@@ -15,7 +15,7 @@ const MyFavoriteTechBubbles = () => {
         }}
       />
 
-      <div style={{ display: "felx" }}>
+      <div style={{ display: "flex" }}>
         {data.map((datam) => (
           <TechBubble {...datam} />
         ))}
