@@ -2,16 +2,13 @@ import { Button, Divider, Grid, Header, Icon, Image } from "semantic-ui-react";
 import { UndecoratedAnchor } from "../../common";
 import MyFavoriteTechBubbles from "../../static/MyFavoriteTechSection/MyFavoriteTechBubbles";
 import { PageSectionPropTypes } from "../Page";
+import ScrollArrow from "./ScrollArrow";
 
 const mobile = true; // TOMMY SUPPORT BIG TIME
 
 const WelcomeSection = () => {
-  const divStyle = {
-    backgroundImage: "linear-gradient(to bottom right, #70CFFF, #5C08AF)",
-  };
-
   return (
-    <div className="Gradient">
+    <div className="Gradient" style={{ minHeight: "90vh" }}>
       <Grid
         style={{ minHeight: 700, padding: "1em 0em" }}
         container
@@ -71,6 +68,7 @@ const WelcomeSection = () => {
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <ScrollArrow />
     </div>
   );
 };
