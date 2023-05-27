@@ -14,12 +14,12 @@ const MyFavoriteTechBubbles = () => {
           fontWeight: "normal",
         }}
       />
-      <Divider />
-      <Card.Group centered>
+
+      <div style={{ display: "felx" }}>
         {data.map((datam) => (
           <TechBubble {...datam} />
         ))}
-      </Card.Group>
+      </div>
     </>
   );
 };

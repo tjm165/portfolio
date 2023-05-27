@@ -6,7 +6,14 @@ const TechBubble = ({ icon, name, description }: TechCardPropTypes) => {
     <Popup
       position="left center"
       hoverable
-      trigger={<Image src={icon} spaced circular size={"tiny"} />}
+      trigger={
+        <Image
+          src={icon}
+          style={{ marginTop: "6px", borderRadius: "5px" }}
+          spaced
+          size={"tiny"}
+        />
+      }
     >
       <Popup.Header>{name}</Popup.Header>
       <Popup.Content>{description}</Popup.Content>
