@@ -18,6 +18,7 @@ const ScrollArrow = () => {
     justifyContent: "center",
     alignItems: "center",
     transition: "background-color 0.3s",
+    paddingBottom: "12px",
   };
 
   const arrowStyle = {

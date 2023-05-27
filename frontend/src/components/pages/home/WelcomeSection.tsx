@@ -8,7 +8,7 @@ const mobile = true; // TOMMY SUPPORT BIG TIME
 
 const WelcomeSection = () => {
   return (
-    <div className="Gradient" style={{ height: "90vh", minHeight: "90vh" }}>
+    <div className="Gradient" style={{ minHeight: "90vh" }}>
       <Grid
         style={{ minHeight: 700, padding: "1em 0em" }}
         container
