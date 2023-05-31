@@ -12,6 +12,12 @@ const ScrollArrow = () => {
     });
   };
 
+  const wrapper = {
+    position: "fixed",
+    bottom: "10px",
+    width: "100%",
+  };
+
   const scrollArrowStyle = {
     cursor: "pointer",
     display: "flex",
@@ -30,8 +36,11 @@ const ScrollArrow = () => {
   };
 
   return (
-    <div style={scrollArrowStyle} onClick={scrollToBottom}>
-      <span style={arrowStyle}></span>
+    // @ts-ignore doesn't like fixed position
+    <div style={wrapper}>
+      <div style={scrollArrowStyle} onClick={scrollToBottom}>
+        <span style={arrowStyle}></span>
+      </div>
     </div>
   );
 };
