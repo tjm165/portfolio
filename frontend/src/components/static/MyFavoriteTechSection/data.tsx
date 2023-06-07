@@ -1,6 +1,6 @@
 import ReactIcon from "./logos/react.png";
 import TypescriptIcon from "./logos/typescript.svg";
-import AwsIcon from "./logos/aws.jpeg";
+import AwsIcon from "./logos/aws.png";
 import OcamlIcon from "./logos/ocaml.png";
 import TerraformLogo from "./logos/terraform.png";
 import TechCardPropTypes from "./type";

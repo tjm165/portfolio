@@ -4,6 +4,7 @@ import { Item } from "semantic-ui-react";
 import { PageSectionPropTypes } from "../Page";
 import { consts, MySection, Types } from "../../common";
 import config from "../../../config";
+import { ResultObj } from "@tommy/types";
 
 const getCardData = (inputs: BlogItemProps[]) => {
   return inputs.map((input) => {
@@ -12,6 +13,16 @@ const getCardData = (inputs: BlogItemProps[]) => {
     };
   });
 };
+
+function shouldShowBlogPost(blog: ResultObj): boolean {
+  if (blog.draftMode && window.location.origin.includes("localhost")) {
+    return true;
+  }
+  if (!blog.draftMode && !window.location.origin.includes("localhost")) {
+    return true;
+  }
+  return false;
+}
 
 export default function BlogLibrarySection({ color }: PageSectionPropTypes) {
   const highlights: BlogItemProps[] = getCardData(library);
@@ -32,13 +43,15 @@ export default function BlogLibrarySection({ color }: PageSectionPropTypes) {
       headingTextCenter={Types.Position.LEFT}
     >
       <Item.Group relaxed>
-        {highlights.map((h, i) => (
-          <BlogItem
-            key={i}
-            {...h}
-            image={h.image && `${root}/${h.path}/${h.image}`}
-          />
-        ))}
+        {highlights
+          .filter((h) => shouldShowBlogPost(h))
+          .map((h, i) => (
+            <BlogItem
+              key={i}
+              {...h}
+              image={h.image && `${root}/${h.path}/${h.image}`}
+            />
+          ))}
       </Item.Group>
     </MySection>
   );
