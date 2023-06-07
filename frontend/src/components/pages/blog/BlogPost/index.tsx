@@ -9,7 +9,7 @@ function BlogSection({ color }: PageSectionPropTypes) {
   return (
     <MySection
       color={color}
-      headingText="Blog Posts"
+      headingText={blog.metadata.title}
       headingTextCenter={Types.Position.LEFT}
     >
       <MuiMarkdown>{blog.body}</MuiMarkdown>

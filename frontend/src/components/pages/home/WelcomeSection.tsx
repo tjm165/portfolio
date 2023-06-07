@@ -1,7 +1,6 @@
 import { Button, Divider, Grid, Header, Icon, Image } from "semantic-ui-react";
 import { UndecoratedAnchor } from "../../common";
 import MyFavoriteTechBubbles from "../../static/MyFavoriteTechSection/MyFavoriteTechBubbles";
-import { PageSectionPropTypes } from "../Page";
 import ScrollArrow from "./ScrollArrow";
 
 const mobile = true; // TOMMY SUPPORT BIG TIME

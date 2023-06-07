@@ -1,5 +1,5 @@
 import TechCardPropTypes from "./type";
-import { Card, Image, Dimmer, Popup } from "semantic-ui-react";
+import { Card, Image, Popup } from "semantic-ui-react";
 import { useState } from "react";
 
 const TechCard = ({ icon, name, description }: TechCardPropTypes) => {
