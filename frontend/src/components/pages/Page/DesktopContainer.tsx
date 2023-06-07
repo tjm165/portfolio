@@ -22,7 +22,17 @@ class DesktopContainer extends Component {
     return (
       <>
         <InView onChange={this.toggleFixedMenu}>
-          <Segment inverted textAlign="center" vertical>
+          <Segment
+            inverted
+            textAlign="center"
+            vertical
+            style={{
+              minHeight: "10vh",
+              maxHeight: "10vh",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <Menu
               fixed={fixed ? "top" : undefined}
               inverted={!fixed}

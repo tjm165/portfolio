@@ -1,11 +1,24 @@
 import { useLoaderData } from "react-router-dom";
 import MuiMarkdown from "mui-markdown";
-import { consts } from "../../../common";
+import { consts, MySection, Types } from "../../../common";
+import Page, { PageSectionPropTypes } from "../../Page";
 
-export default function BlogPost() {
+function BlogSection({ color }: PageSectionPropTypes) {
   const blog: BlogData = useLoaderData() as BlogData;
 
-  return <MuiMarkdown>{blog.body}</MuiMarkdown>;
+  return (
+    <MySection
+      color={color}
+      headingText="Blog Posts"
+      headingTextCenter={Types.Position.LEFT}
+    >
+      <MuiMarkdown>{blog.body}</MuiMarkdown>
+    </MySection>
+  );
+}
+
+export default function BlogPost() {
+  return <Page PageSections={[BlogSection]} />;
 }
 
 type BlogData = {

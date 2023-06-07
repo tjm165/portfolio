@@ -51,12 +51,18 @@ const Page = ({ HeroSection, PageSections }: PagePropTypes) => {
 
   return (
     <ResponsiveContainer>
-      <>
+      <span
+        style={{
+          minHeight: "90vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {HeroSection && <HeroSection />}
         {PageSections?.map((PageSection, index) => (
           <PageSection key={index} color={colors[index % colors.length]} />
         ))}
-      </>
+      </span>
 
       <FooterSection />
     </ResponsiveContainer>

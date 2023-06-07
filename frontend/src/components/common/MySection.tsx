@@ -18,7 +18,11 @@ const MySection = ({
   fluid,
 }: PropTypes) => {
   return (
-    <Segment style={{ backgroundColor: color, padding: "4em 4em" }} vertical>
+    <Segment
+      basic
+      style={{ backgroundColor: color, padding: "4em 4em" }}
+      vertical
+    >
       <Container fluid={fluid}>
         <Header
           textAlign={headingTextCenter}

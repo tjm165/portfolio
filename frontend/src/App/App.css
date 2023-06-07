@@ -26,9 +26,9 @@
 
 .Gradient {
   background-image: linear-gradient(
-    to bottom right,
-    #70cfff,
-    #5c08af
+    to bottom left,
+    #92effd,
+    #4e65ff
   ) !important;
 }
 
