@@ -10,3 +10,7 @@
 1. `yarn publish:local`
 
 # Metadata
+
+- Title
+- Description
+- draftMode
