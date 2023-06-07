@@ -1,18 +1,10 @@
 import { useState } from "react";
 import { createMedia } from "@artsy/fresnel";
 
-import {
-  Item,
-  Button,
-  Icon,
-  Divider,
-  Image,
-  Grid,
-  Header,
-  Popup,
-  Segment,
-} from "semantic-ui-react";
-import { UndecoratedLink } from "../../../common";
+import { Item, Button, Icon, Divider, Popup } from "semantic-ui-react";
+import { UndecoratedLink } from "../../common";
+
+import { ResultObj } from "@tommy/types";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -22,12 +14,7 @@ const { MediaContextProvider, Media } = createMedia({
   },
 });
 
-export type BlogItemProps = {
-  title: string;
-  description: string;
-  path: string;
-  image?: string;
-};
+export type BlogItemProps = ResultObj;
 
 export default function BlogItem({
   title,
@@ -87,7 +74,7 @@ export default function BlogItem({
             </Item.Extra>
           </Item.Content>
           <Media greaterThan="mobile">
-            {image && <Item.Image src={image} />}
+            {image && <Item.Image size="small" src={image} />}
           </Media>
         </Item>
       </MediaContextProvider>

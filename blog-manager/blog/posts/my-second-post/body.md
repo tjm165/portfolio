@@ -4,7 +4,7 @@ A paragraph with _emphasis_ and **strong importance**.
 
 - Lists
 - [ ] todo
-- [x] done
+- [x] done!
 
 A table:
 
@@ -14,5 +14,5 @@ A table:
 | Paragraph | Text        |
 
 ```js
-console.log("It works!!!!!");
+console.log("It works!!");
 ```

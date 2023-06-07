@@ -1,5 +1,5 @@
 import Home from "./home";
 import ErrorPage from "./error-page";
-import Blog from "./blog";
+import BlogLibrary from "./BlogLibrary";
 
-export { Home, ErrorPage, Blog };
+export { Home, ErrorPage, BlogLibrary };

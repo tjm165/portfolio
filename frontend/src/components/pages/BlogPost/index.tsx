@@ -1,7 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import MuiMarkdown from "mui-markdown";
-import { consts, MySection, Types } from "../../../common";
-import Page, { PageSectionPropTypes } from "../../Page";
+import { consts, MySection, Types } from "../../common";
+import Page, { PageSectionPropTypes } from "../Page";
+import config from "../../../config";
 
 function BlogSection({ color }: PageSectionPropTypes) {
   const blog: BlogData = useLoaderData() as BlogData;
@@ -27,16 +28,30 @@ type BlogData = {
 };
 
 export async function blogPostLoader({ params }: any) {
+  let draftMode = config.DRAFT_MODE;
+
+  let root = consts.cdnBlogPosts;
+
+  if (draftMode) {
+    root = "http://localhost:4566/tommy/portfolio/blog/posts";
+  }
+
   const metadata_response = await fetch(
-    `${consts.cdnBlogPosts}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`
+    `${root}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`
   );
-  const metadata = await metadata_response.json();
+
+  const metadata = await metadata_response.text();
+
+  console.log(metadata);
+
+  console.log(metadata);
 
   const body_response = await fetch(
-    `${consts.cdnBlogPosts}/${params.blogId}/${consts.cdnBlogBodySuffix}`
+    `${root}/${params.blogId}/${consts.cdnBlogBodySuffix}`
   );
 
   const body = await body_response.text();
+  console.log(body);
 
   return { body, metadata };
 }

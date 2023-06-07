@@ -6,8 +6,19 @@
   "author": "Thomas Moawad",
   "license": "MIT",
   "scripts": {
-    "sync_blog": "aws s3 sync blog s3://my-cdn-s3/portfolio/blog",
+    "sync_blog:aws": "aws s3 sync blog s3://my-cdn-s3/portfolio/blog",
+    "sync_blog:local": "aws --endpoint-url=http://localhost:4566 s3 sync ./blog s3://tommy/portfolio/blog",
     "invalidate_cdn": "aws cloudfront create-invalidation --distribution-id E100N2BSOXPXX3 --paths '/portfolio/blog/*'",
-    "publish:aws": "yarn sync_blog && yarn invalidate_cdn"
+    "create_metadata": "ts-node scripts/createMetaData.ts",
+    "publish:aws": "yarn create_metadata && yarn sync_blog:aws && yarn invalidate_cdn",
+    "publish:local": "yarn create_metadata && yarn sync_blog:local",
+    "start_localstack": "sh scripts/localstack.sh"
+  },
+  "experiments": {
+    "topLevelAwait": true
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.4"
   }
 }

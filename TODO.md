@@ -1,10 +1,3 @@
-To do in this pull request
-
-1. Dynamically fetch meta data
-   1. If on local then fetch from local
-   1. If on higher env then fetch from cloudfront
-1. Script to very dertily write/cache the library.ts
-
 Next Blog UX PR
 
 1. Clean up blog library
@@ -26,3 +19,5 @@ Next Page PR
 Tech debt
 
 1. MediaContextProvider only once pls
+
+1. How will metadata sort the files? I might need to still figure out how to write all at once

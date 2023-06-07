@@ -3,7 +3,7 @@ import Page from "../Page";
 import BlogLibrarySection from "./BlogLibrarySection";
 
 // maybe flatten out the two blog pages since they aren't even related
-export default function BlogPage() {
+export default function BlogLibrary() {
   return (
     <>
       <Outlet />

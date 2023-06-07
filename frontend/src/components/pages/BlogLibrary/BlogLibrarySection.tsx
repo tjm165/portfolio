@@ -1,22 +1,30 @@
 import BlogItem, { BlogItemProps } from "./BlogItem";
 import library from "./library";
 import { Item } from "semantic-ui-react";
-import { PageSectionPropTypes } from "../../Page";
-import { MySection, Types } from "../../../common";
+import { PageSectionPropTypes } from "../Page";
+import { consts, MySection, Types } from "../../common";
+import config from "../../../config";
 
 const getCardData = (inputs: BlogItemProps[]) => {
   return inputs.map((input) => {
     return {
-      title: input.title,
-      description: input.description,
-      path: input.path,
-      image: input.image,
+      ...input,
     };
   });
 };
 
 export default function BlogLibrarySection({ color }: PageSectionPropTypes) {
   const highlights: BlogItemProps[] = getCardData(library);
+  let draftMode = config.DRAFT_MODE;
+
+  let root = consts.cdnBlogPosts;
+
+  if (draftMode) {
+    root = "http://localhost:4566/tommy/portfolio/blog/posts";
+  }
+
+  console.log(draftMode);
+
   return (
     <MySection
       color={color}
@@ -24,13 +32,11 @@ export default function BlogLibrarySection({ color }: PageSectionPropTypes) {
       headingTextCenter={Types.Position.LEFT}
     >
       <Item.Group relaxed>
-        {highlights.map(({ title, description, path, image }, i) => (
+        {highlights.map((h, i) => (
           <BlogItem
             key={i}
-            title={title}
-            description={description}
-            path={path}
-            image={image}
+            {...h}
+            image={h.image && `${root}/${h.path}/${h.image}`}
           />
         ))}
       </Item.Group>

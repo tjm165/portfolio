@@ -1,0 +1,2 @@
+{"title":"My Title","path":"my-second-post","numCharacters":318,"description":"Hey this is my first blog!","image":"https://picsum.photos/300/300"} 
+{"title":"My Title","path":"my-first-blog-post","numCharacters":317,"description":"Hey this is my first blog!","image":"https://picsum.photos/300/300"} 
