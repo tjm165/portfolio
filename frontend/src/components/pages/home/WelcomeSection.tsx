@@ -1,16 +1,13 @@
-import { Button, Grid, Header, Icon, Image } from "semantic-ui-react";
+import { Button, Divider, Grid, Header, Icon, Image } from "semantic-ui-react";
 import { UndecoratedAnchor } from "../../common";
-import { PageSectionPropTypes } from "../Page";
+import MyFavoriteTechBubbles from "../../static/MyFavoriteTechSection/MyFavoriteTechBubbles";
+import ScrollArrow from "./ScrollArrow";
 
 const mobile = true; // TOMMY SUPPORT BIG TIME
 
 const WelcomeSection = () => {
-  const divStyle = {
-    backgroundImage: "linear-gradient(to bottom right, #70CFFF, #5C08AF)",
-  };
-
   return (
-    <div className="Gradient">
+    <div className="Gradient" style={{ minHeight: "90vh" }}>
       <Grid
         style={{ minHeight: 700, padding: "1em 0em" }}
         container
@@ -20,7 +17,7 @@ const WelcomeSection = () => {
         <Grid.Row>
           <Grid.Column
             floated="right"
-            width={8}
+            width={7}
             style={{
               display: "flex",
               alignItems: "center",
@@ -55,6 +52,8 @@ const WelcomeSection = () => {
                 <Icon name="linkedin" /> Connect on LinkedIn
               </Button>
             </UndecoratedAnchor>
+            <Divider />
+            <MyFavoriteTechBubbles />
           </Grid.Column>
           <Grid.Column
             width={8}
@@ -64,10 +63,11 @@ const WelcomeSection = () => {
               justifyContent: "center",
             }}
           >
-            <Image src={require("../../../moawad.jpg")} circular />
+            <Image src={require("../../../moawad.png")} circular />
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <ScrollArrow />
     </div>
   );
 };

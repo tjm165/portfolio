@@ -27,7 +27,8 @@ class DesktopContainer extends Component {
             textAlign="center"
             vertical
             style={{
-              minHeight: "5vh",
+              minHeight: "10vh",
+              maxHeight: "10vh",
               display: "flex",
               flexDirection: "column",
             }}
