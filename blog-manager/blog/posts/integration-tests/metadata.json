@@ -1,3 +1,5 @@
 {
-  "title": "Using Jest + Express for integration test"
+  "title": "Using Jest + Express for integration test",
+  "description": "How to handle integration tests using Jest and Express.",
+  "draftMode": true
 }
