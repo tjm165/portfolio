@@ -14,8 +14,7 @@ Next Blog UX PR
 Next Architecture Blog PR
 
 1. Yarn command to load metadata into frontend code. And read minutes (aka word count)
-1. How to support local development of a blog post without pushing to cloudfront every few minutes.
-   1. Maybe mark as draft mode?
+1. Mark as draft mode to not show on higher environments
 1. View count or Google analytics even just for me to see
 1. Make an init blog that will clone example blog post
 1. Date?
