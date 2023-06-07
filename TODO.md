@@ -1,29 +1,24 @@
-This PR
+To do in this pull request
 
-1. Make sure that the blog post still looks good
-1. S3 Sync for blog posts. Yeah that would make sense
+1. Dynamically fetch meta data
+   1. If on local then fetch from local
+   1. If on higher env then fetch from cloudfront
+1. Script to very dertily write/cache the library.ts
 
-Next Blog PR Stretch Scope
+Next Blog UX PR
 
-1. How to be fancy about getting meta-data such as the dates of a blog post
-1. Maybe consider tags. Although those should be code based not S3 based
-1. Meta data on minutes to read
-
-Next PR
-
-1. Gradient Welcome Pane
-1. Abstract to Page component
-1. MAKE SURE TO SUPPORT MOBILE WITHIN THE PAGE ABSTRACTION
-1. Hero section and NavBar same color pls
-   Next Styling PR
-
-1. Header needs to have name and all pages
-1. Gradient Welcome Pane and Hero section and NavBar same color
+1. Clean up blog library
+1. Add blog page to the nav bar
+1. Add share button to blog page
 
 Next Architecture Blog PR
 
 1. Yarn command to load metadata into frontend code. And read minutes (aka word count)
 1. How to support local development of a blog post without pushing to cloudfront every few minutes.
+   1. Maybe mark as draft mode?
+1. View count or Google analytics even just for me to see
+1. Make an init blog that will clone example blog post
+1. Date?
 
 Next Page PR
 

@@ -8,19 +8,10 @@ const library: BlogItemProps[] = [
     image: "https://picsum.photos/300/300",
   },
   {
-    path: "my-first-blog-post",
-    title: "Blog Post",
+    path: "integration-tests",
+    title: "Integration tests???",
     description: "Hey!",
-  },
-  {
-    path: "my-first-blog-post",
-    title: "My First Blog Post",
-    description: "Hey!",
-  },
-  {
-    path: "my-first-blog-post",
-    title: "My First Blog Post",
-    description: "Hey!",
+    image: "https://picsum.photos/300/300",
   },
 ];
 
