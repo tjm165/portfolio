@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -6,15 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { ErrorPage, BlogLibrary, Home } from "./components/pages";
 import BlogPost, { blogPostLoader } from "./components/pages/BlogPost";
+import { Menu } from "semantic-ui-react";
+import { UndecoratedAnchor } from "./components/common";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App view={<Home />} />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/2",
     element: <App view={<Home />} />,
     errorElement: <ErrorPage />,
   },
@@ -32,6 +29,35 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+const navConfig: { label: string; path: string }[] = [
+  {
+    label: "Home",
+    path: "/",
+  },
+  {
+    label: "Blog",
+    path: "/blog",
+  },
+];
+
+export const NavItems = () => {
+  const locator = "/" + window.location.pathname.split("/")[1];
+
+  return (
+    <>
+      {navConfig.map((item, i) => {
+        return (
+          <UndecoratedAnchor index={i} href={item.path}>
+            <Menu.Item as="a" active={locator == item.path}>
+              {item.label}
+            </Menu.Item>
+          </UndecoratedAnchor>
+        );
+      })}
+    </>
+  );
+};
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
