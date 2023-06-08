@@ -45,9 +45,7 @@ class MobileContainer extends Component {
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
             inverted
-            style={{
-              backgroundColor: transparent ? "rgba(0,0,0,0)" : "",
-            }}
+            className={transparent ? "FancyHeader" : ""}
             textAlign="center"
             vertical
           >

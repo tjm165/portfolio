@@ -32,6 +32,10 @@
   ) !important;
 }
 
+.FancyHeader {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
 .Transparent {
   background: rgba(0, 0, 0, 0.5) !important;
 }

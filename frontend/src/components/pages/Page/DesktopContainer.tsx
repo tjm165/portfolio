@@ -30,8 +30,8 @@ class DesktopContainer extends Component {
             textAlign="center"
             vertical
             inverted
+            className={transparent ? "FancyHeader" : ""}
             style={{
-              backgroundColor: transparent ? "rgba(0,0,0,0)" : "",
               minHeight: "10vh",
               maxHeight: "10vh",
               display: "flex",
