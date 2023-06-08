@@ -36,6 +36,15 @@
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
+.FancyHeader > .ui.secondary.inverted.pointing.menu {
+  border-top: 0px;
+}
+
+.FancyHeader > * .ui.secondary.inverted.pointing.menu {
+  border-width: 0px !important;
+  border-bottom-width: 2px !important;
+}
+
 .Transparent {
   background: rgba(0, 0, 0, 0.5) !important;
 }
