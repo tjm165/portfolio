@@ -15,20 +15,26 @@ const { MediaContextProvider, Media } = createMedia({
 
 type ResponsiveContainerPropTypes = {
   children: ReactNode;
+  headerColor: string;
 };
 
-const ResponsiveContainer = ({ children }: ResponsiveContainerPropTypes) => (
+const ResponsiveContainer = ({
+  children,
+  headerColor,
+}: ResponsiveContainerPropTypes) => (
   /* Heads up!
    * For large applications it may not be best option to put all page into these containers at
    * they will be rendered twice for SSR.
    */
   <MediaContextProvider>
     <Media greaterThan="mobile">
-      <DesktopContainer>{children}</DesktopContainer>
+      {/* @ts-ignore because not a functional component */}
+      <DesktopContainer headerColor={headerColor}>{children}</DesktopContainer>
     </Media>
 
     <Media at="mobile">
-      <MobileContainer>{children}</MobileContainer>
+      {/* @ts-ignore because not a functional component */}
+      <MobileContainer headerColor={headerColor}>{children}</MobileContainer>
     </Media>
   </MediaContextProvider>
 );
@@ -50,7 +56,7 @@ const Page = ({ HeroSection, PageSections }: PagePropTypes) => {
   const colors = [myPalette.specific.white, myPalette.abstract.primary.light];
 
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer headerColor="blue">
       <span
         style={{
           minHeight: "90vh",
