@@ -7,6 +7,7 @@ import {
   Segment,
   Sidebar,
 } from "semantic-ui-react";
+import { NavItems } from "../../..";
 
 type MobileContainerPropTypes = {
   children: ReactNode;
@@ -33,9 +34,7 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as="a" active>
-            Home
-          </Menu.Item>
+          <NavItems />
           {/* <Menu.Item as="a">Work</Menu.Item>
           <Menu.Item as="a">Company</Menu.Item>
           <Menu.Item as="a">Careers</Menu.Item> */}

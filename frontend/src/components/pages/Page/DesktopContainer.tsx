@@ -1,6 +1,7 @@
 import { Component, ReactNode } from "react";
 import { InView } from "react-intersection-observer";
 import { Container, Menu, Segment } from "semantic-ui-react";
+import { NavItems } from "../../..";
 
 type DesktopContainerPropTypes = {
   children: ReactNode;
@@ -41,9 +42,8 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Menu.Item as="a" active>
-                  Home
-                </Menu.Item>
+                <NavItems />
+
                 {/* <Menu.Item as="a">Work</Menu.Item>
                 <Menu.Item as="a">Company</Menu.Item>
                 <Menu.Item as="a">Careers</Menu.Item> */}
