@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -41,11 +41,13 @@ const navConfig: { label: string; path: string }[] = [
 ];
 
 export const NavItems = () => {
+  const locator = "/" + window.location.pathname.split("/")[1];
+
   return (
     <>
       {navConfig.map((item, i) => {
         return (
-          <Menu.Item index={i} as="a" active>
+          <Menu.Item index={i} as="a" active={locator == item.path}>
             {item.label}
           </Menu.Item>
         );
