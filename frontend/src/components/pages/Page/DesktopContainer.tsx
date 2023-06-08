@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 type DesktopContainerPropTypes = {
   children: ReactNode;
-  headerColor: string;
+  transparent?: boolean;
 };
 
 /* Heads up!
@@ -20,7 +20,7 @@ class DesktopContainer extends Component {
   toggleFixedMenu = (inView: boolean) => this.setState({ fixed: !inView });
 
   render() {
-    const { children } = this.props as DesktopContainerPropTypes;
+    const { children, transparent } = this.props as DesktopContainerPropTypes;
     const { fixed } = this.state;
 
     return (
@@ -29,8 +29,9 @@ class DesktopContainer extends Component {
           <Segment
             textAlign="center"
             vertical
+            inverted
             style={{
-              backgroundColor: "rgba(0,0,0,0)",
+              backgroundColor: transparent ? "rgba(0,0,0,0)" : "",
               minHeight: "10vh",
               maxHeight: "10vh",
               display: "flex",

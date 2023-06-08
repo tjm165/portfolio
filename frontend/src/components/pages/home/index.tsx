@@ -6,7 +6,14 @@ import HomepageHeading from "./WelcomeSection";
 const HomepageLayout = () => {
   const PageSections: PageSection[] = [MyPathSection];
 
-  return <Page HeroSection={HomepageHeading} PageSections={PageSections} />;
+  return (
+    <Page
+      hasGradient
+      transparentHeader
+      HeroSection={HomepageHeading}
+      PageSections={PageSections}
+    />
+  );
 };
 
 export default HomepageLayout;
