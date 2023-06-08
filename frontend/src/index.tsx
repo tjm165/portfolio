@@ -43,9 +43,9 @@ const navConfig: { label: string; path: string }[] = [
 export const NavItems = () => {
   return (
     <>
-      {navConfig.map((item) => {
+      {navConfig.map((item, i) => {
         return (
-          <Menu.Item as="a" active>
+          <Menu.Item index={i} as="a" active>
             {item.label}
           </Menu.Item>
         );
