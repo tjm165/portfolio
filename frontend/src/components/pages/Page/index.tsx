@@ -15,26 +15,20 @@ const { MediaContextProvider, Media } = createMedia({
 
 type ResponsiveContainerPropTypes = {
   children: ReactNode;
-  headerColor: string;
 };
 
-const ResponsiveContainer = ({
-  children,
-  headerColor,
-}: ResponsiveContainerPropTypes) => (
+const ResponsiveContainer = ({ children }: ResponsiveContainerPropTypes) => (
   /* Heads up!
    * For large applications it may not be best option to put all page into these containers at
    * they will be rendered twice for SSR.
    */
   <MediaContextProvider>
     <Media greaterThan="mobile">
-      {/* @ts-ignore because not a functional component */}
-      <DesktopContainer headerColor={headerColor}>{children}</DesktopContainer>
+      <DesktopContainer>{children}</DesktopContainer>
     </Media>
 
     <Media at="mobile">
-      {/* @ts-ignore because not a functional component */}
-      <MobileContainer headerColor={headerColor}>{children}</MobileContainer>
+      <MobileContainer>{children}</MobileContainer>
     </Media>
   </MediaContextProvider>
 );
@@ -56,22 +50,24 @@ const Page = ({ HeroSection, PageSections }: PagePropTypes) => {
   const colors = [myPalette.specific.white, myPalette.abstract.primary.light];
 
   return (
-    <ResponsiveContainer headerColor="blue">
-      <span
-        style={{
-          minHeight: "90vh",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        {HeroSection && <HeroSection />}
-        {PageSections?.map((PageSection, index) => (
-          <PageSection key={index} color={colors[index % colors.length]} />
-        ))}
-      </span>
+    <div className="Gradient">
+      <ResponsiveContainer>
+        <span
+          style={{
+            minHeight: "90vh",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          {HeroSection && <HeroSection />}
+          {PageSections?.map((PageSection, index) => (
+            <PageSection key={index} color={colors[index % colors.length]} />
+          ))}
+        </span>
 
-      <FooterSection />
-    </ResponsiveContainer>
+        <FooterSection />
+      </ResponsiveContainer>
+    </div>
   );
 };
 

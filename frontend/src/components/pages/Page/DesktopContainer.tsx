@@ -20,7 +20,7 @@ class DesktopContainer extends Component {
   toggleFixedMenu = (inView: boolean) => this.setState({ fixed: !inView });
 
   render() {
-    const { children, headerColor } = this.props as DesktopContainerPropTypes;
+    const { children } = this.props as DesktopContainerPropTypes;
     const { fixed } = this.state;
 
     return (
@@ -30,7 +30,7 @@ class DesktopContainer extends Component {
             textAlign="center"
             vertical
             style={{
-              backgroundColor: headerColor,
+              backgroundColor: "rgba(0,0,0,0)",
               minHeight: "10vh",
               maxHeight: "10vh",
               display: "flex",
