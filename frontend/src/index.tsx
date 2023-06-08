@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { ErrorPage, BlogLibrary, Home } from "./components/pages";
 import BlogPost, { blogPostLoader } from "./components/pages/BlogPost";
 import { Menu } from "semantic-ui-react";
+import { UndecoratedAnchor } from "./components/common";
 
 const router = createBrowserRouter([
   {
@@ -47,9 +48,11 @@ export const NavItems = () => {
     <>
       {navConfig.map((item, i) => {
         return (
-          <Menu.Item index={i} as="a" active={locator == item.path}>
-            {item.label}
-          </Menu.Item>
+          <UndecoratedAnchor index={i} href={item.path}>
+            <Menu.Item as="a" active={locator == item.path}>
+              {item.label}
+            </Menu.Item>
+          </UndecoratedAnchor>
         );
       })}
     </>
