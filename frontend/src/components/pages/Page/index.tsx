@@ -4,6 +4,7 @@ import { myPalette } from "../../../App/myTheme";
 import DesktopContainer from "./DesktopContainer";
 import MobileContainer from "./MobileContainer";
 import FooterSection from "./FooterSection";
+import { useTitle } from "../../../hooks";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -52,6 +53,7 @@ type PagePropTypes = {
   PageSections?: PageSection[];
   hasGradient?: boolean;
   transparentHeader?: boolean;
+  tabTitle: string;
 };
 
 const Page = ({
@@ -59,8 +61,11 @@ const Page = ({
   PageSections,
   hasGradient,
   transparentHeader,
+  tabTitle,
 }: PagePropTypes) => {
   const colors = [myPalette.specific.white, myPalette.abstract.primary.light];
+
+  useTitle(tabTitle);
 
   return (
     <div className={hasGradient ? "Gradient" : ""}>
