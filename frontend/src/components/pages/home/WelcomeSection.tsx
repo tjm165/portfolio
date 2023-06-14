@@ -19,7 +19,7 @@ const { MediaContextProvider, Media } = createMedia({
 const WelcomeSection = () => {
   return (
     <MediaContextProvider>
-      <div className="Gradient" style={{ minHeight: "90vh" }}>
+      <div style={{ minHeight: "90vh" }}>
         <Grid
           style={{ minHeight: 700, padding: "1em 0em" }}
           container

@@ -11,6 +11,8 @@ import { NavItems } from "../../..";
 
 type MobileContainerPropTypes = {
   children: ReactNode;
+  headerColor: string;
+  transparent?: boolean;
 };
 
 class MobileContainer extends Component {
@@ -21,7 +23,7 @@ class MobileContainer extends Component {
   handleToggle = () => this.setState({ sidebarOpened: true });
 
   render() {
-    const { children } = this.props as MobileContainerPropTypes;
+    const { children, transparent } = this.props as MobileContainerPropTypes;
     const { sidebarOpened } = this.state;
 
     return (
@@ -41,7 +43,12 @@ class MobileContainer extends Component {
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Segment inverted textAlign="center" vertical>
+          <Segment
+            inverted
+            className={transparent ? "FancyHeader" : ""}
+            textAlign="center"
+            vertical
+          >
             <Container>
               <Menu inverted pointing secondary size="large">
                 <Menu.Item onClick={this.handleToggle}>
