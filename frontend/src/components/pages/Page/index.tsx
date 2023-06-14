@@ -72,7 +72,7 @@ const Page = ({
       <ResponsiveContainer transparent={transparentHeader}>
         <span
           style={{
-            minHeight: "90vh",
+            minHeight: "92vh",
             display: "flex",
             flexDirection: "column",
           }}
