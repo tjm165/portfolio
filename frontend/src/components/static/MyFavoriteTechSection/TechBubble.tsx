@@ -1,5 +1,7 @@
 import TechCardPropTypes from "./type";
 import { Card, Image, Popup } from "semantic-ui-react";
+// @ts-ignore
+import LazyImage from "react-lazy-blur-image";
 
 const TechBubble = ({ icon, name, description }: TechCardPropTypes) => {
   return (
@@ -7,11 +9,17 @@ const TechBubble = ({ icon, name, description }: TechCardPropTypes) => {
       position="left center"
       hoverable
       trigger={
-        <Image
-          src={icon}
-          style={{ marginTop: "6px", borderRadius: "5px" }}
-          spaced
-          size={"tiny"}
+        <LazyImage
+          uri={icon}
+          // @ts-ignore
+          render={(src) => (
+            <Image
+              src={src}
+              style={{ marginTop: "6px", borderRadius: "5px" }}
+              spaced
+              size={"tiny"}
+            />
+          )}
         />
       }
     >

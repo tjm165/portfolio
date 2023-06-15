@@ -76,7 +76,12 @@ const WelcomeSection = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Image src={require("../../../moawad.png")} circular />
+                  <LazyImage
+                    placeholder={require("../../../moawad-low-res.png")}
+                    uri={require("../../../moawad.png")}
+                    // @ts-ignore
+                    render={(src) => <Image src={src} circular />}
+                  />
                 </Grid.Column>
               </Media>
               <MyFavoriteTechBubbles />
@@ -95,7 +100,7 @@ const WelcomeSection = () => {
                   uri={require("../../../moawad.png")}
                   // @ts-ignore
                   render={(src) => <Image src={src} circular />}
-                />{" "}
+                />
               </Media>
             </Grid.Column>
           </Grid.Row>
