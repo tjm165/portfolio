@@ -87,6 +87,7 @@ const WelcomeSection = () => {
                 </Grid.Column>
               </Media>
               <MyFavoriteTechBubbles />
+              <div style={{ height: "5vh" }}></div>
             </Grid.Column>
             <Grid.Column
               width={8}

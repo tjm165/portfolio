@@ -37,7 +37,7 @@ const ScrollArrow = () => {
 
   return (
     // @ts-ignore doesn't like fixed position
-    <div style={wrapper}>
+    <div className="scroll-arrow" style={wrapper}>
       <div style={scrollArrowStyle} onClick={scrollToBottom}>
         <span style={arrowStyle}></span>
       </div>
