@@ -44,6 +44,21 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Menu.Menu position="left">
+                  <Menu.Item
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-end" /* Vertically center items */,
+                      justifyContent: "center" /* Horizontally center items */,
+                    }}
+                    onClick={() => {
+                      window.location.href = window.location.origin;
+                    }}
+                  >
+                    <strong>Thomas Moawad</strong>
+                  </Menu.Item>
+                </Menu.Menu>
+
+                <Menu.Menu position="right">
                   <NavItems />
                 </Menu.Menu>
               </Container>
