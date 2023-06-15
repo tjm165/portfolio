@@ -4,6 +4,8 @@ import { Button, Divider, Grid, Header, Icon, Image } from "semantic-ui-react";
 import { UndecoratedAnchor } from "../../common";
 import MyFavoriteTechBubbles from "../../static/MyFavoriteTechSection/MyFavoriteTechBubbles";
 import ScrollArrow from "./ScrollArrow";
+// @ts-ignore
+import LazyImage from "react-lazy-blur-image";
 
 const mobile = true; // TOMMY SUPPORT BIG TIME
 
@@ -74,10 +76,18 @@ const WelcomeSection = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Image src={require("../../../moawad.png")} circular />
+                  <LazyImage
+                    placeholder={require("../../../moawad-low-res.png")}
+                    uri={require("../../../moawad.png")}
+                    // @ts-ignore
+                    render={(src) => (
+                      <Image size={"medium"} src={src} circular />
+                    )}
+                  />
                 </Grid.Column>
               </Media>
               <MyFavoriteTechBubbles />
+              <div style={{ height: "5vh" }}></div>
             </Grid.Column>
             <Grid.Column
               width={8}
@@ -88,7 +98,12 @@ const WelcomeSection = () => {
               }}
             >
               <Media greaterThan="mobile">
-                <Image src={require("../../../moawad.png")} circular />
+                <LazyImage
+                  placeholder={require("../../../moawad-low-res.png")}
+                  uri={require("../../../moawad.png")}
+                  // @ts-ignore
+                  render={(src) => <Image size={"large"} src={src} circular />}
+                />
               </Media>
             </Grid.Column>
           </Grid.Row>
