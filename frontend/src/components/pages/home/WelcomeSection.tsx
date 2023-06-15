@@ -80,7 +80,9 @@ const WelcomeSection = () => {
                     placeholder={require("../../../moawad-low-res.png")}
                     uri={require("../../../moawad.png")}
                     // @ts-ignore
-                    render={(src) => <Image src={src} circular />}
+                    render={(src) => (
+                      <Image size={"medium"} src={src} circular />
+                    )}
                   />
                 </Grid.Column>
               </Media>
@@ -99,7 +101,7 @@ const WelcomeSection = () => {
                   placeholder={require("../../../moawad-low-res.png")}
                   uri={require("../../../moawad.png")}
                   // @ts-ignore
-                  render={(src) => <Image src={src} circular />}
+                  render={(src) => <Image size={"large"} src={src} circular />}
                 />
               </Media>
             </Grid.Column>
