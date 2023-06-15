@@ -43,7 +43,9 @@ class DesktopContainer extends Component {
               secondary={!fixed}
             >
               <Container>
-                <NavItems />
+                <Menu.Menu position="left">
+                  <NavItems />
+                </Menu.Menu>
               </Container>
             </Menu>
           </Segment>
