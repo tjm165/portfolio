@@ -2,6 +2,8 @@ import { Component, ReactNode } from "react";
 import {
   Button,
   Container,
+  Grid,
+  Header,
   Icon,
   Menu,
   Segment,
@@ -31,30 +33,47 @@ class MobileContainer extends Component {
         <Sidebar
           as={Menu}
           animation="overlay"
-          inverted
           onHide={this.handleSidebarHide}
           vertical
           visible={sidebarOpened}
         >
           <NavItems />
-          {/* <Menu.Item as="a">Work</Menu.Item>
-          <Menu.Item as="a">Company</Menu.Item>
-          <Menu.Item as="a">Careers</Menu.Item> */}
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
-            inverted
-            className={transparent ? "FancyHeader" : ""}
-            textAlign="center"
-            vertical
+            className={transparent ? "FancyHeader" : "BorderlessHeader"}
+            // textAlign="center"
           >
             <Container>
-              <Menu inverted pointing secondary size="large">
-                <Menu.Item onClick={this.handleToggle}>
-                  <Icon name="sidebar" />
-                </Menu.Item>
-              </Menu>
+              <Grid columns={3}>
+                <Grid.Column style={{ float: "left" }} width={2}>
+                  <Menu pointing secondary>
+                    <Menu.Item onClick={this.handleToggle}>
+                      <Icon name="sidebar" />
+                    </Menu.Item>
+                  </Menu>
+                </Grid.Column>
+                <Grid.Column
+                  textAlign="center"
+                  width={12}
+                  style={{
+                    display: "flex",
+                    alignItems: "center" /* Vertically center items */,
+                    justifyContent: "center" /* Horizontally center items */,
+                  }}
+                >
+                  <Header
+                    as="h2"
+                    onClick={() => {
+                      window.location.href = window.location.origin;
+                    }}
+                  >
+                    Thomas Moawad
+                  </Header>
+                </Grid.Column>
+                <Grid.Column style={{ float: "right" }} width={2}></Grid.Column>
+              </Grid>
             </Container>
           </Segment>
           {children}

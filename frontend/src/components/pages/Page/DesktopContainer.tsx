@@ -29,28 +29,38 @@ class DesktopContainer extends Component {
           <Segment
             textAlign="center"
             vertical
-            inverted
             className={transparent ? "FancyHeader" : ""}
             style={{
-              minHeight: "10vh",
-              maxHeight: "10vh",
+              minHeight: "8vh",
+              maxHeight: "8vh",
               display: "flex",
               flexDirection: "column",
             }}
           >
             <Menu
               fixed={fixed ? "top" : undefined}
-              inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
-              size="large"
             >
               <Container>
-                <NavItems />
+                <Menu.Menu position="left">
+                  <Menu.Item
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-end" /* Vertically center items */,
+                      justifyContent: "center" /* Horizontally center items */,
+                    }}
+                    onClick={() => {
+                      window.location.href = window.location.origin;
+                    }}
+                  >
+                    <strong>Thomas Moawad</strong>
+                  </Menu.Item>
+                </Menu.Menu>
 
-                {/* <Menu.Item as="a">Work</Menu.Item>
-                <Menu.Item as="a">Company</Menu.Item>
-                <Menu.Item as="a">Careers</Menu.Item> */}
+                <Menu.Menu position="right">
+                  <NavItems />
+                </Menu.Menu>
               </Container>
             </Menu>
           </Segment>

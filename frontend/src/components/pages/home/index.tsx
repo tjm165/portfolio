@@ -10,6 +10,7 @@ const HomepageLayout = () => {
     <Page
       hasGradient
       transparentHeader
+      tabTitle="Home"
       HeroSection={HomepageHeading}
       PageSections={PageSections}
     />

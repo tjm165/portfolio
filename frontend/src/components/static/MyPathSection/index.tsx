@@ -13,7 +13,7 @@ const MyPathSection = ({ color }: PageSectionPropTypes) => {
 
       <MySection
         color={myPalette.specific.offWhite}
-        headingText="My Path"
+        headingText="My Journey"
         headingTextCenter={Types.Position.CENTER}
       >
         <Timeline />

@@ -4,22 +4,22 @@ import { consts, MySection, Types } from "../../common";
 import Page, { PageSectionPropTypes } from "../Page";
 import config from "../../../config";
 
-function BlogSection({ color }: PageSectionPropTypes) {
+export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
 
-  return (
-    <MySection
-      color={color}
-      headingText={blog.metadata.title}
-      headingTextCenter={Types.Position.LEFT}
-    >
-      <MuiMarkdown>{blog.body}</MuiMarkdown>
-    </MySection>
-  );
-}
+  function BlogSection({ color }: PageSectionPropTypes) {
+    return (
+      <MySection
+        color={color}
+        headingText={blog.metadata.title}
+        headingTextCenter={Types.Position.LEFT}
+      >
+        <MuiMarkdown>{blog.body}</MuiMarkdown>
+      </MySection>
+    );
+  }
 
-export default function BlogPost() {
-  return <Page PageSections={[BlogSection]} />;
+  return <Page tabTitle={blog.metadata.title} PageSections={[BlogSection]} />;
 }
 
 type BlogData = {
@@ -40,7 +40,7 @@ export async function blogPostLoader({ params }: any) {
     `${root}/${params.blogId}/${consts.cdnBlogMetadataSuffix}`
   );
 
-  const metadata = await metadata_response.text();
+  const metadata = await metadata_response.json();
 
   console.log(metadata);
 

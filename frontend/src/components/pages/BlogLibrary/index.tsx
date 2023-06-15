@@ -7,7 +7,7 @@ export default function BlogLibrary() {
   return (
     <>
       <Outlet />
-      <Page PageSections={[BlogLibrarySection]} />
+      <Page tabTitle="Blog" PageSections={[BlogLibrarySection]} />
     </>
   );
 }
