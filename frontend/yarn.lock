@@ -8079,6 +8079,13 @@ react-is@^16.13.1, react-is@^16.6.3, react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
+react-lazy-blur-image@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-lazy-blur-image/-/react-lazy-blur-image-0.1.2.tgz#f6e164069aec4f27b2b97ff26e617a73778557ee"
+  integrity sha512-UCoPdr7T4UEhR7OsAIIwbTNq6SeFR6lb4j5yRI5bGB5FahazJLCjazG4f0eDAN0ZWBwfSxMeJFwU05dcemkzMQ==
+  dependencies:
+    react-visibility-sensor "^5.1.1"
+
 react-popper@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.3.0.tgz#17891c620e1320dce318bad9fede46a5f71c70ba"
@@ -8180,6 +8187,13 @@ react-vertical-timeline-component@^3.6.0:
     classnames "^2.2.6"
     prop-types "^15.7.2"
     react-intersection-observer "^8.26.2"
+
+react-visibility-sensor@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-visibility-sensor/-/react-visibility-sensor-5.1.1.tgz#5238380960d3a0b2be0b7faddff38541e337f5a9"
+  integrity sha512-cTUHqIK+zDYpeK19rzW6zF9YfT4486TIgizZW53wEZ+/GPBbK7cNS0EHyJVyHYacwFEvvHLEKfgJndbemWhB/w==
+  dependencies:
+    prop-types "^15.7.2"
 
 react@^18.2.0:
   version "18.2.0"

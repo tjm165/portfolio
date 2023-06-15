@@ -4,6 +4,8 @@ import { Button, Divider, Grid, Header, Icon, Image } from "semantic-ui-react";
 import { UndecoratedAnchor } from "../../common";
 import MyFavoriteTechBubbles from "../../static/MyFavoriteTechSection/MyFavoriteTechBubbles";
 import ScrollArrow from "./ScrollArrow";
+// @ts-ignore
+import LazyImage from "react-lazy-blur-image";
 
 const mobile = true; // TOMMY SUPPORT BIG TIME
 
@@ -88,7 +90,12 @@ const WelcomeSection = () => {
               }}
             >
               <Media greaterThan="mobile">
-                <Image src={require("../../../moawad.png")} circular />
+                <LazyImage
+                  placeholder={require("../../../moawad-low-res.png")}
+                  uri={require("../../../moawad.png")}
+                  // @ts-ignore
+                  render={(src) => <Image src={src} circular />}
+                />{" "}
               </Media>
             </Grid.Column>
           </Grid.Row>
