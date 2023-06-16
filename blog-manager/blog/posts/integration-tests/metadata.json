@@ -1,5 +1,5 @@
 {
   "title": "Using Express proxies for local integration test",
-  "description": "How to handle integration tests using Jest and Express.",
+  "description": "Tests are important for ensuring the reliability of your system. While unit tests test components within a sub-system, it misses a huge level of uncertainty in how your sub systems interact with each other.",
   "draftMode": true
 }
