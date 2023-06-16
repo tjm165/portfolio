@@ -1,8 +1,8 @@
 [
   {
     "path": "integration-tests",
-    "numCharacters": 283,
-    "title": "Using Jest + Express for integration test",
+    "numCharacters": 260,
+    "title": "Using Express proxies for local integration test",
     "description": "How to handle integration tests using Jest and Express.",
     "draftMode": true,
     "image": "image.png"

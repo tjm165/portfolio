@@ -1,4 +1,4 @@
-What are integration tests?
+This
 
 > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
 

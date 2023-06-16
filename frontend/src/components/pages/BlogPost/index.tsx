@@ -32,6 +32,8 @@ export async function blogPostLoader({ params }: any) {
 
   let root = consts.cdnBlogPosts;
 
+  console.log(draftMode);
+
   if (draftMode) {
     root = "http://localhost:4566/tommy/portfolio/blog/posts";
   }
