@@ -26,7 +26,7 @@ const MySection = ({
       <Container fluid={fluid}>
         <Header
           textAlign={headingTextCenter}
-          style={{ fontSize: "2em", padding: "0em 0em 1em 0em" }}
+          style={{ fontSize: "2em", padding: "0em 0em 0em 0em" }}
         >
           {headingText}
         </Header>

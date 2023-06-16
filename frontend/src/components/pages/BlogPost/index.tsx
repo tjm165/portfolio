@@ -4,6 +4,7 @@ import { consts, MySection, Types } from "../../common";
 import Page, { PageSectionPropTypes } from "../Page";
 import config from "../../../config";
 import { Highlight, themes } from "prism-react-renderer";
+import { Header } from "semantic-ui-react";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
@@ -16,22 +17,32 @@ export default function BlogPost() {
         headingTextCenter={Types.Position.LEFT}
       >
         <MuiMarkdown
-          Highlight={Highlight}
-          themes={themes}
-          prismTheme={themes.github}
-          // overrides={{
-          //   ...getOverrides({
-          //     theme: themes.github,
-          //     Highlight: Highlight,
-          //   }),
+          overrides={{
+            ...getOverrides({
+              themes: themes,
+              theme: themes.vsDark,
+              Highlight: Highlight,
+            }),
 
-          //   h1: {
-          //     component: "p",
-          //     props: {
-          //       style: { color: "red" },
-          //     },
-          //   },
-          // }}
+            h2: {
+              component: Header,
+              props: {
+                as: "h2",
+              },
+            },
+            h3: {
+              component: Header,
+              props: {
+                as: "h3",
+              },
+            },
+            h4: {
+              component: Header,
+              props: {
+                as: "h4",
+              },
+            },
+          }}
         >
           {blog.body}
         </MuiMarkdown>
