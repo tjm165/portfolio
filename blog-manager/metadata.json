@@ -1,9 +1,9 @@
 [
   {
     "path": "integration-tests",
-    "numCharacters": 1671,
+    "numCharacters": 2546,
     "title": "Using Express proxies for local integration test",
-    "description": "Tests are important for ensuring the reliability of your system. While unit tests test components within a sub-system, it misses a huge level of uncertainty in how your sub systems interact with each other.",
+    "description": "Automated tests are absolutely critical in ensuring the reliability and functionality of your system. While unit tests are effective at assessing individual components within a sub-system, they fail to address the significant uncertainty that arises from the interactions between different sub-systems.",
     "draftMode": true,
     "image": "image.png"
   },
