@@ -4,7 +4,7 @@
     "numCharacters": 2546,
     "title": "Using Express proxies for local integration test",
     "description": "Tests are important for ensuring the reliability of your system. While unit tests test components within a sub-system, it misses a huge level of uncertainty in how your sub systems interact with each other.",
-    "draftMode": true,
+    "draftMode": false,
     "image": "image.png"
   },
   {
@@ -12,7 +12,7 @@
     "numCharacters": 320,
     "title": "Hello Blog1 on Local",
     "description": "A description",
-    "draftMode": false,
+    "draftMode": true,
     "image": "image.png"
   },
   {
