@@ -4,7 +4,7 @@ type Config = {
 };
 
 const config: Config = {
-  DRAFT_MODE: Boolean(process.env.NODE_ENV) || false,
+  DRAFT_MODE: Boolean(process.env.NODE_ENV === "development") || false,
   cdn: "http://d307urd3htsez.cloudfront.net/portfolio/blog",
 };
 
