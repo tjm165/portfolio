@@ -1,8 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-import MuiMarkdown from "mui-markdown";
+import { MuiMarkdown, getOverrides } from "mui-markdown";
 import { consts, MySection, Types } from "../../common";
 import Page, { PageSectionPropTypes } from "../Page";
 import config from "../../../config";
+import { Highlight, themes } from "prism-react-renderer";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
@@ -14,7 +15,26 @@ export default function BlogPost() {
         headingText={blog.metadata.title}
         headingTextCenter={Types.Position.LEFT}
       >
-        <MuiMarkdown>{blog.body}</MuiMarkdown>
+        <MuiMarkdown
+          Highlight={Highlight}
+          themes={themes}
+          prismTheme={themes.github}
+          // overrides={{
+          //   ...getOverrides({
+          //     theme: themes.github,
+          //     Highlight: Highlight,
+          //   }),
+
+          //   h1: {
+          //     component: "p",
+          //     props: {
+          //       style: { color: "red" },
+          //     },
+          //   },
+          // }}
+        >
+          {blog.body}
+        </MuiMarkdown>
       </MySection>
     );
   }

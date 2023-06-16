@@ -10,7 +10,7 @@ Suppose that we have two services:
 We can use <a href="https://www.npmjs.com/package/http-proxy-middleware" target="_blank">http-proxy-middleware</a> which is satisfyingly elegant.
 Based on the documentation we can create the following file
 
-```js
+```javascript
 import * as express from "express";
 import { createProxyMiddleware } from "http-proxy-middleware";
 
