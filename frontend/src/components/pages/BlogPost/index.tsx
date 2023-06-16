@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
-import MuiMarkdown from "mui-markdown";
+import { MuiMarkdown, getOverrides } from "mui-markdown";
 import { consts, MySection, Types } from "../../common";
 import Page, { PageSectionPropTypes } from "../Page";
 import config from "../../../config";
+import { Highlight, themes } from "prism-react-renderer";
+import { Header } from "semantic-ui-react";
 
 export default function BlogPost() {
   const blog: BlogData = useLoaderData() as BlogData;
@@ -14,7 +16,36 @@ export default function BlogPost() {
         headingText={blog.metadata.title}
         headingTextCenter={Types.Position.LEFT}
       >
-        <MuiMarkdown>{blog.body}</MuiMarkdown>
+        <MuiMarkdown
+          overrides={{
+            ...getOverrides({
+              themes: themes,
+              theme: themes.vsDark,
+              Highlight: Highlight,
+            }),
+
+            h2: {
+              component: Header,
+              props: {
+                as: "h2",
+              },
+            },
+            h3: {
+              component: Header,
+              props: {
+                as: "h3",
+              },
+            },
+            h4: {
+              component: Header,
+              props: {
+                as: "h4",
+              },
+            },
+          }}
+        >
+          {blog.body}
+        </MuiMarkdown>
       </MySection>
     );
   }
@@ -31,6 +62,8 @@ export async function blogPostLoader({ params }: any) {
   let draftMode = config.DRAFT_MODE;
 
   let root = consts.cdnBlogPosts;
+
+  console.log(draftMode);
 
   if (draftMode) {
     root = "http://localhost:4566/tommy/portfolio/blog/posts";
