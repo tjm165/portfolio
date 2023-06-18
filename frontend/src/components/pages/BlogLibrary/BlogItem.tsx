@@ -14,6 +14,15 @@ const { MediaContextProvider, Media } = createMedia({
   },
 });
 
+function getTimeToRead(numCharacters: number) {
+  const estimate = Math.ceil(numCharacters / 850);
+
+  if (estimate === 1) {
+    return `${estimate} minute`;
+  }
+  return `${estimate} minutes`;
+}
+
 export type BlogItemProps = ResultObj;
 
 export default function BlogItem({
@@ -21,6 +30,7 @@ export default function BlogItem({
   description,
   path,
   image,
+  numCharacters,
 }: BlogItemProps) {
   const subPath = `/blog/${path}`;
   const fullUrl = `${window.location.origin}/blog/${path}`;
@@ -53,7 +63,7 @@ export default function BlogItem({
               </UndecoratedLink>
             </Item.Header>
 
-            <Item.Meta>Description</Item.Meta>
+            <Item.Meta>{getTimeToRead(numCharacters)}</Item.Meta>
             <Item.Description>{description}</Item.Description>
             <Item.Extra style={{ marginTop: "auto" }}>
               <Popup
