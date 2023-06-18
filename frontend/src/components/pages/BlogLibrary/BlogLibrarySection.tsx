@@ -15,10 +15,10 @@ const getCardData = (inputs: BlogItemProps[]) => {
 };
 
 function shouldShowBlogPost(blog: ResultObj): boolean {
-  if (blog.draftMode && window.location.origin.includes("localhost")) {
+  if (window.location.origin.includes("localhost")) {
     return true;
   }
-  if (!blog.draftMode && !window.location.origin.includes("localhost")) {
+  if (blog.draftMode && !window.location.origin.includes("localhost")) {
     return true;
   }
   return false;
