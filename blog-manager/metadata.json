@@ -4,7 +4,7 @@
     "numCharacters": 2546,
     "title": "Using Express proxies for local integration test",
     "description": "Tests are important for ensuring the reliability of your system. While unit tests test components within a sub-system, it misses a huge level of uncertainty in how your sub systems interact with each other.",
-    "draftMode": false,
+    "draftMode": true,
     "image": "image.png"
   },
   {
@@ -12,13 +12,27 @@
     "numCharacters": 320,
     "title": "Hello Blog1 on Local",
     "description": "A description",
-    "draftMode": true,
+    "draftMode": false,
     "image": "image.png"
   },
   {
     "path": "my-second-post",
     "numCharacters": 318,
     "title": "Hello Blog1 on CDN",
+    "description": "A description",
+    "draftMode": true
+  },
+  {
+    "path": "python-go-experiment",
+    "numCharacters": 1083,
+    "title": "Python Go Experiment",
+    "description": "A description",
+    "draftMode": true
+  },
+  {
+    "path": "what-chess-teaches-about-software-engineering",
+    "numCharacters": 3163,
+    "title": "What Chess Can Teach Us About Software Engineering: Insights from Experience, Patterns, and Strategic Thinking",
     "description": "A description",
     "draftMode": true
   }
